@@ -1,5 +1,6 @@
 #int 
 integer = 15
+x, y, z = 1, 2, 3
 
 #float
 floatingPoint = 3.14
