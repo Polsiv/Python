@@ -5,9 +5,9 @@ subtract = lambda x, y: x - y
 divide = lambda x, y: x / y
 
 operations = {"*": multiplication,
+               "/": divide,
                "+": add,
-               "-": subtract,
-               "/": divide
+               "-": subtract
                }
 
 
