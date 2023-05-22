@@ -32,7 +32,7 @@ def analizador(ecuacion: str):
                 equationSolved = ecuacion[:ecuacion.find("=") - 1].split(" ")
                 index = 0
             else:
-                index += 1
+                index += 1  
 
     print(ecuacion)
 
