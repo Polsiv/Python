@@ -1,11 +1,13 @@
-def selection(list):
-    for i in range(0,len(list)-1):
-        min = i
-        for j in range(i + 1, len(list)):
-            if(list[j] < list[min]):
-                min = j
-        print(list)
-        list[i], list[min] = list[min], list[i]
+def seleccion(lista):
+    for i in range(0, len(lista) - 1):
+        minimo = i
+        for j in range(i + 1, len(lista)):
+            if (lista[j] < lista[minimo]):
+                minimo = j
 
-listodd = [11, 3, 81, 7, 45]
-selection(listodd)
+        lista[i], lista[minimo] = lista[minimo], lista[i]
+    print(lista)
+
+
+listaimpares = [11, 3, 81, 7, 45]
+seleccion(listaimpares)
