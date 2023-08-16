@@ -18,4 +18,3 @@ def countsort(list, max):
            
 oddlist = [9, 3, 1, 5, 9, 2, 0, 1]
 countsort(oddlist, max(oddlist))
-
