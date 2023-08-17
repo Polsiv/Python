@@ -1,7 +1,7 @@
 def shellSort(array, n):
 
     interval = n // 2
-    print(interval)
+    
     while interval > 0:
         for i in range(interval, n):
             temp = array[i]
@@ -18,3 +18,4 @@ data = [9, 8, 3, 7, 5, 6, 4, 1]
 size = len(data)
 shellSort(data, size)
 print(data)
+     
