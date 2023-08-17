@@ -1,7 +1,7 @@
 def shellSort(array, n):
 
+    # Rearrange elements at each n/2, n/4, n/8, ... intervals
     interval = n // 2
-    print(interval)
     while interval > 0:
         for i in range(interval, n):
             temp = array[i]

@@ -10,15 +10,19 @@ def bucketSort(array):
         bucket[index_b].append(j)
 
     for i in range(len(array)):
-        bucket[i] = sorted(bucket[i])
+         bucket[i] = sorted(bucket[i])
+         print(bucket)
 
+    print("=====================")
     k = 0
     for i in range(len(array)):
+        print(f'i = {i}')
         for j in range(len(bucket[i])):
-            array[k] = bucket[i][j]
-            k += 1
+             print(f'j = {j}')
+             array[k] = bucket[i][j]
+             k += 1
     return array
 
+list = [.42, .33, .32, .52, .37, .47, .51]
 
-list = [.42, .32, .33, .52, .37, .47, .51]
 print(bucketSort(list))
