@@ -1,16 +1,17 @@
-#Alphabetic order
+#Alphabetic order--------------------------------------------------------
 def insercion(list):
     for i in range(1, len(list)+1):
         k=i-1
         while (k>0) and (list[k]["name"]<list[k-1]["name"]):
-            list[k]["name"], list[k-1]["name"] = list[k-1]["name"], list[k]["name"]
+            list[k], list[k-1] = list[k-1], list[k]
             k -= 1
 
     print("-------Sorted in alphabetic order:---------")
     for i in range(len(list)):
         print(list[i]["name"])
 
-#Find the Position of the Company
+
+#Find the Position of the Company------------------------------------------
 
 def sequential(list, found):
     posicion = -1
@@ -21,19 +22,18 @@ def sequential(list, found):
     if(posicion == -1):
         print("-----Not found------")
 
+#Sort codes-----------------------------------------------------------
 
-#Sort codes 
 def inserction1(list):
     for i in range(1, len(list)+1):
         k=i-1
         while (k>0) and (list[k]["code"]<list[k-1]["code"]):
-            list[k]["code"], list[k-1]["code"] = list[k-1]["code"], list[k]["code"]
+            list[k], list[k-1]= list[k-1], list[k]
             k -= 1
 
     print("-------Sorted in incremental order:---------")
-    for i in range(len(list)):
-        print(f'{list[i]["name"]}: {list[i]["code"]}')
-    
+
+#Contentw-----------------------------------------------------------w
 
 Employes = [
     {"name": "Juan Pérez", "code": 23456, "CompanyPosition": "Gerente General"},
@@ -47,8 +47,7 @@ Employes = [
 ]
 
 toFind = "Director Ejecutivo"
-insercion(Employes)
+(insercion(Employes))
 sequential(Employes, toFind)
 inserction1(Employes)
-
 
