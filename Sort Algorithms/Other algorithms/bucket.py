@@ -13,7 +13,6 @@ def bucketSort(array):
          bucket[i] = sorted(bucket[i])
          print(bucket)
 
-    print("=====================")
     k = 0
     for i in range(len(array)):
         print(f'i = {i}')
