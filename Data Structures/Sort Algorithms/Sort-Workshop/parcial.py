@@ -1,3 +1,5 @@
+#Se crea la lista de peliculas, con sus respectivos diccionarios conteniendo la informacion de cada pelicula.
+
 peliculas = [ 
     {'titulo': 'starwars the return of jedi', 'año_estreno':1967, 'recaudacion':1000000, 'valoracion_publico': 4.5},
     {'titulo': 'avengers end game', 'año_estreno':2017, 'recaudacion':230000, 'valoracion_publico': 4.9},
@@ -7,10 +9,10 @@ peliculas = [
     {'titulo': 'avengers infinity war', 'año_estreno':2020, 'recaudacion':120000, 'valoracion_publico': 5}
     ]
 
-# ordenar lista
+
+#=============================TIMSORT (Ordena las listas alfabeticamente)============================
 
 MIN_MERGE = len(peliculas)
-
 def calcMinRun(n):
     
     r = 0
@@ -19,6 +21,7 @@ def calcMinRun(n):
         n >>= 1
     return n + r
 
+
 def insertionSort(arr, left, right):
     for i in range(left + 1, right + 1):
         j = i
@@ -26,9 +29,8 @@ def insertionSort(arr, left, right):
             arr[j], arr[j - 1] = arr[j - 1], arr[j]
             j -= 1
 
-
-
 def merge(arr, l, m, r):
+
 
     len1, len2 = m - l + 1, r - m
     left, right = [], []
@@ -38,6 +40,8 @@ def merge(arr, l, m, r):
         right.append(arr[m + 1 + i])
 
     i, j, k = 0, 0, l
+
+
 
     while i < len1 and j < len2:
         if left[i]["titulo"] <= right[j]["titulo"]:
@@ -82,7 +86,7 @@ def timSort(arr):
         size = 2 * size
 
 
-#=============================TIME SORT (LANZAMIENTO)============================
+#=============================TIMSORT DOs(Ordena las listas por su fecha de lanzamiento de manera ascendente)============================
 
 
 def insertionSortDos(arr, left, right):
@@ -149,7 +153,7 @@ def timSortDos(arr):
         size = 2 * size
 
 
-#=============================TIME SORT (RECAUDACION)============================
+#=============================TIMSORT 3 (Ordena las listas por su total recaudado de manera ascendente)============================
 
 def insertionSortTres(arr, left, right):
     for i in range(left + 1, right + 1):
@@ -213,7 +217,7 @@ def timSortTres(arr):
         size = 2 * size
 
 
-#=============================Imprimir Informacion(Tomas)============================
+#=============================Imprimir Informacion(Iprime las listas ordenadas de manera ascendente: orden alfabetico, año de estreno y total recaudado)============================
 
 
 def imprimir_titulo():
@@ -232,7 +236,7 @@ def imprimir_recaudacion():
         print(f'Titulo: {x["titulo"].capitalize()} Año estreno: {x["año_estreno"]} Recaudacion: {x["recaudacion"]} Valoracion del publico: {x["valoracion_publico"]}')  
             
 
-#Parte sebastian============================================================================================
+#Parte sebastian====(Esta funcion indica si hay peliculas cuyas fecha de lanzamiento haya sido 2017)=======================================
 
 def secuencialG(lista, buscado):
     posicion = -1
@@ -241,9 +245,11 @@ def secuencialG(lista, buscado):
         if (i["año_estreno"] == buscado):
             posicion = i
             print(i["titulo"].capitalize())
-    if posicion==-1:
+    if posicion == -1:
         print("No existe en la lista alguna pelicula que se estrenara en: ",buscado)
     return posicion
+
+#====(Esta funcion indica si hay peliculas que inicien con la palabra iron)=======================================
 
 def secuencialH(lista, buscado):
     posicion = -1
@@ -257,8 +263,7 @@ def secuencialH(lista, buscado):
     return posicion
 
 
-
-# parte silv===================================================================
+# parte silv====(Esta funcion indica si existe el nombre de una pelicula en especifico, y si existe, imprime el nombre y la posicion(segun la lista ordenada alfabeticamente))==================
 
 def secuencial(list, found):
         posicion = -1
@@ -270,6 +275,8 @@ def secuencial(list, found):
         if (posicion == -1):
             print("pelicula no encontrada.")
 
+#====(Esta funcion imprime el total recuadado por las peliculas que contengan la palabra avengers)=======================================
+
 def secuencial1(list, found):
     posicion = -1
     total = 0
@@ -277,12 +284,12 @@ def secuencial1(list, found):
         if (found in list[i]["titulo"]):
             total+= list[i]["recaudacion"]
             posicion = i
-    print("Total recaudado", total)
+    print("Total recaudado: ", total)
 
     if (posicion == -1):
         print("No hay peliculas que tengan la palabra Avengers.")
 
-# parte alejo===================================================================
+# parte alejo====(Esta funcion imprime el total de peliculas con  valoracion de 5)=============
 
 def secuencialvaloracion(lista, buscado):
 
@@ -296,8 +303,9 @@ def secuencialvaloracion(lista, buscado):
 
     if  posicion == -1:
         print("No se encontro ningua pelicula con valoracion ", buscado)
-
     return posicion
+
+# parte alejo====(Esta funcion imprime si existe en la lista la pelicula Avengers Infity War)=============
 
 def secuencialinfinity(lista, buscado):
 
@@ -309,9 +317,10 @@ def secuencialinfinity(lista, buscado):
             print(f'Titulo: {lista[i]["titulo"].capitalize()} Año estreno: {lista[i]["año_estreno"]} Recaudacion: {lista[i]["recaudacion"]} Valoracion del publico: {lista[i]["valoracion_publico"]}')
 
     if  posicion == -1:
-        print("No se encontro la pelicula Avengers infity War")
+        print("No se encontro la pelicula Avengers Infity War")
 
     return posicion
+
 
 #Menu=======================================================================
 
@@ -338,8 +347,8 @@ while x != 9:
               
     elif x == 4:
         palabraH="iron"
-        secuencialH(peliculas,palabraH.lower())
-       
+        secuencialH(peliculas, palabraH.lower())
+
     elif x == 5:
         timSort(peliculas)
         print("\n========================Imprimir la posicion de la pelicula deseada a encontrar (en orden alfabetico)========================")
