@@ -1,14 +1,7 @@
-class Solution(object):
-    def countBits(n):
-        
-        ans = []
+#https://www.youtube.com/watch?v=awxaRgUB4Kw Neet code solution!
 
-        tempans = [[], [], [], []]
+def countBits(n):
+    return [bin(i).count('1') for i in range(n+1)]
 
-        for i in range(0, n + 1):
-            i = bin(i).replace("0b", "")
-            ans.append(i)
-    
-    
-    countBits(4)
+print(countBits(5))
 
