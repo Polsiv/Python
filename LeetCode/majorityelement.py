@@ -1,24 +1,11 @@
-def findmajority(list):
+class Solution:
+    def majorityElement(self, nums: List[int]) -> int:
+        frequencies = {}
+        count = 0
+        for i in :
+            frequencies[i] = frequencies.get(i, 0) + 1
 
-    frequencies = {}
-
-    for i in list:
-        frequencies[i] = 0
-
-
-
-
-    
-    print(frequencies)
+        return max(frequencies, key=frequencies.get)
 
 
-
-
-
-
-
-list = [1, 2, 4, 5, 1, 2, 4, 1, 1, 1]
-
-
-findmajority(list)
-
+        
