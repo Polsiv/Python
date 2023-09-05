@@ -1,3 +1,4 @@
+#https://www.youtube.com/watch?v=7pnhv842keE Leetcode solution
 class Solution:
     def majorityElement(self, nums: List[int]) -> int:
         frequencies = {}
