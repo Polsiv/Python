@@ -1,10 +1,15 @@
 def rabbits (n):
-    population = [1, 1]
-    for i in range(2, n):
-        population.append(population[i - 1] + population[i -2])
-    return population
-    
-x = int(input("Enter the x month you want to know: "))
-result = rabbits(x)
-print(result[-1])
+    if (n <= 1): return 1
+    return rabbits(n - 1) + rabbits(n - 2)
+print(rabbits(10))
 
+#This algorithm is 0(n^2) time complexity, which is really bad
+
+
+def optimized_rabbits(x, dir = {}):
+    if (x in dir): return dir[x]
+    if(x <= 1): return 1
+    dir[x] = optimized_rabbits(x - 1, dir) + optimized_rabbits(x - 2, dir)
+    return dir[x]
+
+print(optimized_rabbits(10))
