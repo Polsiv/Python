@@ -1,5 +1,5 @@
 #Creating the element
-class node(object):
+class node:
     def __init__(self, data = None):
         self.data = data
         self.next = None
@@ -7,8 +7,7 @@ class node(object):
 #Creating the head 
 class linked_list:
     def __init__(self):
-        self.head = node(
-        )
+        self.head = node()
 
 #Appending new elements to the linked list
     def append(self, data):
