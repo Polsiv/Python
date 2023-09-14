@@ -20,22 +20,43 @@ class linked_list:
 
 
 #Display the elements
-    def display(self):
-        
+    def display(self, daystarts):
         cur_node = self.head
+        days_of_week = ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"]
     
         while cur_node.next != None:
             cur_node = cur_node.next
 
-            test = []
-            for i in range(1, cur_node.days + 1):
-                test.append(i)
+            print(cur_node.name)
+            print(" ".join(days_of_week))
 
-            print("Month:", cur_node.name, " Has: ", test)
+            day = 1
+            for i in range(1, cur_node.days + 1):
+                if i == 1:
+                    print("   " * daystarts, end = "")
+                print("{:>2}".format(i), end= " ")
+
+                if(day + daystarts) % 7 == 0:
+                    print()
+                day += 1
+
+            if day % 7 != 1:
+                print()
+            print()
+            daystarts = (daystarts + cur_node.days) % 7
 
 
 months2023 = linked_list()
 months2023.append("January", 31)
 months2023.append("February", 28)
-months2023.append("December", )
-months2023.display()
+months2023.append("March", 31)
+months2023.append("April", 30)
+months2023.append("May", 31)
+months2023.append("June", 30)
+months2023.append("July", 31)
+months2023.append("August", 31)
+months2023.append("September", 30)
+months2023.append("October", 31)
+months2023.append("November", 30)
+months2023.append("December", 31)
+months2023.display(0)

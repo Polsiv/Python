@@ -15,4 +15,6 @@ def month(days):
             print (j, end = " ")
         print()
 
+    print(('{: > 2} '* 7).format(day_of_week))
+
 month(30)
