@@ -1,17 +1,21 @@
 #Creating the month(node)
-class month: 
-    def __init__(self, name = None, days = None):
+class Month: 
+    def __init__(self, name = None, days = 0):
         self.next = None
         self.name = name
         self.days = days 
-       
+        list = []
+        for i in range(1, days + 1):
+            list.append(i)
+        self.listDay = list
+        
 #Creating the list (year 2023)
-class linked_list:
+class Linked_list:
     def __init__(self):
-        self.head = month()
+        self.head = Month()
     
     def append(self, name, days):
-        new_node = month(name, days)
+        new_node = Month(name, days)
         cur_node = self.head
 
         while cur_node.next != None:
@@ -46,7 +50,7 @@ class linked_list:
             daystarts = (daystarts + cur_node.days) % 7
 
 
-months2023 = linked_list()
+months2023 = Linked_list()
 months2023.append("January", 31)
 months2023.append("February", 28)
 months2023.append("March", 31)
@@ -59,4 +63,4 @@ months2023.append("September", 30)
 months2023.append("October", 31)
 months2023.append("November", 30)
 months2023.append("December", 31)
-months2023.display(0)
+months2023.display(69)
