@@ -47,7 +47,7 @@ def sweeping(applestack):
 
 def find_range(applestack):
     stack_backup = MyStack()
-    mini, maxi = 0, 0
+    mini, maxi = 41, -41
     while(not empty_stack(applestack)):
         data = unstacking(applestack)
         if data < mini:

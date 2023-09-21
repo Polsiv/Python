@@ -2,7 +2,6 @@ from stack import *
 import random
 import sys
 
-
 month_temp = MyStack()
 temperatures = []
 
