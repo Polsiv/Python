@@ -5,7 +5,7 @@ def newmethod(funct, derivative, x, n):
         f = eval(funct)
         return f
     
-    def derivativef(x   ):
+    def derivativef(x):
         df = eval(derivative)
         return df
     
