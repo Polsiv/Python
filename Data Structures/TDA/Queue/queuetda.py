@@ -15,6 +15,7 @@ def arribo(cola,dato):
         cola.final.sig=nodo
     cola.final=nodo
     cola.tamano+=1
+    
 
 def atencion(cola):
     dato=cola.frente.info
