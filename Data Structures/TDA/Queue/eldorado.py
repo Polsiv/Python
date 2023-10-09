@@ -16,8 +16,9 @@ def crear_vuelo_despegue(tipo):
     if tipo == 2:
         arribo(colaAterrizaje, vuelos)
 
+        
 x = 0
-while (x != 5):
+while (x != 5): 
     try:
         x = int(input("---------Elige la opción a ejecutar---------\n1)Agregar Vuelo de Despegue\n2)Agregar Vuelo de Aterrizaje\n3)mostrar cola Avión\n4.\n5)Salir\n"))
     except ValueError:
@@ -25,8 +26,12 @@ while (x != 5):
 
     if x == 1: crear_vuelo_despegue(1)
     if x == 2: crear_vuelo_despegue(2)
+    if x == 3: 
+        y = int(input("Elige el tipo de cola: \n1)Despegue. \n2)Atterizaje."))
+        if y == 1: barrido(colaDespegue) 
+        elif y == 2: barrido(colaAterrizaje)
+        else: print("Número ingresado no válido")
 
 
 
-barrido(colaDespegue)
 
