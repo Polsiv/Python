@@ -45,16 +45,12 @@ def barrido(cola):
         arribo(cola,dato)
 
 def CompararCodigoDespegue(cola, codigo):
-    flag = False
     caux=ColaDespegue()
     while(not cola_vacia(cola)):
         dato=atencion(cola)
-        if dato.CodigoVuelo() == codigo:
-            flag = True
+        
         arribo(caux,dato)
      
     while(not cola_vacia(caux)):
         dato=atencion(caux)
         arribo(cola,dato)
-    
-    return flag

@@ -6,6 +6,10 @@ class AvionDespegue(object):
         self._aeropuertoD = AeropuertoD
         self._tipoVuelo = TipoVuelo
 
+    def InformacionVuelo(self):
+        return f'Codigo del Vuelo: {self._codigovuelo}, Aerolinea: {self._aerolinea}, Hora de salida: {self._horasalida}, Aereopuerto de Origen: Alfonso Bonilla, Aereopuerto Destino: {self._aeropuertoD}, Tipo de Vuelo: {self._tipoVuelo}'
+
+    @property
     def CodigoVuelo(self):
         return self._codigovuelo
 
@@ -28,7 +32,3 @@ class AvionDespegue(object):
     @HoraSalida.setter
     def Horasalida(self, horasalida):
         self._horasalida = horasalida
-
-
-    def InformacionVuelo(self):
-        return f'Codigo del Vuelo: {self._codigovuelo}, Aerolinea: {self._aerolinea}, Hora de salida: {self._horasalida}, Aereopuerto de Origen: Alfonso Bonilla, Aereopuerto Destino: {self._aeropuertoD}, Tipo de Vuelo: {self._tipoVuelo}'

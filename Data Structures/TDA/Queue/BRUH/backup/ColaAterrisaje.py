@@ -1,7 +1,7 @@
 class nodoCola(object):
     info, sig = None, None
 
-class ColaDespegue(object):
+class ColaAterrisaje(object):
     def __init__(self):
         self.frente, self.final=None, None
         self.largo=0
@@ -23,7 +23,7 @@ def cola_vacia(cola):
 def en_frente(cola):
     return cola.frente.info
 
-def largodedespegue(cola):
+def largodeaterrizaje(cola):
     return cola.largo
 
 def atencion(cola):
@@ -35,7 +35,7 @@ def atencion(cola):
     return dato
 
 def barrido(cola):
-    caux=ColaDespegue()
+    caux=ColaAterrisaje()
     while(not cola_vacia(cola)):
         dato=atencion(cola)
         print(dato.InformacionVuelo())
@@ -44,17 +44,12 @@ def barrido(cola):
         dato=atencion(caux)
         arribo(cola,dato)
 
-def CompararCodigoDespegue(cola, codigo):
-    flag = False
-    caux=ColaDespegue()
+def CompararCodigo(cola):
+    caux=ColaAterrisaje()
     while(not cola_vacia(cola)):
         dato=atencion(cola)
-        if dato.CodigoVuelo() == codigo:
-            flag = True
         arribo(caux,dato)
-     
     while(not cola_vacia(caux)):
         dato=atencion(caux)
         arribo(cola,dato)
-    
-    return flag
+    return dato._codigovuelo()

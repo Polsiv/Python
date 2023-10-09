@@ -12,13 +12,12 @@ def crear_vuelo_despegue():
     TipoVuelo = input("Ingrese el tipo de vuelo: ")
     Codigovuelo = int(input("Ingrese el codigo de vuelo: "))
     
-    if not cola_vacia(ColaDespegues):
-        while CompararCodigoDespegue(ColaDespegues, Codigovuelo):
-            Codigovuelo = int(input(" El codigo ya existe, por favor ingrese otro codigo de vuelo: "))
+    while CompararCodigoDespegue(ColaDespegues, Codigovuelo):
+        int(input(" El codigo ya existe, por favor ingrese otro codigo de vuelo: "))
 
     AvionesDespegue = AvionDespegue(Codigovuelo, Aereolinea, HoraSalida, AereopuertoD, TipoVuelo)
     arribo(ColaDespegues, AvionesDespegue)
-
+    
 
 def crear_vuelo_aterrisaje():
     Codigovuelo = int(input("Ingrese el codigo de vuelo: "))
