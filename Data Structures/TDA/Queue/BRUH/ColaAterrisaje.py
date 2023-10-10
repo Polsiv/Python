@@ -44,12 +44,39 @@ def barrido(cola):
         dato=atencion(caux)
         arribo(cola,dato)
 
-def CompararCodigo(cola):
+def comparar_codigo_aterrizaje(cola, codigo):
+    flag = False
     caux=ColaAterrisaje()
     while(not cola_vacia(cola)):
+
         dato=atencion(cola)
+        if dato.CodigoVuelo() == codigo:
+            flag = True
         arribo(caux,dato)
+     
     while(not cola_vacia(caux)):
         dato=atencion(caux)
         arribo(cola,dato)
-    return dato._codigovuelo()
+    
+    return flag
+
+def bubble(list):
+    for i in range(0, len(list)-1):
+        for j in range(0, len(list)-i-1):
+            if (list[j].Horalleagada() > list[j + 1].Horalleagada()):
+                list[j], list[j + 1] = list[j+1], list[j]
+    return list
+
+def acomodar_cola_aterrizaje(cola):
+    lista = []
+    caux=ColaAterrisaje()
+    while(not cola_vacia(cola)):
+        dato=atencion(cola)
+        lista.append(dato)
+
+    lista = bubble(lista)
+    for i in lista:
+        arribo(caux, i)
+    while(not cola_vacia(caux)):
+        dato=atencion(caux)
+        arribo(cola,dato)

@@ -16,7 +16,6 @@ def arribo(cola,  dato):
     cola.final=nodo
     cola.largo+=1
 
-
 def cola_vacia(cola):
     return cola.frente is None
 
@@ -44,10 +43,11 @@ def barrido(cola):
         dato=atencion(caux)
         arribo(cola,dato)
 
-def CompararCodigoDespegue(cola, codigo):
+def comparar_codigo_despegue(cola, codigo):
     flag = False
     caux=ColaDespegue()
     while(not cola_vacia(cola)):
+
         dato=atencion(cola)
         if dato.CodigoVuelo() == codigo:
             flag = True
@@ -58,3 +58,40 @@ def CompararCodigoDespegue(cola, codigo):
         arribo(cola,dato)
     
     return flag
+
+
+def bubble(list):
+    for i in range(0, len(list)-1):
+        for j in range(0, len(list)-i-1):
+            if (list[j].HoraSalida() > list[j + 1].HoraSalida()):
+                list[j], list[j + 1] = list[j+1], list[j]
+    return list
+
+def acomodar_cola_despegue(cola):
+    lista = []
+    caux=ColaDespegue()
+    while(not cola_vacia(cola)):
+        dato=atencion(cola)
+        lista.append(dato)
+
+    lista = bubble(lista)
+    for i in lista:
+        arribo(caux, i)
+    while(not cola_vacia(caux)):
+        dato=atencion(caux)
+        arribo(cola,dato)
+
+def cambiar_hora(cola, codigo):
+    caux=ColaDespegue()
+    while(not cola_vacia(cola)):
+
+        dato=atencion(cola)
+        if dato.CodigoVuelo() == codigo:
+            print("Existe el avion")
+            hora = int(input("Ingrese la nueva hora de despegue: "))
+            dato.Horasalida(hora)
+        arribo(caux,dato)
+     
+    while(not cola_vacia(caux)):
+        dato=atencion(caux)
+        arribo(cola,dato)

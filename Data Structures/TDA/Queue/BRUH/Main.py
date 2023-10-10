@@ -11,30 +11,32 @@ def crear_vuelo_despegue():
     AereopuertoD = input("Ingrese el aereopuerto de destino: ")
     TipoVuelo = input("Ingrese el tipo de vuelo: ")
     Codigovuelo = int(input("Ingrese el codigo de vuelo: "))
-    
     if not cola_vacia(ColaDespegues):
-        while CompararCodigoDespegue(ColaDespegues, Codigovuelo):
+        while comparar_codigo_despegue(ColaDespegues, Codigovuelo):
             Codigovuelo = int(input(" El codigo ya existe, por favor ingrese otro codigo de vuelo: "))
-
     AvionesDespegue = AvionDespegue(Codigovuelo, Aereolinea, HoraSalida, AereopuertoD, TipoVuelo)
     arribo(ColaDespegues, AvionesDespegue)
-
+    acomodar_cola_despegue(ColaDespegues)
 
 def crear_vuelo_aterrisaje():
-    Codigovuelo = int(input("Ingrese el codigo de vuelo: "))
     Aereolinea = input("Ingrese la aereolinea: ")
-    Horalleaga = int(input("Ingrese la hora de llegada: "))
-    AereopuertoO = input("Ingrese el aereopuerto de Origen: ")
+    Horallegada = int(input("Ingrese la hora de llegada: "))
+    AereopuertoO = input("Ingrese el aereopuerto de origen: ")
     TipoVuelo = input("Ingrese el tipo de vuelo: ")
-    AvionesAterrisaje = AvionAterrisaje(Codigovuelo, Aereolinea, Horalleaga, AereopuertoO, TipoVuelo)
+    Codigovuelo = int(input("Ingrese el codigo de vuelo: "))
+    if not cola_vacia(ColaAterrisajes):
+        while comparar_codigo_aterrizaje(ColaAterrisajes, Codigovuelo):
+            Codigovuelo = int(input(" El codigo ya existe, por favor ingrese otro codigo de vuelo: "))
+    AvionesAterrisaje = AvionAterrisaje(Codigovuelo, Aereolinea, Horallegada, AereopuertoO, TipoVuelo)
     arribo(ColaAterrisajes, AvionesAterrisaje)
+    acomodar_cola_aterrizaje(ColaAterrisajes)
 
 def menu():
     apagar = True
     x = 0
     while (apagar): 
         try:
-            x = int(input("---------Elige la opción a ejecutar---------\n1)Agregar Vuelo de Despegue\n2)Agregar Vuelo de Aterrizaje\n3)mostrar cola Avión\n4)Reprogramar Vuelo\n5)Salir\n"))
+            x = int(input("---------Elige la opción a ejecutar---------\n1)Agregar Vuelo de Despegue\n2)Agregar Vuelo de Aterrizaje\n3)mostrar cola Avión\n4)Modificar hora de salida\n5)Salir\n"))
         except ValueError:
             print("El dato ingresado no esta permitido, se esperaba un entero(1-5)")
 
@@ -46,9 +48,9 @@ def menu():
             elif y == 2: barrido(ColaAterrisajes)
             else: print("Número ingresado no válido")
         if x == 4:
-            #codigo = int(input("Ingrese el codigo del vuelo a reprogramar: "))
-            print(largodedespegue(ColaDespegues))
-                
+            codigo = int(input("Ingrese el codigo del avion a modificar: "))
+            cambiar_hora(ColaDespegues, codigo)
+            acomodar_cola_despegue(ColaDespegues)
         if x == 5: 
             print("Gracias por su uso")
             apagar = False
