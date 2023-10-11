@@ -56,9 +56,7 @@ def comparar_codigo_despegue(cola, codigo):
     while(not cola_vacia(caux)):
         dato=atencion(caux)
         arribo(cola,dato)
-    
     return flag
-
 
 def bubble(list):
     for i in range(0, len(list)-1):
@@ -88,7 +86,7 @@ def cambiar_hora(cola, codigo):
         dato=atencion(cola)
         if dato.CodigoVuelo() == codigo:
             print("Existe el avion")
-            hora = int(input("Ingrese la nueva hora de despegue: "))
+            hora = str(input("Ingrese la nueva hora de despegue: "))
             dato.Horasalida(hora)
         arribo(caux,dato)
      
