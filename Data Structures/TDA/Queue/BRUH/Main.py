@@ -9,32 +9,33 @@ import re
 time_obj = time.localtime()
 tiempo_actual = time.strftime("%X", time_obj)
 ColaDespegues, ColaAterrisajes = ColaDespegue(), ColaAterrisaje()
-print(tiempo_actual)
 pista = True
 
 
-
-def validate_time_format(time_str):
+def validate_time_format(time_str: str) -> bool:
     pattern = re.compile(r'^([0-1][0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9])$')
-    if pattern.match(time_str):
-        return True
-    else:
-        return False
-    
+    return pattern.match(time_str)
+      
+def comparar_hora(input_time: str) -> bool:
+    current_time = time.localtime()
+    current_hour = current_time.tm_hour
+    current_minute = current_time.tm_min
 
-def comparar_hora(input: str) -> bool:
-    if input > tiempo_actual: return False
-    else: return True
+    one_hour_later = current_hour + 1
+    if one_hour_later >= 24:
+        one_hour_later -= 24
 
-#def analizar_pista():
-    #return ""
+    one_hour_later_str = f'{one_hour_later:02}:{current_minute:02}:00'
+    return input_time >= one_hour_later_str
+
+
 
 
 def crear_vuelo_despegue(): 
     Aereolinea = input("Ingrese la aereolínea: ")
-    HoraSalida = str(input("Ingrese la hora de salida: "))
-    while(comparar_hora(HoraSalida)):
-        HoraSalida = str(input("La hora ingresada ya pasó, por favor ingrese otra hora válida: "))
+    HoraSalida = str(input("Ingrese la hora de salida (mínimo una hora después de la hora actual): "))
+    while(not validate_time_format(HoraSalida) and comparar_hora(HoraSalida)):
+        HoraSalida = str(input("La hora ingresada ya pasó, o el formato no es valido, por favor ingrese otra hora válida: "))
 
     AereopuertoD = input("Ingrese el aereopuerto de destino: ")
     print("Ingrese el tipo de vuelo: ")
