@@ -28,9 +28,7 @@ def comparar_hora(input_time: str) -> bool:
     one_hour_later_str = f'{one_hour_later:02}:{current_minute:02}:00'
     return input_time >= one_hour_later_str
 
-
-
-
+    
 def crear_vuelo_despegue(): 
     Aereolinea = input("Ingrese la aereolínea: ")
     HoraSalida = str(input("Ingrese la hora de salida (mínimo una hora después de la hora actual): "))
