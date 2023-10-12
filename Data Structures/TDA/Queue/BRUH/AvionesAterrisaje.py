@@ -6,7 +6,7 @@ class AvionAterrisaje(object):
         self._aeropuertoO = AeropuertoO
         self._tipoVuelo = TipoVuelo
 
-    def InformacionVuelo(self):
+    def InformacionVueloAterrizaje(self):
         return f'Codigo del Vuelo: {self._codigovuelo}, Aerolinea: {self._aerolinea}, Hora de llegada: {self._horallegada}, Aereopuerto de Destino: Alfonzo Bonilla, Aereopuerto Origen: {self._aeropuertoO}, Tipo de Vuelo: {self._tipoVuelo}'
 
     #@property
@@ -18,7 +18,7 @@ class AvionAterrisaje(object):
         return self._aerolinea
 
     #@property
-    def Horalleagada(self):
+    def Horallegada(self):
         return self._horallegada
 
     #@property

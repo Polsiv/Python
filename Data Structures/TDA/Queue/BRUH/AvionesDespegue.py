@@ -31,5 +31,5 @@ class AvionDespegue(object):
         self._horasalida = horasalida
 
 
-    def InformacionVuelo(self):
+    def InformacionVueloDespegue(self):
         return f'Codigo del Vuelo: {self._codigovuelo}, Aerolinea: {self._aerolinea}, Hora de salida: {self._horasalida}, Aereopuerto de Origen: Alfonso Bonilla, Aereopuerto Destino: {self._aeropuertoD}, Tipo de Vuelo: {self._tipoVuelo}'

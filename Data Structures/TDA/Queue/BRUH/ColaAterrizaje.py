@@ -1,7 +1,7 @@
 class nodoCola(object):
     info, sig = None, None
 
-class ColaAterrisaje(object):
+class ColaAterrizaje(object):
     def __init__(self):
         self.frente, self.final=None, None
         self.largo=0
@@ -21,7 +21,13 @@ def cola_vacia(cola):
     return cola.frente is None
 
 def en_frente(cola):
-    return cola.frente.info
+    return cola.frente.info.InformacionVueloAterrizaje()
+
+def en_frente_tipo_aterrizaje(cola):
+    return cola.frente.info.TipoVuelo()
+
+def en_frente_hora_aterrizaje(cola):
+    return cola.frente.info.Horallegada()
 
 def largodeaterrizaje(cola):
     return cola.largo
@@ -34,11 +40,19 @@ def atencion(cola):
     cola.largo-=1
     return dato
 
-def barrido(cola):
-    caux=ColaAterrisaje()
+def atencion_Aterrizaje(cola):
+    dato=cola.frente.info
+    cola.frente=cola.frente.sig
+    if cola.frente is None:
+        cola.final=None
+    cola.largo-=1
+    return dato.InformacionVueloAterrizaje()
+
+def barrido_aterrizaje(cola):
+    caux=ColaAterrizaje()
     while(not cola_vacia(cola)):
         dato=atencion(cola)
-        print(dato.InformacionVuelo())
+        print(dato.InformacionVueloAterrizaje())
         arribo(caux,dato)
     while(not cola_vacia(caux)):
         dato=atencion(caux)
@@ -46,7 +60,7 @@ def barrido(cola):
 
 def comparar_codigo_aterrizaje(cola, codigo):
     flag = False
-    caux=ColaAterrisaje()
+    caux=ColaAterrizaje()
     while(not cola_vacia(cola)):
 
         dato=atencion(cola)
@@ -63,13 +77,13 @@ def comparar_codigo_aterrizaje(cola, codigo):
 def bubble(list):
     for i in range(0, len(list)-1):
         for j in range(0, len(list)-i-1):
-            if (list[j].Horalleagada() > list[j + 1].Horalleagada()):
+            if (list[j].Horallegada() > list[j + 1].Horallegada()):
                 list[j], list[j + 1] = list[j+1], list[j]
     return list
 
 def acomodar_cola_aterrizaje(cola):
     lista = []
-    caux=ColaAterrisaje()
+    caux=ColaAterrizaje()
     while(not cola_vacia(cola)):
         dato=atencion(cola)
         lista.append(dato)
