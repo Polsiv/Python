@@ -1,6 +1,4 @@
 #Hecho por: Juan Pablo Silvestre, Sebastián López, Tomás Mancera, Alejandro Salazar Tovar
-
-
 from AvionesDespegue import *
 from AvionesAterrisaje import *
 from ColaDespegue import *
