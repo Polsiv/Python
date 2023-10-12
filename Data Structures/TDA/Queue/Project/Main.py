@@ -6,7 +6,6 @@ from ColaAterrizaje import *
 import time
 import re
 
-
 time_obj = time.localtime()
 tiempo_actual = time.strftime("%X", time_obj)
 ColaDespegues, ColaAterrizajes = ColaDespegue(), ColaAterrizaje()
