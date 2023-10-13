@@ -1,6 +1,6 @@
 #Hecho por: Juan Pablo Silvestre, Sebastián López, Tomás Mancera, Alejandro Salazar Tovar
 from AvionesDespegue import *
-from AvionesAterrisaje import *
+from AvionesAterrizaje import *
 from ColaDespegue import *
 from ColaAterrizaje import *
 import time
@@ -58,6 +58,10 @@ def crear_vuelo_despegue():
     while not (validate_time_format(HoraSalida) and comparar_hora(HoraSalida)):
         HoraSalida = str(input("La hora ingresada ya pasó, o el formato no es valido, por favor ingrese otra hora válida: "))
 
+    HoraLlegada = str(input("Ingrese la hora de llegada: "))
+    while not (validate_time_format(HoraLlegada) and comparar_hora(HoraLlegada) and HoraLlegada > HoraSalida):
+        HoraLlegada = str(input("La hora ingresada ya pasó, o el formato no es valido, o también la hora de llegada tiene que ser mayor a la hora de salida, por favor ingrese otra hora válida: "))
+
     AereopuertoD = input("Ingrese el aereopuerto de destino: ")
     print("Ingrese el tipo de vuelo: ")
     controlador = True
@@ -75,15 +79,19 @@ def crear_vuelo_despegue():
     if not cola_vacia(ColaDespegues):
         while comparar_codigo_despegue(ColaDespegues, Codigovuelo):
             Codigovuelo = int(input(" El código ya existe, por favor ingrese otro código de vuelo: "))
-    AvionesDespegue = AvionDespegue(Codigovuelo, Aereolinea, HoraSalida, AereopuertoD, TipoVuelo)
+    AvionesDespegue = AvionDespegue(Codigovuelo, Aereolinea, HoraSalida, HoraLlegada, AereopuertoD, TipoVuelo)
     arribo(ColaDespegues, AvionesDespegue)
     acomodar_cola_despegue(ColaDespegues)
 
-def crear_vuelo_aterrisaje():
+def crear_vuelo_aterrizaje():
     Aereolinea = input("Ingrese la aereolinea: ")
+    Horasalida = input("Ingrese la hora de salida: ")
+    while not (validate_time_format(Horasalida) and comparar_hora(Horasalida)):
+        Horasalida = str(input("La hora ingresada ya pasó, o el formato no es valido, por favor ingrese otra hora válida: "))
+
     Horallegada = str(input("Ingrese la hora de llegada: "))
-    while not (validate_time_format(Horallegada) and comparar_hora(Horallegada)):
-        Horallegada = str(input("La hora ingresada ya pasó, o el formato no es valido, por favor ingrese otra hora válida: "))
+    while not (validate_time_format(Horallegada) and comparar_hora(Horallegada) and Horallegada > Horasalida):
+        Horallegada = str(input("La hora ingresada ya pasó, o el formato no es valido, o también la hora de llegada tiene que ser mayor a la hora de salida, por favor ingrese otra hora válida: "))
     AereopuertoO = input("Ingrese el aereopuerto de origen: ")
     controlador = True
     while(controlador):
@@ -100,7 +108,7 @@ def crear_vuelo_aterrisaje():
     if not cola_vacia(ColaAterrizajes):
         while comparar_codigo_aterrizaje(ColaAterrizajes, Codigovuelo):
             Codigovuelo = int(input(" El código ya existe, por favor ingrese otro código de vuelo: "))
-    AvionesAterrisaje = AvionAterrisaje(Codigovuelo, Aereolinea, Horallegada, AereopuertoO, TipoVuelo)
+    AvionesAterrisaje = AvionAterrizaje(Codigovuelo, Aereolinea, Horasalida, Horallegada, AereopuertoO, TipoVuelo)
     arribo(ColaAterrizajes, AvionesAterrisaje)
     acomodar_cola_aterrizaje(ColaAterrizajes)
 
@@ -111,10 +119,10 @@ def menu():
         try:
             x = int(input("---------Elige la opción a ejecutar---------\n1)Agregar Vuelo de Despegue\n2)Agregar Vuelo de Aterrizaje\n3)mostrar cola Avión\n4)Modificar hora de salida\n5)Controlar aviones\n6)Cancelar vuelo de despegue\n7)Salir\n"))
         except ValueError:
-            print("El dato ingresado no esta permitido, se esperaba un entero(1-5)")
+            print("El dato ingresado no esta permitido, se esperaba un entero(1-7)")
 
         if x == 1: crear_vuelo_despegue()
-        elif x == 2: crear_vuelo_aterrisaje()
+        elif x == 2: crear_vuelo_aterrizaje()
         elif x == 3: 
             y = int(input("Elige el tipo de cola: \n1)Despegue. \n2)Atterizaje.\n"))
             if y == 1: barrido_despegue(ColaDespegues)

@@ -1,8 +1,9 @@
 class AvionDespegue(object):
-    def __init__(self, CodigoVuelo, Aerolinea, Horasalida, AeropuertoD, TipoVuelo):
+    def __init__(self, CodigoVuelo, Aerolinea, Horasalida, Horallegada, AeropuertoD, TipoVuelo):
         self._codigovuelo = CodigoVuelo
         self._aerolinea = Aerolinea
         self._horasalida = Horasalida
+        self._horallegada = Horallegada
         self._aeropuertoD = AeropuertoD
         self._tipoVuelo = TipoVuelo
 
@@ -18,6 +19,9 @@ class AvionDespegue(object):
     def HoraSalida(self):
         return self._horasalida
 
+    def HoraLlegada(self):
+        return self._horallegada
+
     #@property
     def AereopuertoD(self):
         return self._aeropuertoD
@@ -32,4 +36,4 @@ class AvionDespegue(object):
 
 
     def InformacionVueloDespegue(self):
-        return f'Codigo del Vuelo: {self._codigovuelo}, Aerolinea: {self._aerolinea}, Hora de salida: {self._horasalida}, Aereopuerto de Origen: Alfonso Bonilla, Aereopuerto Destino: {self._aeropuertoD}, Tipo de Vuelo: {self._tipoVuelo}'
+        return f'Código del Vuelo: {self._codigovuelo}, Aerolínea: {self._aerolinea}, Hora de salida: {self._horasalida}, Hora de llegada: {self._horallegada} Aereopuerto de Origen: Alfonso Bonilla, Aereopuerto Destino: {self._aeropuertoD}, Tipo de Vuelo: {self._tipoVuelo}'
