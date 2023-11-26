@@ -41,7 +41,7 @@ st.table(dataframe)
 
 
 # map_data = pd.DataFrame(
-#     np.random.randn(1000, 2) / [50, 50] + [37.76, -122.4],
+#     np.random.randn(1000, 2) / [50, 50] + [37.76, -122.4],    s
 #     columns=['lat', 'lon'])
 
 # st.map(map_data)
@@ -49,7 +49,7 @@ st.table(dataframe)
 4.5709, -74.2973
 
 col = pd.DataFrame({
-    "LAT":[4.5709],
+    "LAT":[4.5709   ],
     "LON": [-74.2269311]
 })
 
