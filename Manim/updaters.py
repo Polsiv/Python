@@ -3,7 +3,7 @@ from manim import *
 class Updaters(Scene):
     def construct(self):
         num = always_redraw(
-            lambda: Text("ln(2)")
+            lambda: MathTex("ln(2)")
         )
         box = always_redraw(
             lambda: SurroundingRectangle(

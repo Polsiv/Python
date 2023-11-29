@@ -5,8 +5,10 @@ class Tracker(Scene):
         
         k = ValueTracker(0)
 
-        num = DecimalNumber().set_value(k.get_value())
+        num = always_redraw(
+            lambda: DecimalNumber().set_value(k.get_value())
+        )
 
         self.play(FadeIn(num))
         self.wait()
-        self.play(FadeOut(num))
+        self.play(k.animate.set_value(5), run_time = 3, rate_func = smooth)
