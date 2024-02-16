@@ -14,5 +14,3 @@ class FirstExample(Scene):
         self.add(blue_circle, green_square, yellow_triangle)
         self.play(Create(blue_circle))
 
-
-
