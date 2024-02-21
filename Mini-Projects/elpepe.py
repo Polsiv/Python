@@ -14,12 +14,11 @@
 def calculator(n):
 
   fizz, Buzz = "Fizz", "Buzz"
-  for i in range(1,     n + 1):
+  for i in range(1, n + 1):
     toComplete = ""
     if (i % 3 == 0):
       toComplete += fizz
-      print(i, toComplete)
-      continue
+      next
     if (i % 5 == 0):
       toComplete += Buzz
       print(i, toComplete)
