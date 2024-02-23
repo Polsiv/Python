@@ -191,7 +191,7 @@ supermarket = {
                     }
                 }
             }
-        },
+        }, 
         "aisle_2": {
             "Gillette": {
                 345: {
@@ -244,3 +244,4 @@ def sum_all_electronics(supermarket):
 
 total_electronics = sum_all_electronics(supermarket)
 print(f"omg sum all: ${total_electronics}")
+
