@@ -12,6 +12,8 @@ print("found") if flag else print("not found")
 
 #best case O(0), worst case O(n)
 
-uniques = set(mystring)
-if len(mystring) == len(uniques): print("elpepe")
-else:print("la pepa")   
+
+#Another way
+# uniques = set(mystring)
+# if len(mystring) == len(uniques): print("elpepe")
+# else:print("la pepa")   
