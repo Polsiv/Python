@@ -191,7 +191,7 @@ supermarket = {
                     }
                 }
             }
-        },
+        }, 
         "aisle_2": {
             "Gillette": {
                 345: {
@@ -231,4 +231,17 @@ supermarket = {
     }
 }
 
-print(supermarket["Electronics"]["aisle_1"]["samsung"][123])
+#print(supermarket["Electronics"]["aisle_1"]["samsung"][123])
+
+def sum_all_electronics(supermarket):
+    total = 0
+    for aisle in supermarket["Electronics"].values():
+        for brand in aisle.values():
+            for product in brand.values():
+                total += product["price"]
+    return total
+
+
+total_electronics = sum_all_electronics(supermarket)
+print(f"omg sum all: ${total_electronics}")
+
