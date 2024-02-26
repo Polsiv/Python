@@ -245,3 +245,110 @@ def sum_all_electronics(supermarket):
 total_electronics = sum_all_electronics(supermarket)
 print(f"omg sum all: ${total_electronics}")
 
+# Problem 1: Print all products in aisle_1
+for brand, items in supermarket["Electronics"]["aisle_1"].items():
+    for item_id, item_details in items.items():
+        print(item_details["product_name"])
+
+# Problem 2: Print the total number of products in aisle_1
+total_products = sum(len(items) for items in supermarket["Electronics"]["aisle_1"].values())
+print("Total number of products in aisle_1:", total_products)
+
+# Problem 3: Print the average price of products in aisle_1
+prices = [item_details["price"] for items in supermarket["Electronics"]["aisle_1"].values() for item_details in items.values()]
+average_price = sum(prices) / len(prices)
+print("Average price of products in aisle_1:", average_price)
+
+# Problem 4: Find the cheapest product in aisle_1
+cheapest_product = min((item_details["price"], item_details["product_name"]) for items in supermarket["Electronics"]["aisle_1"].values() for item_details in items.values())
+print("Cheapest product in aisle_1:", cheapest_product)
+
+# Problem 5: Find the most expensive product in aisle_1
+most_expensive_product = max((item_details["price"], item_details["product_name"]) for items in supermarket["Electronics"]["aisle_1"].values() for item_details in items.values())
+print("Most expensive product in aisle_1:", most_expensive_product)
+
+# Problem 6: Print all products with prices less than $5 in aisle_1
+print("Products with prices less than $5 in aisle_1:")
+for items in supermarket["Electronics"]["aisle_1"].values():
+    for item_details in items.values():
+        if item_details["price"] < 5:
+            print(item_details["product_name"])
+
+# Problem 7: Print all products with prices greater than $10 in aisle_1
+print("Products with prices greater than $10 in aisle_1:")
+for items in supermarket["Electronics"]["aisle_1"].values():
+    for item_details in items.values():
+        if item_details["price"] > 10:
+            print(item_details["product_name"])
+
+# Problem 8: Print all products with reviews containing the word "awesome" in aisle_1
+print("Products with reviews containing the word 'awesome' in aisle_1:")
+for items in supermarket["Electronics"]["aisle_1"].values():
+    for item_details in items.values():
+        for review in item_details["reviews"].values():
+            if "awesome" in review.lower():
+                print(item_details["product_name"])
+
+# Problem 9: Print all products with reviews containing the word "trash" in aisle_1
+print("Products with reviews containing the word 'trash' in aisle_1:")
+for items in supermarket["Electronics"]["aisle_1"].values():
+    for item_details in items.values():
+        for review in item_details["reviews"].values():
+            if "trash" in review.lower():
+                print(item_details["product_name"])
+
+# Problem 10: Print all products in aisle_1 sorted by price (ascending)
+print("Products in aisle_1 sorted by price (ascending):")
+sorted_products = sorted((item_details["price"], item_details["product_name"]) for items in supermarket["Electronics"]["aisle_1"].values() for item_details in items.values())
+for price, product_name in sorted_products:
+    print(product_name, "-", price)
+
+# Problem 11: Print all products in aisle_1 sorted by price (descending)
+print("Products in aisle_1 sorted by price (descending):")
+sorted_products_desc = sorted(((item_details["price"], item_details["product_name"]) for items in supermarket["Electronics"]["aisle_1"].values() for item_details in items.values()), reverse=True)
+for price, product_name in sorted_products_desc:
+    print(product_name, "-", price)
+
+
+# Problem 12: Print the total number of reviews for products in aisle_1
+total_reviews = sum(len(item_details["reviews"]) for items in supermarket["Electronics"]["aisle_1"].values() for item_details in items.values())
+print("Total number of reviews for products in aisle_1:", total_reviews)
+
+# Problem 13: Print all unique product names in aisle_1
+unique_product_names = set(item_details["product_name"] for items in supermarket["Electronics"]["aisle_1"].values() for item_details in items.values())
+print("Unique product names in aisle_1:", unique_product_names)
+
+# Problem 14: Print all unique brand names in aisle_1
+unique_brand_names = set(brand for brand in supermarket["Electronics"]["aisle_1"].keys())
+print("Unique brand names in aisle_1:", unique_brand_names)
+
+# Problem 15: Print the average number of reviews per product in aisle_1
+average_reviews_per_product = total_reviews / total_products
+print("Average number of reviews per product in aisle_1:", average_reviews_per_product)
+
+# Problem 16: Print the total number of brands in aisle_1
+total_brands = len(supermarket["Electronics"]["aisle_1"])
+print("Total number of brands in aisle_1:", total_brands)
+
+# Problem 17: Print all product names containing the word "phone" in aisle_1
+print("Product names containing the word 'phone' in aisle_1:")
+for items in supermarket["Electronics"]["aisle_1"].values():
+    for item_details in items.values():
+        if "phone" in item_details["product_name"].lower():
+            print(item_details["product_name"])
+
+# Problem 18: Print all product names containing the word "Mac" in aisle_1
+print("Product names containing the word 'Mac' in aisle_1:")
+for items in supermarket["Electronics"]["aisle_1"].values():
+    for item_details in items.values():
+        if "Mac" in item_details["product_name"]:
+            print(item_details["product_name"])
+
+# Problem 19: Print all product names containing the word "Legion" in aisle_1
+print("Product names containing the word 'Legion' in aisle_1:")
+for items in supermarket["Electronics"]["aisle_1"].values():
+    for item_details in items.values():
+        if "Legion" in item_details["product_name"]:
+            print(item_details["product_name"])
+
+
