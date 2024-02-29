@@ -23,21 +23,24 @@ def decimal_to_base(number, base):
         target = float_part * base
         float_part_complete += str(int(target))
         float_part = target - int(target)
-    
     return result[::-1] + "." + float_part_complete
 
 def base_to_decimal(number, base):
-    above_decimal = {"A": 10, "B":  11, "C": 12, "D": 13, "E": 14, "F": 15}
+    above_decimal = {"0": 0, "1": 1, "2": 2, "3": 3, "4": 4, "5": 5, "6": 6, "7": 7, "8": 8, "9": 9, "A": 10, "B": 11, "C": 12, "D": 13, "E": 14, "F": 15}
+    if "." in number: int_part, float_part = number.split(".") 
+    else: int_part  = number
+    int_result, float_result = 0, 0
     
-    for i in range (len(number)):
-        if number[i] in above_decimal.keys(): number = number.replace(str(number[i]), str(above_decimal[number[i]]))
-    
-    
-    int_part, float_part = number.split(".")
+    #converting int_part
+    for i in range(len(int_part)):
+        int_result += above_decimal[int_part[i]] * math.pow(base, len(int_part) - i - 1)
 
-    return 0
+    #converting float_part
+    if float_part != 0:
+        for i in range(len(float_part)):
+            float_result += above_decimal[float_part[i]] * math.pow(base, (-i - 1))
 
-
+    return (int_result + float_result)    
 
 def main():
 
@@ -53,7 +56,7 @@ def main():
         base = int(input("Enter the base: "))
         number = (input("Enter the number to covert to decimal: "))
         base_to_decimal(number, base)
-        # print(f'Your number {number} is written as: {base(number, base)} in decimal.')
+        print(f'Your number {number} is written as: {base_to_decimal(number, base)} in decimal.')
 
 
 main()
