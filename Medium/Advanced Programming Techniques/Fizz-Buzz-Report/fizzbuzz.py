@@ -30,22 +30,25 @@ for i in range (1, 22):
 #from class
     
 def read_from_file(filename):
-  num_list = []
-  with open(filename) as f:
-    content = f.read().splitlines()
-  for i in content[1:101]:
-    num_list.append(int(i))
-  return(num_list)
-    
+    num_list = []
+    with open(filename, "r") as f:
+        content = f.read().splitlines()
+    for i in content[1:101]:
+        num_list.append(int(i))
+    return (num_list)
+
 def check(num_list):
-  for i in num_list:
-    completed_string = ""
-    if i % 3 == 0: completed_string += "Fizz"
-    if i % 5 == 0: completed_string += "Buzz"
-    print(i, completed_string or i)
+    for i in num_list:
+        completed_string = ""
+        if i % 3 == 0: 
+            completed_string += "Fizz"
+        if i % 5 == 0: 
+            completed_string += "Buzz"
+        print(i, completed_string or i)
 
 def main():
-  my_list = read_from_file("input.txt")
-  check(my_list)
+    my_list = read_from_file("input.txt")
+    check(my_list)
 
 main()
+
