@@ -1,7 +1,5 @@
 import math
 
-
-
 def decimal_to_base(number, base):
     above_decimal, coc, result ="ABCDEF", 1, ""
     int_part = int(number)
@@ -44,7 +42,6 @@ def base_to_decimal(number, base):
     return (int_result + float_result)    
 
 def main():
-
     option = int(input(f'==Welcome to the number base calculator, enter the option you desire!== \n 1) From base N to base M. \n 2) From base Decimal to N. \n 3) From base N to Decimal. \n {"="*30} \n Enter your option:'))
     if option == 1:
         main_base = int(input("Enter the main base: "))
@@ -61,6 +58,5 @@ def main():
         number = (input("Enter the number to covert to decimal: "))
         base_to_decimal(number, base)
         print(f'Your number {number} is written as: {base_to_decimal(number, base)} in decimal.')
-
 
 main()
