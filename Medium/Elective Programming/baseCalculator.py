@@ -46,7 +46,9 @@ def main():
 
     option = int(input(f'==Welcome to the number base calculator, enter the option you desire!== \n 1) From base N to base M. \n 2) From base Decimal to N. \n 3) From base N to Decimal. \n {"="*30} \n Enter your option:'))
     if option == 1:
-        print("xd")
+        main_base = int(input("Enter the main base: "))
+        number = float(input("Enter the number"))
+        target_base = int(input("Enter the target base"))
 
     if option == 2:
         number = float(input("Enter the decimal number to covert: "))
@@ -57,6 +59,5 @@ def main():
         number = (input("Enter the number to covert to decimal: "))
         base_to_decimal(number, base)
         print(f'Your number {number} is written as: {base_to_decimal(number, base)} in decimal.')
-
 
 main()
