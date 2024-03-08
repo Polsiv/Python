@@ -46,24 +46,6 @@ def base_to_decimal(number, base):
         for i in range(len(float_part)):
             float_result += above_decimal[float_part[i]] * math.pow(base, (-i - 1))
 
-    return (int_result + float_result)    
+    print(int_result + float_result if float_part else int(int_result))
+    return int_result + float_result if float_part else int(int_result)
 
-def main():
-    option = int(input(f'==Welcome to the number base calculator, enter the option you desire!== \n 1) From base N to base M. \n 2) From base Decimal to N. \n 3) From base N to Decimal. \n {"="*30} \n Enter your option:'))
-    if option == 1:
-        main_base = int(input("Enter the main base: "))
-        number = (input("Enter the number"))
-        target_base = int(input("Enter the target base"))
-        print(f'your number {number} in base {main_base} is written as {(decimal_to_base(base_to_decimal(number, main_base), target_base))} in {target_base} base')
-
-    if option == 2:
-        number = float(input("Enter the decimal number to covert: "))
-        base = int(input("Enter the target base: "))
-        print(f'Your number {number} is written as: {decimal_to_base(number, base)} in {base} base.')
-    if option == 3: 
-        base = int(input("Enter the base: "))
-        number = (input("Enter the number to covert to decimal: "))
-        base_to_decimal(number, base)
-        print(f'Your number {number} is written as: {base_to_decimal(number, base)} in decimal.')
-
-main()
