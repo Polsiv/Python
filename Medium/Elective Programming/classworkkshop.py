@@ -24,6 +24,8 @@ print(list(filter_gen))
 reduce_gen = reduce(lambda x, y: (x / y), mylist)
 print(reduce_gen)
 
+
+#nested function
 def find_area(n):
     def find_area(m):
         return (m * n)/2
