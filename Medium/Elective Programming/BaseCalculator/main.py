@@ -55,7 +55,7 @@ def basic_calculator():
                 return
             result = num1 / num2
 
-        st.success(f"Result: {result}")
+        st.success(f"Result: {decimal_to_base(result, input_base)}")
 
 def app_calculator():
     st.subheader("App Calculator")

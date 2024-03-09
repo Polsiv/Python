@@ -30,8 +30,7 @@ def base_to_decimal(number, base):
     "G": 16, "H": 17, "I": 18, "J": 19, "K": 20, "L": 21, "M": 22,
     "N": 23, "O": 24, "P": 25, "Q": 26, "R": 27, "S": 28, "T": 29,
     "U": 30, "V": 31, "W": 32, "X": 33, "Y": 34, "Z": 35
-}
-
+    }
     float_part = 0
     if "." in number: int_part, float_part = number.split(".") 
     else: int_part  = number
