@@ -12,3 +12,4 @@ password2 = "UUAjd322exf@"
 
 #finds all the values from a to e
 print(r.findall('[a-e]', password2))
+print(r.findall())
