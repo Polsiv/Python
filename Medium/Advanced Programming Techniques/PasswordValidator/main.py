@@ -4,19 +4,16 @@ Author: Juan Pablo Silvestre
 import re
 
 class InputManager:
-
     def read_file(self, file_name):
         """
-        reads the file content and removes the left over elements
+        Reads the file content and removes the leftover elements.
         """
         num_list = []
-        f = open(file_name, "r", encoding='utf-8')
-        for i in f:  
-            num_list.append(i.strip())
-        f.close()
+        with open(file_name, "r", encoding='utf-8') as f:
+            for line in f:
+                num_list.append(line.strip())
         num_list.remove("100")
         return num_list
-
 
 class PassWordValidator:
 
@@ -40,13 +37,11 @@ class PassWordValidator:
                 passes = "true"
             else:
                 passes = "false"
-            verified_passwords.append(passes + length + upper_case 
+            verified_passwords.append(passes + length + upper_case
             + lower_case + number + special_symbol + invalid)
         return verified_passwords
 
-
 class ResultPrinter:
-
     def show_results(self, passwords, verifiedpasswords):
         """
         displays the results
@@ -55,7 +50,6 @@ class ResultPrinter:
             print(i, k)
 
 class System:
-
     def __init__(self):
         """
         constructor for System.
@@ -67,12 +61,14 @@ class System:
         self.verifed = self.validator.check_password(self.passwords)
         self.resultPrinted = ResultPrinter()
 
-    def show(self):
+    def show(self, passwords, verified):
         """
         calls ResultPrinter instance
         """
-        self.resultPrinted.show_results(self.passwords, self.verifed)
-      
+        self.resultPrinted.show_results(passwords, verified)
+
 class Main:
     system = System()
-    system.show()
+    passwords = system.passwords
+    verified = system.verifed
+    system.show(passwords, verified)
