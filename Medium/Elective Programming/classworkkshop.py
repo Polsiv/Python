@@ -111,3 +111,33 @@ def operations_set() -> None:
 def posicional_dominal_arguments():
     def myFunc(a, b, c, *, d, e, f):
         return a * b
+    
+    return myFunc
+
+class MobilePhone:
+    def __init__(self, manufacturer, screen_size, num_cores) -> None:
+        self.manufacturer = manufacturer
+        self.screen_size = screen_size
+        self.numcores = num_cores
+        self.apps = []
+        self.status = False
+
+    def power_on(self):
+        self.status = True
+        print(self.status)
+
+    def power_off(self):
+        if not self.status: print("phone already turned off")
+        else:
+            self.status = False
+            print("turning off")
+    
+    def install_app(self, app):
+        self.apps.append(app)
+
+    def uninstall_app(self, app):
+        self.apps.remove(app)
+
+phone1 = MobilePhone("samsung", "idk", 9)
+
+phone1.power_on()
