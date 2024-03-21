@@ -10,8 +10,8 @@ def basics():
     result = 10 * 3.0
     print(result)
 
-    x = int(input("enter the number 7, is no gay"))
-    y= int(input("enter the number 7, is no gay"))
+    x = int(input("enter the number 7, L"))
+    y= int(input("enter the number 10, W"))
 
     print(x + y)
     print(x - y)
@@ -19,7 +19,7 @@ def basics():
     try:
         x / y
     except:
-        print("DIVISIOJ POR 0 MI BRO")
+        print("div by 0 bitchahh")
 
     print(x/y)    
 
@@ -209,3 +209,69 @@ class MobilePhone:
 phone1 = MobilePhone("samsung", "idk", 9)
 phone1.power_on()
 
+class Fraction:
+    def __init__(self, num, den):
+        if den == 0:
+            raise ValueError("not 0 bra")
+        self.num = num
+        self.den = den
+        self.simplify()
+
+    def simplify(self):
+        common = self.gcd(self.num, self.den)
+        self.num //= common
+        self.den //= common
+
+    @staticmethod
+    def gcd(a, b):
+        while b != 0:
+            a, b = b, a % b
+        return a
+
+    def __add__(self, other):
+        new_num = self.num * other.den + other.num * self.den
+        new_den = self.den * other.den
+        return Fraction(new_num, new_den)
+
+    def __sub__(self, other):
+        new_num = self.num * other.den - other.num * self.den
+        new_den = self.den * other.den
+        return Fraction(new_num, new_den)
+
+    def __mul__(self, other):
+        new_num = self.num * other.num
+        new_den = self.den * other.den
+        return Fraction(new_num, new_den)
+
+    def __truediv__(self, other):
+        if other.num == 0:
+            raise ValueError("not 0 again bra")
+        new_num = self.num * other.den
+        new_den = self.den * other.num
+        return Fraction(new_num, new_den)
+
+    def __str__(self):
+        return f"{self.num}/{self.den}"
+
+fraction1 = Fraction(1, 2)
+fraction2 = Fraction(3, 4)
+
+print("1st", fraction1)
+print("2nd", fraction2)
+print("sum", fraction1 + fraction2)
+print("sub", fraction1 - fraction2)
+print("mu1t", fraction1 * fraction2)
+print("div", fraction1 / fraction2)
+
+
+
+def handling_exceptions():
+    def intdiv(a, b):
+        try:
+            result = a // b
+        except TypeError:
+            print( "what")
+        except ZeroDivisionError:
+            print( "not 0" )
+        except Exception:
+            print("bry")
