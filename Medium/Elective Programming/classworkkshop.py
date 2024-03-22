@@ -254,7 +254,7 @@ class Fraction:
         return f"{self.num}/{self.den}"
 
 fraction1 = Fraction(1, 2)
-fraction2 = Fraction(3, 4)
+fraction2 = Fraction(3, 4)      
 
 print("1st", fraction1)
 print("2nd", fraction2)
@@ -274,16 +274,13 @@ def handling_exceptions():
         except ZeroDivisionError:
             print( "not 0" )
         except Exception:
-<<<<<<< HEAD
             print("bry")
 
 def zip_function():
     a = ("elpepe", "elpepe2", "elpepe3")
-b = ("thepip", "thepip2", "thepip3")
+    b = ("thepip", "thepip2", "thepip3")
 
-x = zip(a, b)
+    x = zip(a, b)
+    print(tuple(x))
 
-print(tuple(x))
-=======
-            print("bry")
->>>>>>> 0f1d6a973317a9f1ea917186d873e921f795828d
+    
