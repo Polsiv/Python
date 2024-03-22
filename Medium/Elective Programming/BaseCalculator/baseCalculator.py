@@ -45,6 +45,5 @@ def base_to_decimal(number, base):
         for i in range(len(float_part)):
             float_result += above_decimal[float_part[i]] * math.pow(base, (-i - 1))
 
-    print(int_result + float_result if float_part else int(int_result))
     return int_result + float_result if float_part else int(int_result)
 

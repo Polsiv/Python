@@ -274,6 +274,7 @@ def handling_exceptions():
         except ZeroDivisionError:
             print( "not 0" )
         except Exception:
+<<<<<<< HEAD
             print("bry")
 
 def zip_function():
@@ -283,3 +284,6 @@ b = ("thepip", "thepip2", "thepip3")
 x = zip(a, b)
 
 print(tuple(x))
+=======
+            print("bry")
+>>>>>>> 0f1d6a973317a9f1ea917186d873e921f795828d
