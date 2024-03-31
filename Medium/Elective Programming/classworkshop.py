@@ -65,7 +65,6 @@ def more_wrapper():
 
     #generator
     def collatz_conjeture(n):
-
         while True: 
             if n % 2 == 0:
                 n //= 2
