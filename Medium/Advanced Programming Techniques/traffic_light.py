@@ -1,6 +1,6 @@
 from abc import ABC, abstractclassmethod
 
-#State
+#States
 
 class TrafficLightState(ABC):
     
@@ -43,8 +43,6 @@ class AmberState(TrafficLightState):
         print("switching from amber to Red")
         traffic_light.state = RedState()
 
-
-
 #context
 
 class TrafficLight:
@@ -58,7 +56,6 @@ class TrafficLight:
         return self.state.switch_light(self)
     
 
-
+    
 traffic_light = TrafficLight()
-
 traffic_light.switch_light()
