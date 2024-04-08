@@ -4,5 +4,7 @@ public class Main {
         System.out.println(my_traffic_light.displayLight());
         my_traffic_light.switch_light();
         System.out.println(my_traffic_light.displayLight());
+        my_traffic_light.switch_light();
+        System.out.println(my_traffic_light.displayLight());
     }
 }
