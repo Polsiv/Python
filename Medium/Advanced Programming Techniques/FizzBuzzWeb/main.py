@@ -14,6 +14,13 @@ def number_in_data_base(num):
     count = cursor.fetchone()[0]
     return count > 0
         
+def number_active(num):
+    connection = data_base_connection()
+    cursor = connection.cursor()
+    cursor.execute("SELECT COUNT(*) FROM numbers WHERE num = ? AND active = '1'", (num,))
+    count = cursor.fetchone()[0]
+    return count > 0
+
 app = Flask(__name__)
 
 @app.route('/')
@@ -46,28 +53,57 @@ def numbers_post():
         connection.close()
         return "number already in data base (if not show it should be disabled)", 405
     else:
-        cursor.execute("INSERT INTO numbers (num, num_evaluated, active) VALUES (?, ?, ?)", (number, evaluated_number, True))
+        cursor.execute("INSERT INTO numbers (num, num_evaluated, active) VALUES (?, ?, ?)", (number, evaluated_number, 1))
         connection.commit()
         connection.close()
         return f'{number} has been added with success.', 201
 
-#REMOVE AND RETRIEVE
-@app.route('/numbers/', methods = ['PUT'])
+#REMOVE
+@app.route('/numbers/', methods = ['DELETE'])
 def numbers_delete():
     connection = data_base_connection()
     cursor = connection.cursor()
     number = request.get_json()["num"]
-    enable = request.get_json()["enable"]
-
-    if number_in_data_base(number):
-        cursor.execute('UPDATE numbers SET active = ? WHERE num = ?', (enable, number))
+    if number_in_data_base(number) and number_active(number):
+        cursor.execute("UPDATE numbers SET active = '0' WHERE num = ?", (number,))
         connection.commit()
         connection.close()
-        return f'{number}, disabled with success.', 200
+        return f'{number}, deleted.', 200
     
     else: 
         connection.close()
         return 'Number not found or may be already disabled.', 404
+    
+#UPDATE
+@app.route('/numbers/', methods = ['PUT'])
+def numbers_update():
+    connection = data_base_connection()
+    cursor = connection.cursor()
+    number = request.get_json()["num"]
+    new_number = request.get_json()["newnum"]
+    if number_in_data_base(number) and number_active(number):
+        cursor.execute("UPDATE numbers SET num = ?, num_evaluated = ? WHERE num = ?", (new_number, fizz_buzz.check_numbers(new_number), number))
+        connection.commit()
+        connection.close()        
+        return f'{number}, updated.', 200
+    else:
+        return 'Number not found.', 404
+
+
+    
+#RETRIEVE
+@app.route('/numbers/recover', methods = ['PUT'])
+def numbers_recover():
+    connection = data_base_connection()
+    cursor = connection.cursor()
+    number = request.get_json()["num"]
+    if number_in_data_base(number) and not number_active(number ):
+        cursor.execute("UPDATE numbers SET active = '1' WHERE num = ?", (number,))
+        connection.commit()
+        connection.close()
+        return f'{number}, retrieved.', 200
+    else:
+        return "Number not found or already active.", 404
     
 #GET RANGE
 @app.route('/numbers/range', methods = ['POST'])
