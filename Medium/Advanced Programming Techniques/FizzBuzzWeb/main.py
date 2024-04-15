@@ -69,7 +69,6 @@ def numbers_delete():
         connection.close()
         return 'Number not found or may be already disabled.', 404
     
-    
 #GET RANGE
 @app.route('/numbers/range', methods = ['POST'])
 def numbers_range():
@@ -88,8 +87,7 @@ def numbers_range():
         connection.close()
         results = [dict(row) for row in numbers]
         return jsonify(results), 200
-    
-        
+         
 #GET FOR ALL NUMBERS
 @app.route('/numbers', methods=['GET'])
 def numbers_getall():
@@ -101,5 +99,4 @@ def numbers_getall():
     connection.close()
     return jsonify(results), 200
 
-    
 app.run(host = "0.0.0.0", port = 80)
