@@ -29,15 +29,11 @@ def insert_data():
     cursor.executemany("INSERT INTO numbers (num, num_evaluated, active) VALUES (?, ?, ?)", data)
     connection.commit()
 
-
 def print_data():
     df = pd.read_sql_query("SELECT * FROM numbers", connection)
     print(df)
 
-
-
-
-execute_schema()
-insert_data()
-print_data()
+#execute_schema()
+#insert_data()
+#print_data()
 connection.close()
