@@ -10,7 +10,7 @@ def data_base_connection():
 def number_in_data_base(num):
     connection = data_base_connection()
     cursor = connection.cursor()
-    cursor.execute('SELECT COUNT(*) FROM numbers WHERE num = ?', (num,))
+    cursor.execute("SELECT COUNT(*) FROM numbers WHERE num = ? AND active = '1'", (num,))
     count = cursor.fetchone()[0]
     connection.close()
     return count > 0
@@ -20,7 +20,6 @@ app = Flask(__name__)
 @app.route('/')
 def index():
     return "Home"
-
 #GET
 @app.route('/numbers/', methods=['GET'])
 def numbers_get():
@@ -28,12 +27,12 @@ def numbers_get():
     number = request.args.get('num')
     cursor = connection.cursor()
 
-    cursor.execute('SELECT num, num_evaluated FROM numbers WHERE num = ?', (number,))
+    cursor.execute("SELECT num, num_evaluated FROM numbers WHERE num = ? AND active = '1'", (number,))
     result = cursor.fetchone()
     if result is not None:
         return f'{result[0]}: {result[1]}'
     else:
-        return "Number not found.", 404
+        return "Number not found, or may be disabled", 404
         
 #POST
 @app.route('/numbers/', methods=['POST'])
@@ -44,7 +43,7 @@ def numbers_post():
     evaluated_number = fizz_buzz.check_numbers(number)
     
     if number_in_data_base(number): 
-        return "number already in data base", 405
+        return "number already in data base ", 405
     else:
         cursor.execute("INSERT INTO numbers (num, num_evaluated, active) VALUES (?, ?, ?)", (number, evaluated_number, True))
         connection.commit()
@@ -52,19 +51,21 @@ def numbers_post():
         return f'{number} has been added with success.', 201
 
 #DELETE
-@app.route('/numbers/', methods = ['DELETE'])
+@app.route('/numbers/', methods = ['PUT'])
 def numbers_delete():
     connection = data_base_connection()
     cursor = connection.cursor()
-    number = request.args.get("num")
+    number = request.get_json()["num"]
+    enable = request.get_json()["enable"]
 
     if number_in_data_base(number):
-        cursor.execute("DELETE FROM numbers where num = ?", (number,))
+        cursor.execute('UPDATE numbers SET active = ? WHERE num = ?', (enable,number))
         connection.commit()
-        connection.close()
-        return f'{number} deleted with success.', 200
-    else:
-        return 'Number not found.', 404
+        return f'{number}, disabled with success.', 200
+    
+    else: 
+        return 'Number not found or may be already disabled.', 404
+    
     
 #GET RANGE
 @app.route('/numbers/range', methods = ['POST'])
@@ -78,7 +79,7 @@ def numbers_range():
     if low_limit > sup_limit:
         return "limits are not well defined", 400
     else:
-        cursor.execute('SELECT * FROM NUMBERS WHERE num BETWEEN ? AND ?', (low_limit, sup_limit))
+        cursor.execute("SELECT * FROM NUMBERS WHERE num BETWEEN ? AND ? AND active = '1'", (low_limit, sup_limit))
         numbers = cursor.fetchall()
         results = [dict(row) for row in numbers]
         return jsonify(results), 200
@@ -94,6 +95,7 @@ def numbers_getall():
     
     results = [dict(row) for row in fizz_buzz_numbers]
     return jsonify(results), 200
+
 
   
 
