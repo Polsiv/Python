@@ -50,7 +50,7 @@ def numbers_post():
         connection.close()
         return f'{number} has been added with success.', 201
 
-#DELETE
+#REMOVE AND RETRIEVE
 @app.route('/numbers/', methods = ['PUT'])
 def numbers_delete():
     connection = data_base_connection()
