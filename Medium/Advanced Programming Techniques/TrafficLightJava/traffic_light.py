@@ -49,16 +49,13 @@ class TrafficLight:
     def __init__(self):
         self.state = RedState()
 
-    def display_light(self):
+    def display_light_tl(self):
         return self.state.display_light()
     
-    def switch_light(self):
+    def switch_light_tl(self):
         return self.state.switch_light(self)
     
 
 traffic_light = TrafficLight()
-traffic_light.switch_light()
-print(traffic_light.display_light())
-traffic_light.switch_light()
-print(traffic_light.display_light())
-traffic_light.switch_light()
+traffic_light.switch_light_tl()
+print(traffic_light.display_light_tl())

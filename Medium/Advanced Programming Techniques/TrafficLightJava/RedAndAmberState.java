@@ -4,8 +4,8 @@ class RedAndAmberState implements TrafficLightState {
         return "Red & Amber";
     }
 
-    public void switch_light(TrafficLight trafficLight) {
+    public void switch_light(TrafficLight traffic_light) {
         System.out.println("switching from amber to green");
-        trafficLight.setState(new GreenState());
+        traffic_light.setState(new GreenState());
     }
 }
