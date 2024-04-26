@@ -9,12 +9,14 @@
 using namespace std;
 using namespace std::chrono;
 
-int generate_random(){
-
+vector<int> rng(int low_limit, int high_limit, int max_numbers){
+    vector<int> num_list;
     random_device dev;
+    uniform_int_distribution<mt19937::result_type> dist(low_limit, high_limit);
     mt19937 rng(dev());
-    uniform_int_distribution<mt19937::result_type> dist(0, 16383);
-    return dist(rng);
+    for (int i = 0; i < max_numbers; i++)
+        num_list.push_back(dist(rng));
+    return num_list;
 };
 
 vector<int> countsort(vector<int>& list, int max) {
@@ -41,32 +43,41 @@ vector<int> countsort(vector<int>& list, int max) {
     return list_sorted;
 }
 
-vector<int> write_data(string filename){
+void write_data(string filename, vector<int> numbers){
 
-    vector<int> numbers;
-    fstream file (filename,  fstream::app);
+    fstream file (filename, ios::out);
 
     if (file.is_open()){
-        for (int i = 0; i < 1048576; i++){
+        for (int number: numbers){
 
-            int rd = generate_random();
-            file << rd << endl;
-            numbers.push_back(rd);
+            file << number << endl;
         }
     } else {
         cout << "couldnt open file." << endl;
     }
+}
+
+vector<int> read_data(string file_name){
+
+    vector<int> numbers;
+    fstream file (file_name, ios::in);
+    
+    if (file.is_open()){
+        int number;
+        while(file >> number){
+            numbers.push_back(number);
+        }
+    } else {
+        cout << "Couldn't open file.";
+    }
+    
     return numbers;
 }
 
 void write_sorted_data(string filename, vector<int> numbers){
-
-    fstream file (filename,  fstream::app);
-
+    fstream file (filename,  ios::out);
     if (file.is_open()){
-
         for (int i: numbers){
-
             file << i << endl;
         }
     } else {
@@ -75,16 +86,19 @@ void write_sorted_data(string filename, vector<int> numbers){
 }
 
 int main(){
-    
-    vector<int> numbers = write_data("unsortednumbers.txt");
+    int min_limit = 0;
+    int sup_limit = 256; 
+    int max_numbers = 1048576;
+    vector<int> numbers = rng(min_limit, sup_limit, max_numbers);
+    write_data("input.txt", numbers);
+    vector<int> numbers_from_file = read_data("input.txt");
 
     auto start = high_resolution_clock::now();
-    std::vector<int> sorted = countsort(numbers, *std::max_element(numbers.begin(), numbers.end()));
+    std::vector<int> sorted = countsort(numbers_from_file, *std::max_element(numbers_from_file.begin(), numbers_from_file.end()));
     auto stop = high_resolution_clock::now();
-
     auto duration = duration_cast<milliseconds>(stop - start);
-    write_sorted_data("sortednumbers.txt", sorted);
 
+    write_sorted_data("sortednumbers.txt", sorted);
     cout << "time elapsed: " << duration.count() << " milliseconds" << endl;
     return 0;
   
