@@ -50,6 +50,6 @@ def main():
     sorted_list = count_sort(num_list, maxi)
     end = time.time()
     write_sorted_data("sortednumbers.txt", sorted_list)
-    print(end - start, "seconds.")
+    print((end - start) * 1000, "ms.")
 
 main()
