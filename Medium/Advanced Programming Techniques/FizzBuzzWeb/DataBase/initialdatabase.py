@@ -5,9 +5,10 @@ data_base_name = "database.db"
 connection = sqlite3.connect(data_base_name)
 cursor = connection.cursor()
 schema_file = "schema.sql"
+data_base_route = ".DataBase/database.bd"
 
 def execute_schema():
-    with open(schema_file) as file:
+    with open(schema_file) as file: 
         connection.executescript(file.read())
 
 def test_data(filename):
@@ -33,7 +34,7 @@ def print_data():
     df = pd.read_sql_query("SELECT * FROM numbers", connection)
     print(df)
 
-execute_schema()
-insert_data()
-print_data()
+#execute_schema()
+#insert_data()
+#print_data()
 connection.close()
