@@ -43,13 +43,11 @@ def count_sort(odd_list, maxi):
     return list_sorted
 
 def main():
-    low_limit, sup_limit, max_numbers = 0, 256, 1048576
-    write_data("numbers.txt", generate_random(low_limit, sup_limit, max_numbers))
+    #low_limit, sup_limit, max_numbers = 0, 256, 1048576
+    #write_data("numbers.txt", generate_random(low_limit, sup_limit, max_numbers))
     num_list, maxi = read_data("numbers.txt")
-    start = time.time() 
     sorted_list = count_sort(num_list, maxi)
-    end = time.time()
-    write_sorted_data("sortednumbers.txt", sorted_list)
-    print((end - start) * 1000, "ms.")
 
+    write_sorted_data("sortednumbers.txt", sorted_list)
+   
 main()

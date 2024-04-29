@@ -22,3 +22,6 @@ class IDataStorage(ABC):
     def get_range(self, low_limit, sup_limit):
         pass
 
+    @abstractmethod
+    def update_inactive_data(self, data):
+        pass

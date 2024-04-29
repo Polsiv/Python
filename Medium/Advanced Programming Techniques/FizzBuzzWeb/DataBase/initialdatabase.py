@@ -5,7 +5,7 @@ data_base_name = "database.db"
 connection = sqlite3.connect(data_base_name)
 cursor = connection.cursor()
 schema_file = "schema.sql"
-data_base_route = ".DataBase/database.bd"
+data_base_route = ".\DataBase\database.db"
 
 def execute_schema():
     with open(schema_file) as file: 
