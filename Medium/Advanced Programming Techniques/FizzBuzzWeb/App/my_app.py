@@ -1,14 +1,16 @@
 """This module contains the API logic that returns the retrieved data and the HTTP code"""
 from .db_storage import DBStorage
 from .fizz_buzz import FizzBuzz
+from Interfaces.i_data_storage import IDataStorage
+from Interfaces.i_problem_solver import IProblemSolver
 
 class MyApp:
     """class my app"""
 
     def __init__(self) -> None:
         """constructor"""
-        self.storage = DBStorage()
-        self.fizzbuzz = FizzBuzz()
+        self.storage:IDataStorage = DBStorage()
+        self.fizzbuzz:IProblemSolver = FizzBuzz()
 
     def get_number(self, number):
         """logic to get specific number"""
