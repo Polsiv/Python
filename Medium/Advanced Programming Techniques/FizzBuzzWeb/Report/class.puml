@@ -1,0 +1,67 @@
+@startuml
+
+
+Interface IDataStorage {
+get_active_data(data:int)
+
+get_data(data:int)
+
+post_data(data:list)
+
+update_inactive_data(data:int)
+
+get_range(low_limit: int, sup_limit: int)
+
+delete_data(data:int)
+}
+
+Interface IProblemSolver{
++compute_result(data) 
+}
+
+Class DBStorage {
+db_connection()
+
+get_active_data(data:int)
+
+get_data(data:int)
+
+post_data(data:list)
+
+update_inactive_data(data:int)
+
+get_range(low_limit: int, sup_limit: int)
+
+delete_data(data:int)
+}
+
+
+
+Class MyApp{
+proble_solver_instance: IproblemSolver
+storage: IDataStorage
+
+get_number(number:int)
+
+post_number(number:int)
+
+get_range(low_limit:int, sup_limit:int)
+
+delete_number(number:int)
+}
+
+
+Class FizzBuzz{
+
+compute_result(data)
+
+}
+
+MyApp o-- IDataStorage
+DBStorage .. IDataStorage
+
+FizzBuzz .. IProblemSolver
+MyApp o-- IProblemSolver
+
+
+@enduml
