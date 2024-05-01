@@ -19,30 +19,6 @@ vector<int> rng(int low_limit, int high_limit, int max_numbers){
     return num_list;
 };
 
-vector<int> countsort(vector<int>& list, int max) {
-    
-    std::vector<int> list_count(max + 1, 0);
-    std::vector<int> list_sorted(list.size());
-
-    for (int i : list) {
-        list_count[i]++;
-    }
-
-    int total = 0;
-    for (int i = 0; i < list_count.size(); ++i) {
-        int count = list_count[i];
-        list_count[i] = total;
-        total += count;  
-    }
-
-    for (int index : list) {
-        list_sorted[list_count[index]] = index;
-        list_count[index]++;
-    }
-
-    return list_sorted;
-}
-
 void write_data(string filename, vector<int> numbers){
 
     fstream file (filename, ios::out);
@@ -51,6 +27,17 @@ void write_data(string filename, vector<int> numbers){
         for (int number: numbers){
 
             file << number << endl;
+        }
+    } else {
+        cout << "couldnt open file." << endl;
+    }
+}
+
+void write_sorted_data(string filename, vector<int> numbers){
+    fstream file (filename,  ios::out);
+    if (file.is_open()){
+        for (int i: numbers){
+            file << i << endl;
         }
     } else {
         cout << "couldnt open file." << endl;
@@ -74,15 +61,27 @@ vector<int> read_data(string file_name){
     return numbers;
 }
 
-void write_sorted_data(string filename, vector<int> numbers){
-    fstream file (filename,  ios::out);
-    if (file.is_open()){
-        for (int i: numbers){
-            file << i << endl;
-        }
-    } else {
-        cout << "couldnt open file." << endl;
+vector<int> countsort(vector<int> list, int max) {
+    
+    std::vector<int> list_count(max + 1, 0);
+    std::vector<int> list_sorted(list.size());
+
+    for (int i : list) {
+        list_count[i]++;
     }
+
+    int total = 0;
+    for (int i = 0; i < list_count.size(); ++i) {
+        int count = list_count[i];
+        list_count[i] = total;
+        total += count;  
+    }
+
+    for (int index : list) {
+        list_sorted[list_count[index]] = index;
+        list_count[index]++;
+    }
+    return list_sorted;
 }
 
 int main(){
@@ -101,7 +100,6 @@ int main(){
     write_sorted_data("sortednumbers.txt", sorted);
     cout << "time elapsed: " << duration.count() << " milliseconds" << endl;
     return 0;
-  
 }
 
 
