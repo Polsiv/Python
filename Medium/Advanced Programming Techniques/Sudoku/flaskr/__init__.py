@@ -30,6 +30,6 @@ def create_app(test_config=None):
     
     @app.route('/sudoku/', methods = ('GET', 'POST'))
     def sudokus():
-        return ""
+        return "", 200
 
     return app
