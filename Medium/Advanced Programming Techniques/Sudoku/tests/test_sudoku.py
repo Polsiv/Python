@@ -1,5 +1,8 @@
+from flaskr.Core.file_storage import FileStorage
+
 def test_invalid_sudoku(client):
-    
+
+    sudokus = FileStorage.read_data()
     data = { 'suudoku' :[
         [7, 9, 9, 2, 3, 5, 4, 1, 8],
         [8, 5, 1, 4, 9, 6, 3, 7, 2],
@@ -12,7 +15,7 @@ def test_invalid_sudoku(client):
         [9, 4, 7, 3, 8, 1, 6, 2, 5]
         ]
     }   
-    response = client.get('/sudoku/', json=data)
+    response = client.get('/sudoku/', json=sudokus)
     assert response.status_code == 200
     assert b'Invalid Sudoku' in response.data
     assert b'9 repeated in row 1' in response.data
@@ -20,7 +23,7 @@ def test_invalid_sudoku(client):
    
 
 def test_valid_sudoku(client):
-
+    sudokus = FileStorage.read_data()
     data = { 'suudoku' :  [ 
         [9, 2, 4, 7, 6, 3, 1, 5, 8],
         [8, 7, 3, 4, 1, 5, 9, 2, 6],
@@ -33,7 +36,7 @@ def test_valid_sudoku(client):
         [5, 4, 7, 3, 9, 6, 2, 8, 1]]
 
     }
-    response = client.get('/sudoku/', json = data)
+    response = client.get('/sudoku/', json = sudokus)
     assert response.status_code == 200
     assert b'valid sudoku' in response.data
 

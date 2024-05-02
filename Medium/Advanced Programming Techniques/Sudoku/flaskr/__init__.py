@@ -1,5 +1,5 @@
 import os
-
+from flaskr.Core.my_app import MyApp
 from flask import Flask
 
 def create_app(test_config=None):
@@ -28,8 +28,14 @@ def create_app(test_config=None):
     def hello():
         return 'Hello, World!'
     
+    myapp = MyApp()
+    sudokus = myapp.get_data()
+    sudoku1 = sudokus[0]
+
+    
     @app.route('/sudoku/', methods = ('GET', 'POST'))
     def sudokus():
-        return "", 200
+        return str(myapp.compute_sudoku(sudoku1))
+       
 
     return app
