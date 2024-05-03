@@ -1,12 +1,14 @@
-from flaskr.interfaces.i_data_storage import IDataStorage
+"""This module provides the data to our aplication"""
+from flaskr.interfaces.i_data_storage import IDataStorage #pylint: disable=C0116
 
 class FileStorage(IDataStorage):
-    
+
     def read_data(self):
-           with open('./flaskr/InputFiles/input.txt', 'r') as file:
+        """reads the input from the text file"""
+        with open('./flaskr/InputFiles/input.txt', 'r', encoding="utf-8") as file:
             lines = file.readlines()
             num = int(lines[0])
-            data = [line.strip() for line in lines[2:] if line.strip()]  
+            data = [line.strip() for line in lines[2:] if line.strip()]
 
             sudokus = []
             for i in range(num):
@@ -16,6 +18,6 @@ class FileStorage(IDataStorage):
                     sudoku.append(row)
                 sudokus.append(sudoku)
             return sudokus
-    
+
     def save_data(self, data):
-        pass
+        """for future development"""

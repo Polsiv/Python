@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/styles.css">
+    <title>Sudoku Puzzles</title>
+</head>
+<body>
+    <h1>Sudokus</h1>
+    {% for sudoku_table in sudoku_tables %}
+        <h2>Sudoku  #{{ loop.index }} {% if sudoku_table.errors == 'Sudoku puzzle is valid' %}(Valid){% else %}(Invalid){% endif %}</h2>
+        <table border="1">
+            {% for row in sudoku_table.sudoku %}
+                <tr>
+                    {% for cell in row %}
+                        <td>{{ cell }}</td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+        </table>
+        {% if sudoku_table.errors != 'Sudoku puzzle is valid' %}
+            <h3>Errors</h3>
+            <ul>
+                {% for error in sudoku_table.errors %}
+                    <li>{{ error|safe }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endfor %}
+</body>
+</html>
