@@ -21,7 +21,6 @@ def main():
     else:
         storage = FileStorage(paths["fibbonaci_path"])
         problem = FibbonaciVerifier()
-        print("fibonacci output file created.")
         
     data_handler = DataHandler(storage)
     problem_handler = ProblemHandler(problem)
