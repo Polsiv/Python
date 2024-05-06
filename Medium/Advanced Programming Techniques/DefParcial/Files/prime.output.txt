@@ -1,7 +1,6 @@
 5 True
 1 False
 45 False
-8 False
 4783 True
 45324 False
 324245 False
@@ -10,3 +9,4 @@
 10 False
 11 True
 23 True
+98 False
