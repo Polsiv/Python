@@ -17,9 +17,8 @@ def main():
     if input == 1: 
         storage = FileStorage(paths["prime_path"])
         problem = PrimeVerifier()
-        print("prime output file created.")
-
-    if input == 2:
+    
+    else:
         storage = FileStorage(paths["fibbonaci_path"])
         problem = FibbonaciVerifier()
         print("fibonacci output file created.")
