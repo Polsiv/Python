@@ -17,10 +17,12 @@ def main():
     if input == 1: 
         storage = FileStorage(paths["prime_path"])
         problem = PrimeVerifier()
-    
-    else:
+        print("prime output file created.")
+
+    if input == 2:
         storage = FileStorage(paths["fibbonaci_path"])
         problem = FibbonaciVerifier()
+        print("fibonacci output file created.")
         
     data_handler = DataHandler(storage)
     problem_handler = ProblemHandler(problem)

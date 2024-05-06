@@ -1,8 +1,8 @@
-True 3
-True 13
-True 8
-False 4
-True 5
-True 5
-True 5
-True 5
+3 True
+13 True
+8 True
+4 False
+5 True
+5 True
+5 True
+5 True
