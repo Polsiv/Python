@@ -1,8 +1,0 @@
-3 True
-13 True
-8 True
-4 False
-5 True
-5 True
-5 True
-5 True
