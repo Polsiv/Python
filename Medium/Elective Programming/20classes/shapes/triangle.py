@@ -1,5 +1,5 @@
 from math import pow, sqrt
-from interfaces.i_probem_solver import IProblemSolver
+from interfaces.i_problem_solver import IProblemSolver
 
 class Triangle(IProblemSolver):
     

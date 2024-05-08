@@ -1,17 +1,13 @@
 from interfaces.i_problem_solver import IProblemSolver
 
-class Rectangle(IProblemSolver):
+class Rhombus(IProblemSolver):
 
     def compute_results(self, data):
         calculations = {
-            "area": self.area(data),
-            "perimeter": self.perimeter(data)
+            "area": self.area(data)
         }
         return [[key, value] for key, value in calculations.items()]
 
     def area(self, data):
-        return data[0] * data[1]
-
-    def perimeter(self, data):
-        return 2 * (data[0] + data[1])
-
+        diagonal1, diagonal2 = data[0], data[1]
+        return (diagonal1 * diagonal2) / 2

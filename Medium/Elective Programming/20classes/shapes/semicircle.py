@@ -1,9 +1,10 @@
-from interfaces.i_probem_solver import IProblemSolver
+from interfaces.i_problem_solver import IProblemSolver
 from math import pi
 
 class Semicircle(IProblemSolver):
 
     def compute_results(self, data):
+        data = data[0]
         calculations = {
             "area": self.area(data),
             "perimeter": self.perimeter(data)

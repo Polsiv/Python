@@ -1,4 +1,4 @@
-from interfaces.i_probem_solver import IProblemSolver
+from interfaces.i_problem_solver import IProblemSolver
 from math import pi, sqrt
 
 class Ellipse(IProblemSolver):

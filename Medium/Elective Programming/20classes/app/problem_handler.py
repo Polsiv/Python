@@ -1,4 +1,4 @@
-from interfaces.i_probem_solver import IProblemSolver
+from interfaces.i_problem_solver import IProblemSolver
 
 class ProblemHandler:
     def __init__(self, problem: IProblemSolver):

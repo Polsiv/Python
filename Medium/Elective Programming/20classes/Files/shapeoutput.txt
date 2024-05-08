@@ -1,0 +1,3 @@
+diameter 4.0
+circumference 12.566370614359172
+area 12.566370614359172

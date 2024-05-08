@@ -9,14 +9,13 @@ class FileStorage(IDataStorage):
             config = json.load(config_file)
             self.input_path = config['input_path']
             self.output_path = config['output_path']
-            self.file_name = config["name"]
 
     def save_data(self, data):
 
         with open(self.output_path, "w") as f:
             for i in data:
                 f.write(f'{i[0]} {i[1]}\n')
-            print(f'{self.file_name} output file generated.')
+            print(f'output file generated.')
             f.close()
 
     def read_data(self):
@@ -27,7 +26,7 @@ class FileStorage(IDataStorage):
                 num = int(lines[0])
                 data = []
                 for i in lines[2:2+num]:
-                    data.append(i)
+                    data.append(float(i))
             return data
         
         except (ValueError, IndexError) as e:
