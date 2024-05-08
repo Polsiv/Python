@@ -1,7 +1,6 @@
 from interfaces.i_probem_solver import IProblemSolver
-from math import pi
 
-class Semicircle(IProblemSolver):
+class Rectangle(IProblemSolver):
 
     def compute_results(self, data):
         calculations = {
@@ -10,8 +9,9 @@ class Semicircle(IProblemSolver):
         }
         return [[key, value] for key, value in calculations.items()]
 
-    def area(self, radius):
-        return (pi * (radius ** 2)) / 2
+    def area(self, data):
+        return data[0] * data[1]
 
-    def perimeter(self, radius):
-        return pi * radius + 2 * radius
+    def perimeter(self, data):
+        return 2 * (data[0] + data[1])
+
