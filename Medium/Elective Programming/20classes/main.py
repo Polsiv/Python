@@ -53,7 +53,7 @@ def main():
     elif input_shape == "sphere":
         problem_handler = ProblemHandler(Sphere())
     elif input_shape == "semicircle":
-        problem_handler = ProblemHandler(Semicircle())
+        problem_handler = ProblemHandler(Semicircle(e))
     elif input_shape == "square":
         problem_handler = ProblemHandler(Square)
     elif input_shape == "triangle":
