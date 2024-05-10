@@ -1,3 +1,4 @@
+import matplotlib.pyplot as plt
 from random import randint
 import time
 
@@ -43,7 +44,23 @@ def shellSort(array, n):
     return array
 
 
+
+def plot_graph(data):
+
+    x = range(len(data))
+    fig, ax = plt.subplots()
+
+    ax.bar(x, data)
+    ax.set_xlabel('Index')
+    ax.set_ylabel('Value')
+    ax.set_title('Graph of the List')
+
+    plt.show()
+
+
 def main():
+
+    plot_graph = True
     low_limit, sup_limit, max_numbers = 0, 12, 10000000
     write_data("numbers.txt", generate_random(low_limit, sup_limit, max_numbers))
     num_list, len = read_data("numbers.txt")
@@ -55,5 +72,8 @@ def main():
 
     print((end - start), "s")
     print((end - start) * 1000, "ms." )
+
+    if plot_graphs:
+        plot_graph(sorted_list)
 
 main()
