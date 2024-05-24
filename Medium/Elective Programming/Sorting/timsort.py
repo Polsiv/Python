@@ -1,5 +1,6 @@
 from random import randint
 import time
+import matplotlib.pyplot as plt
 
 def generate_random(lowlimit, suplimit, max_numbers):
     num_list = []
@@ -103,9 +104,26 @@ def tim_sort(array):
 
     return array
 
-def main():
-    low_limit, sup_limit, max_numbers = 0, 12, 10000000
-    write_data("numbers.txt", generate_random(low_limit, sup_limit, max_numbers))
+
+def plot_graph(data):
+
+    x = range(len(data))
+    fig, ax = plt.subplots()
+
+    ax.bar(x, data)
+    ax.set_xlabel('Index')
+    ax.set_ylabel('Value')
+    ax.set_title('Graph of the List')
+
+    plt.show()
+
+
+def maintim():
+
+    plot_graphs = False
+
+    #low_limit, sup_limit, max_numbers = 0, 12, 1000
+    #write_data("numbers.txt", generate_random(low_limit, sup_limit, max_numbers))
     num_list = read_data("numbers.txt")
 
     start = time.time()
@@ -113,7 +131,8 @@ def main():
     end = time.time()
     write_sorted_data("sortednumbers.txt", sorted_list)
 
-    print((end - start), "s")
-    print((end - start) * 1000, "ms." )
+    if plot_graphs:
+        plot_graph(sorted_list)
 
-main()
+    return end - start
+

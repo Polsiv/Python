@@ -56,10 +56,10 @@ def plot_graph(data):
     plt.show()
 
 
-def main():
-    plot_graphs = True
-    low_limit, sup_limit, max_numbers = 0, 12, 30
-    write_data("numbers.txt", generate_random(low_limit, sup_limit, max_numbers))
+def maincounting():
+    plot_graphs = False
+    #low_limit, sup_limit, max_numbers = 0, 12, 1000
+    #write_data("numbers.txt", generate_random(low_limit, sup_limit, max_numbers))
     num_list, maxi = read_data("numbers.txt")
 
 
@@ -68,10 +68,7 @@ def main():
     end = time.time()
     write_sorted_data("sortednumbers.txt", sorted_list)
 
-    print((end - start), "s")
-    print((end - start) * 1000, "ms." )
-
     if plot_graphs:
         plot_graph(sorted_list)
 
-main()
+    return end - start
