@@ -1,0 +1,7 @@
+CREATE TABLE IF NOT EXISTS users (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    username TEXT NOT NULL,
+    pass TEXT NOT NULL,
+    u_root INTEGER DEFAULT 0 
+);
+    

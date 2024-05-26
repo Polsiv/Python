@@ -17,4 +17,4 @@ text2 = bytes(input("enter a text 2"), 'utf-8')
 if bcrypt.checkpw(text2, what):
     print("correct")
 
-else: print("password incorrect")
+else: print("password incorrect") 
