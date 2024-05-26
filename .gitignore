@@ -3,7 +3,7 @@ Data Structures\TDA\Stack\Recourse from class
 Data Structures\TDA\Linkedlist\ResourcesFromClass
 FinalProject3rdSemester
 Manim/media/
-Manim/__pycache__/
 flaskactivateenv.bat
 manimactivateenv.bat
 Django/
+**/__pycache__/
