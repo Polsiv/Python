@@ -1,7 +1,7 @@
 import jwt
 import datetime
 
-iat =  datetime.datetime.now() + datetime.timedelta(seconds=)
+iat =  datetime.datetime.now() + datetime.timedelta()
 test = int(iat.timestamp())
 token = jwt.encode({'user': 'silv', 'exp': test}, 'b7a078fb25f842b788adc528e1f59e29')  
 

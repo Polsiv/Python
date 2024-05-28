@@ -2,6 +2,8 @@
 
 import sqlite3
 import pandas as pd
+import uuid
+from werkzeug.security import generate_password_hash
 
 DATA_BASE_NAME = "database.db"
 CONNECTION = sqlite3.connect(DATA_BASE_NAME)
@@ -26,7 +28,27 @@ def test_data(filename):
         return data
     except FileNotFoundError:
         return None
+    
+def root_data(filename):
+    """reads the input file"""
+    try:
+        with open(filename, encoding = "utf-8") as f:
+            data = f.readlines()
+            data = [line.strip() for line in data]
+            return  data
+    except FileNotFoundError:
+        return None
 
+def insert_root():
+    data = root_data("rootuser.txt")
+
+    username = data[0]
+    password = data[1]
+    public_id = str(uuid.uuid4())
+    hashed = generate_password_hash(password, method = 'pbkdf2:sha256')
+    CONNECTION.execute("INSERT INTO users (public_id, username, u_password, u_root) VALUES  (?, ?, ?, 1)", (public_id, username, hashed))
+    CONNECTION.commit()
+    
 def insert_data():
     """inserts the new data"""
     file_name =  "input.txt"
@@ -40,7 +62,9 @@ def print_data():
     df = pd.read_sql_query("SELECT * FROM numbers", CONNECTION)
     print(df)
 
+
 #execute_schema()
 #insert_data()
+#insert_root()
 #print_data()
 CONNECTION.close()
