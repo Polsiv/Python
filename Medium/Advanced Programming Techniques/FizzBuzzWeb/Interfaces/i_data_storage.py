@@ -27,3 +27,7 @@ class IDataStorage(ABC):
     @abstractmethod
     def update_inactive_data(self, data):
         """Abstract method for deleting data"""
+
+    @abstractmethod
+    def hard_delete_data(self, data):
+        """Abstract method  for hard-deleting data"""

@@ -62,7 +62,6 @@ def print_data():
     df = pd.read_sql_query("SELECT * FROM numbers", CONNECTION)
     print(df)
 
-
 #execute_schema()
 #insert_data()
 #insert_root()

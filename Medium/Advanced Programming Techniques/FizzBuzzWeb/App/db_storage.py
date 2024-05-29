@@ -84,7 +84,7 @@ class DBStorage(IDataStorage):
 
     def delete_data(self, data):
         """
-        Query for deleting the data
+        Query for soft-deleting the data
         """
         connection = self.db_connection()
         with connection:
@@ -92,3 +92,13 @@ class DBStorage(IDataStorage):
             cursor.execute("UPDATE numbers SET active = '0' WHERE num = ?", (data,))
         connection.commit()
         connection.close()
+
+    def hard_delete_data(self, data):
+        """
+        Query for hard-deleting the data
+        """
+        connection = self.db_connection()
+        connection.execute("DELETE FROM numbers WHERE num = ?", (data,))
+        connection.commit()
+        connection.close()
+

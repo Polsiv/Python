@@ -3,7 +3,7 @@ This is the main module
 """
 
 from App.users import Users
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, session
 from App.my_app import MyApp
 from functools import wraps
 import jwt
@@ -19,14 +19,16 @@ def token_required(f):
         token = None
         if 'access-token' in request.headers:
             token = request.headers['access-token']
-            print(token)
 
         if not token:
             return jsonify({'message': 'Token is missing!'}, 401)
 
+        if token in users.token_black_list:
+            return jsonify({'message': 'Session expired!'}), 403
+
         try:
             data = jwt.decode(token, app.config['SECRET_KEY'], algorithms = ['HS256'])
-            current_user = users.get_user(data['public_id'])
+            current_user = users.get_user(data['username'])
 
         except jwt.ExpiredSignatureError:
             return jsonify({'message': 'Token has expired!'}), 403
@@ -38,18 +40,23 @@ def token_required(f):
 
     return decorated    
 
+@app.route('/register', methods = ['POST'])
+def register():
+    data = request.get_json()
+    return users.register_user(data)
 
 @app.route('/login')
 def login():
     auth = request.authorization
     return users.login_user(auth, app.config['SECRET_KEY'])
    
+@app.route('/logout', methods = ['POST'])
+def logout():
+    if 'access-token' in request.headers:
+        token = request.headers['access-token']
+        
+    return users.logout_user(token, app.config['SECRET_KEY'])
 
-@app.route('/register', methods = ['POST'])
-def register():
-    data = request.get_json()
-    return users.register_user(data)
-    
 @app.route('/numbers/<number>', methods = ['GET', 'POST', 'DELETE'])
 @token_required
 def numbers(current_user, number):
@@ -62,6 +69,9 @@ def numbers(current_user, number):
             return my_app.post_number(int(number))
 
         if request.method == "DELETE":
+            if current_user[4] == 1:
+                return my_app.hard_delete_number(int(number))
+            
             return my_app.delete_number(int(number))
 
     except ValueError:

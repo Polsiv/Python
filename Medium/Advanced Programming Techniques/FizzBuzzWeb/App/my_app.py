@@ -15,7 +15,8 @@ class MyApp:
     def get_number(self, number):
         """logic to get specific number"""
         db_result = self.storage.get_data(number)
-        if db_result is None:
+        db_result_active = self.storage.get_active_data(number)
+        if db_result is None or db_result_active is None:
             return "Not Found", 404
 
         return f'{db_result[0]}: {db_result[1]}', 200
@@ -50,10 +51,19 @@ class MyApp:
         return nums_dict, 200
 
     def delete_number(self, number):
-        """logic to the delete a number"""
+        """logic to soft-delete a number"""
         db_result = self.storage.get_active_data(number)
         if db_result is None:
             return "Not Found.", 404
 
         self.storage.delete_data(number)
+        return "", 204
+    
+    def hard_delete_number(self, number):
+        """logic to hard-delete a number"""
+        db_result = self.storage.get_data(number)
+        if db_result is None:
+            return "Not Found.", 404
+        
+        self.storage.hard_delete_data(number)
         return "", 204
