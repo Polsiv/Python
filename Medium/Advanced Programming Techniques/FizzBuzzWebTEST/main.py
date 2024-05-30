@@ -3,9 +3,9 @@ This is the main module
 """
 import redis
 from App.users import Users
-from flask import Flask, request, jsonify
+from flask import Flask, request
 from App.my_app import MyApp
-import jwt
+
 from flask_jwt_extended import JWTManager, jwt_required, get_jwt
 from datetime import timedelta
 
@@ -14,8 +14,7 @@ app.config['SECRET_KEY'] = 'd404516c04f243109e4b94197d3b61fc'
 my_app = MyApp()
 users = Users()
 jwt = JWTManager(app)
-ACCESS_EXPIRES = timedelta(hours=1)
-
+ACCESS_EXPIRES = timedelta(minutes=15)
 jwt_redis_blocklist = redis.StrictRedis(
     host="localhost", port=6379, db=0, decode_responses=True
 )
@@ -40,14 +39,12 @@ def login():
 @jwt_required()
 def logout():
     jti = get_jwt()["jti"]
-    jwt_redis_blocklist.set(jti, "", ex = ACCESS_EXPIRES)
-    return jsonify(msg="Session closed")
+    return users.logout_user(jti, ACCESS_EXPIRES, jwt_redis_blocklist)
 
 @app.route('/numbers/<number>', methods = ['GET', 'POST', 'DELETE'])
 @jwt_required()
 def numbers(number):
     current_user = get_jwt()
-    print(current_user)
     """this is where we will get our data from Postman"""
     try:
         if request.method == "GET":

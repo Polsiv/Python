@@ -1,6 +1,6 @@
 import sqlite3
 import uuid
-from flask import jsonify, make_response
+from flask import jsonify
 from DataBase.initialdatabase import DATA_BASE_ROUTE
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_jwt_extended import create_access_token
@@ -38,12 +38,14 @@ class Users():
         user = self.get_user(data["username"])
         if not user: 
             return jsonify({"message": "User not registered"}), 404
-
-        additional_claims = {"root": user[4]}
-
-        access_token = create_access_token(data["username"], additional_claims=additional_claims)
-        return jsonify(access_token=access_token)
-    
-    def logout_user(self, token, key):
         
-        pass
+        if check_password_hash(user[3], data["password"]):
+            additional_claims = {"root": user[4]}
+            access_token = create_access_token(data["username"], additional_claims=additional_claims)
+            return jsonify(access_token=access_token)
+        
+        return jsonify({"message": "Invalid Password"}), 401
+    
+    def logout_user(self, jti, access_expires, redis_block_list):
+        redis_block_list.set(jti, "", ex = access_expires)
+        return jsonify({"message": "Session closed"})
