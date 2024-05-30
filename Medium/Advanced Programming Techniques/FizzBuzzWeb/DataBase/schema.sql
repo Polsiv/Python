@@ -3,7 +3,7 @@ CREATE TABLE IF NOT EXISTS numbers (
     num_evaluated TEXT,
     active BOOLEAN
 );
-    
+
 CREATE TABLE IF NOT EXISTS users (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     public_id TEXT(20) UNIQUE,

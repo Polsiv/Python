@@ -1,46 +1,30 @@
 """
 This is the main module
 """
-
+import redis
 from App.users import Users
-from flask import Flask, request, jsonify, session
+from flask import Flask, request, jsonify
 from App.my_app import MyApp
-from functools import wraps
 import jwt
-from flask_jwt_extended import JWTManager
+from flask_jwt_extended import JWTManager, jwt_required, get_jwt
+from datetime import timedelta
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'd404516c04f243109e4b94197d3b61fc'
 my_app = MyApp()
 users = Users()
 jwt = JWTManager(app)
+ACCESS_EXPIRES = timedelta(hours=1)
 
-def token_required(f):
-    @wraps(f)
-    def decorated(*args, **kwargs):
-        token = None
-        if 'access-token' in request.headers:
-            token = request.headers['access-token']
+jwt_redis_blocklist = redis.StrictRedis(
+    host="localhost", port=6379, db=0, decode_responses=True
+)
 
-        if not token:
-            return jsonify({'message': 'Token is missing!'}, 401)
-
-        if token in users.token_black_list:
-            return jsonify({'message': 'Session expired!'}), 403
-
-        try:
-            data = jwt.decode(token, app.config['SECRET_KEY'], algorithms = ['HS256'])
-            current_user = users.get_user(data['username'])
-
-        except jwt.ExpiredSignatureError:
-            return jsonify({'message': 'Token has expired!'}), 403
-        
-        except jwt.InvalidTokenError:
-            return jsonify({'message': 'Invalid token!'}), 403        
-
-        return f(current_user, *args, **kwargs)
-
-    return decorated    
+@jwt.token_in_blocklist_loader
+def check_if_token_is_revoked(jwt_header, jwt_payload: dict):
+    jti = jwt_payload["jti"]
+    token_in_redis = jwt_redis_blocklist.get(jti)
+    return token_in_redis is not None
 
 @app.route('/register', methods = ['POST'])
 def register():
@@ -53,15 +37,17 @@ def login():
     return users.login_user(auth)
    
 @app.route('/logout', methods = ['POST'])
+@jwt_required()
 def logout():
-    if 'access-token' in request.headers:
-        token = request.headers['access-token']
-        
-    return users.logout_user(token, app.config['SECRET_KEY'])
+    jti = get_jwt()["jti"]
+    jwt_redis_blocklist.set(jti, "", ex = ACCESS_EXPIRES)
+    return jsonify(msg="Session closed")
 
 @app.route('/numbers/<number>', methods = ['GET', 'POST', 'DELETE'])
-@token_required
-def numbers(current_user, number):
+@jwt_required()
+def numbers(number):
+    current_user = get_jwt()
+    print(current_user)
     """this is where we will get our data from Postman"""
     try:
         if request.method == "GET":
@@ -71,7 +57,7 @@ def numbers(current_user, number):
             return my_app.post_number(int(number))
 
         if request.method == "DELETE":
-            if current_user[4] == 1:
+            if current_user['root'] == 1:
                 return my_app.hard_delete_number(int(number))
             
             return my_app.delete_number(int(number))
@@ -80,8 +66,8 @@ def numbers(current_user, number):
         return "Invalid input.", 400
 
 @app.route('/range/', methods = ['POST'])
-@token_required
-def get_range(current_user):
+@jwt_required()
+def get_range():
     """this is where we will get our data from Postman"""
     try:
         limits = request.get_json()

@@ -28,7 +28,15 @@ def test_data(filename):
         return data
     except FileNotFoundError:
         return None
-    
+
+def insert_data():
+    """inserts the new data"""
+    file_name =  "input.txt"
+    data = test_data(file_name)
+
+    CURSOR.executemany("INSERT INTO numbers (num, num_evaluated, active) VALUES (?, ?, ?)", data)
+    CONNECTION.commit()
+
 def root_data(filename):
     """reads the input file"""
     try:
@@ -47,14 +55,6 @@ def insert_root():
     public_id = str(uuid.uuid4())
     hashed = generate_password_hash(password, method = 'pbkdf2:sha256')
     CONNECTION.execute("INSERT INTO users (public_id, username, u_password, u_root) VALUES  (?, ?, ?, 1)", (public_id, username, hashed))
-    CONNECTION.commit()
-    
-def insert_data():
-    """inserts the new data"""
-    file_name =  "input.txt"
-    data = test_data(file_name)
-
-    CURSOR.executemany("INSERT INTO numbers (num, num_evaluated, active) VALUES (?, ?, ?)", data)
     CONNECTION.commit()
 
 def print_data():

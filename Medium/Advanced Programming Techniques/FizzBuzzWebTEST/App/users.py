@@ -3,13 +3,9 @@ import uuid
 from flask import jsonify, make_response
 from DataBase.initialdatabase import DATA_BASE_ROUTE
 from werkzeug.security import generate_password_hash, check_password_hash
-import jwt
-import datetime
 from flask_jwt_extended import create_access_token
 
 class Users():
-
-    token_black_list = set()
 
     @staticmethod
     def db_connection():
@@ -35,27 +31,19 @@ class Users():
             connection.execute("INSERT INTO users (public_id, username, u_password) VALUES (?, ?, ?)", (public_id, data['username'], hashed_password))
             connection.commit()
             connection.close()
-            return jsonify({'message': 'user created'})
-        return jsonify({'message': 'user already created!'})
+            return jsonify({'message': 'user created!'}), 201
+        return jsonify({'message': 'user already created!'}), 403
 
     def login_user(self, data):
+        user = self.get_user(data["username"])
+        if not user: 
+            return jsonify({"message": "User not registered"}), 404
 
-        access_token = create_access_token(identity = data["username"])
+        additional_claims = {"root": user[4]}
+
+        access_token = create_access_token(data["username"], additional_claims=additional_claims)
         return jsonify(access_token=access_token)
     
     def logout_user(self, token, key):
         
-        if not token:
-            return jsonify({'message': 'Token is missing!'}), 401
-        try:
-            jwt.decode(token, key, algorithms=['HS256'])
-            if token in self.token_black_list:
-                return jsonify({'message': 'Invalid Token!'}), 403
-
-            self.token_black_list.add(token)
-        except jwt.ExpiredSignatureError:
-            return jsonify({'message': 'Token has expired!'}), 403
-        except jwt.InvalidTokenError:
-            return jsonify({'message': 'Invalid Token!'}), 403
-
-        return jsonify({'message': 'Successfully logged out'}), 200
+        pass
