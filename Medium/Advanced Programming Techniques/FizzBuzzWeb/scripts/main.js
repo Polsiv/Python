@@ -11,11 +11,14 @@ document.getElementById('login-form').addEventListener('submit', async (e) => {
         },
         body: JSON.stringify({ username, password })
     });
-
     if (response.ok) {
         const data = await response.json();
+        const myHeaders = new Headers();
         // Store the JWT in local storage
         localStorage.setItem('jwt', data.access_token);
+        token = localStorage.getItem("jwt");
+        myHeaders.set('Content-Type', 'application/json');
+        myHeaders.set('Authorization', `Bearer ${token}`);
         // Redirect to the numbers route
         window.location.href = '/numbers/';
     } else {
@@ -23,13 +26,12 @@ document.getElementById('login-form').addEventListener('submit', async (e) => {
     }
 });
 
-// Function to get the JWT token from local storage
+// get JWT token from local storage
 function getJWTToken() {
-   
     return localStorage.getItem('jwt');
 }
 
-// Function to make authenticated requests to protected routes
+// make authenticated requests to protected routes
 async function fetchProtectedRoute(url) {
     const token = localStorage.getItem('jwt');
     if (!token) {
@@ -40,7 +42,7 @@ async function fetchProtectedRoute(url) {
     try {
         console.log('Token:', token);
         console.log('URL:', url);
-
+        
         const response = await fetch(url, {
             headers: {
                 'Authorization': `Bearer ${token}`,

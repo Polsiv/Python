@@ -43,6 +43,7 @@ class UserHandler():
         if check_password_hash(user[3], data["password"]):
             additional_claims = {"root": user[4]}
             access_token = create_access_token(data["username"], additional_claims=additional_claims)
+            print("from user handler", access_token)
             return jsonify(access_token=access_token)
         
         return jsonify({"message": "Invalid Password"}), 401

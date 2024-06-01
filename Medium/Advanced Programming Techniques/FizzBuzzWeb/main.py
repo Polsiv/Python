@@ -1,10 +1,9 @@
-from flask import Flask, request, jsonify, send_from_directory
+from flask import Flask, request, jsonify, render_template
 from App.userhandler import UserHandler
 from App.my_app import MyApp
 from flask_jwt_extended import JWTManager, jwt_required, get_jwt, get_jwt_identity
 from datetime import timedelta
 import redis
-import os
 import logging
 
 
@@ -35,9 +34,10 @@ def register():
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'GET':
-        return send_from_directory(os.path.join(app.root_path, 'templates'), 'login.html')
+        return render_template('login.html')
     
     data = request.get_json()
+    
     return userhandler.login_user(data)
 
 @app.route('/logout', methods=['POST'])
