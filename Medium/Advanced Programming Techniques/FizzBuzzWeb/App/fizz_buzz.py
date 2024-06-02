@@ -1,4 +1,4 @@
-
+#pylint: disable=R0903
 """This module contains the evaluation of the number"""
 
 from Interfaces.i_problem_solver import IProblemSolver

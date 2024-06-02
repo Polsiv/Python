@@ -10,6 +10,8 @@
     <button onclick="window.location.href='/register';">Register</button>
     <button onclick="window.location.href='/login';">Login</button>
 
-    <h2>{{message}}</h2>
+    {% if message %}
+    <h2>{{ message }}</h2>
+    {% endif %}
 </body>
 </html>

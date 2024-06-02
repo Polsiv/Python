@@ -1,8 +1,10 @@
+#pylint: disable=W1401
+#pylint: disable=W1514
 """This module creates the initial state of the data base"""
 
 import sqlite3
-import pandas as pd
 import uuid
+import pandas as pd
 from werkzeug.security import generate_password_hash
 
 DATA_BASE_NAME = "database.db"
@@ -38,7 +40,7 @@ def insert_data():
     CONNECTION.commit()
 
 def root_data(filename):
-    """reads the input file"""
+    """reads the input file for root data"""
     try:
         with open(filename, encoding = "utf-8") as f:
             data = f.readlines()
@@ -48,13 +50,15 @@ def root_data(filename):
         return None
 
 def insert_root():
-    data = root_data("rootuser.txt")
+    """insert root into the database"""
 
+    data = root_data("rootuser.txt")
     username = data[0]
     password = data[1]
     public_id = str(uuid.uuid4())
     hashed = generate_password_hash(password, method = 'pbkdf2:sha256')
-    CONNECTION.execute("INSERT INTO users (public_id, username, u_password) VALUES  (?, ?, ?)", (public_id, username, hashed))
+    CONNECTION.execute("INSERT INTO users (public_id, username, u_password) VALUES  (?, ?, ?)",
+                       (public_id, username, hashed))
     CONNECTION.commit()
 
 def print_data():
@@ -62,7 +66,7 @@ def print_data():
     df = pd.read_sql_query("SELECT * FROM numbers", CONNECTION)
     print(df)
 
-#xecute_schema()
+#execute_schema()
 #insert_data()
 #insert_root()
 #print_data()

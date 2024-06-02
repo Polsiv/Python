@@ -1,3 +1,4 @@
+#pylint: disable=R0903
 """This module contains the Problem Solver Interface"""
 
 from abc import abstractmethod, ABC

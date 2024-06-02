@@ -1,3 +1,4 @@
+# pylint: disable=C0301
 """
 This module contains the the logic for the sql queries that retrieves
 our data
@@ -101,4 +102,3 @@ class DBStorage(IDataStorage):
         connection.execute("DELETE FROM numbers WHERE num = ?", (data,))
         connection.commit()
         connection.close()
-

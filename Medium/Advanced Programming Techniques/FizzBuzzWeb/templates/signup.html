@@ -7,6 +7,14 @@
 </head>
 <body>
     <h1>Enter your credentials</h1>
+
+    {% if message %}
+    {{ message['message'] }}
+    {% endif %}
+
+    <br>
+    <br>
+    
     <form id="signup-form" action="/register" method="post">
         <label for="username">Username</label>
         <input type="text" id="username" name="username" required>
@@ -14,11 +22,6 @@
         <input type="password" id="password" name="password" required>
         <button type="submit">Submit</button>
     </form>
-
-    {% if message %}
-            {{ message['message'] }}
-                
-    {% endif %}
 
     <br>
     <form action="/">

@@ -13,7 +13,7 @@
 
     <form action="/numbers" method="get">
         <label for="number_get">Get Number:</label>
-        <input type="text" id="number_get" name="number_get" required>
+        <input type="number" id="number_get" name="number_get" required>
         <button type="submit">Get</button>
     </form>
 
@@ -29,7 +29,7 @@
 
     <form action="/numbers" method="post">
         <label for="number_post">Post Number:</label>
-        <input type="text" id="number_post" name="number_post" required>
+        <input type="number" id="number_post" name="number_post" required>
         <button type="submit">Post</button>
     </form>
     
@@ -45,7 +45,7 @@
     <form action="/numbers" method="post">
         <input type="hidden" name="_method" value="DELETE">
         <label for="number_delete">Delete Number:</label>
-        <input type="text" id="number_delete" name="number_delete" required>
+        <input type="number" id="number_delete" name="number_delete" required>
         <button type="submit">Delete</button>
 
         {% if delete_result %}
