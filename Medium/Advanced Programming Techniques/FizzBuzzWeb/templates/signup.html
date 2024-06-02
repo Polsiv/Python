@@ -3,24 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Log In</title>
+    <title>Sign Up</title>
 </head>
 <body>
-    <h1>Log In</h1>
-    <form id="login-form" action="/login" method="post">
-        <label for="username">Username:</label>
+    <h1>Enter your credentials</h1>
+    <form id="signup-form" action="/register" method="post">
+        <label for="username">Username</label>
         <input type="text" id="username" name="username" required>
-        <br>
-        <br>
-        <label for="password">Password:</label>
+        <label for="password">Password</label>
         <input type="password" id="password" name="password" required>
-        <br>
-        <br>
-        <button type="submit">Log In</button>
+        <button type="submit">Submit</button>
     </form>
- 
+
     {% if message %}
-            {{message['message']}}
+            {{ message['message'] }}
+                
     {% endif %}
 
     <br>

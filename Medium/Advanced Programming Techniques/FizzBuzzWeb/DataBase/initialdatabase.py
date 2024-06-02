@@ -54,7 +54,7 @@ def insert_root():
     password = data[1]
     public_id = str(uuid.uuid4())
     hashed = generate_password_hash(password, method = 'pbkdf2:sha256')
-    CONNECTION.execute("INSERT INTO users (public_id, username, u_password, u_root) VALUES  (?, ?, ?, 1)", (public_id, username, hashed))
+    CONNECTION.execute("INSERT INTO users (public_id, username, u_password) VALUES  (?, ?, ?)", (public_id, username, hashed))
     CONNECTION.commit()
 
 def print_data():
@@ -62,7 +62,7 @@ def print_data():
     df = pd.read_sql_query("SELECT * FROM numbers", CONNECTION)
     print(df)
 
-#execute_schema()
+#xecute_schema()
 #insert_data()
 #insert_root()
 #print_data()

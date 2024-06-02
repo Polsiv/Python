@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+</head>
+<body>
+    <h1>Hello there! {{current_user}}</h1>
+    {% if message %}
+    <p>{{ message }}</p>
+    {% endif %}
+
+    <form action="/numbers" method="get">
+        <label for="number_get">Get Number:</label>
+        <input type="text" id="number_get" name="number_get" required>
+        <button type="submit">Get</button>
+    </form>
+
+
+    {% if get_result %}
+    <ul>
+        {% for key, value in get_result.items() %}
+            <li>{{ key }}: {{ value }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    <br>
+
+    <form action="/numbers" method="post">
+        <label for="number_post">Post Number:</label>
+        <input type="text" id="number_post" name="number_post" required>
+        <button type="submit">Post</button>
+    </form>
+    
+    {% if post_result %}
+    <ul>
+        {% for key, value in post_result.items() %}
+            <li>{{ key }}: {{ value }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    <br>
+
+    <form action="/numbers" method="post">
+        <input type="hidden" name="_method" value="DELETE">
+        <label for="number_delete">Delete Number:</label>
+        <input type="text" id="number_delete" name="number_delete" required>
+        <button type="submit">Delete</button>
+
+        {% if delete_result %}
+        <ul>
+            {% for key, value in delete_result.items() %}
+                <li>{{ key }}: {{ value }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+
+    </form>
+    <br>
+
+    <form action="/range/" method="get">
+        <button type="submit">Go to range!</button>
+    </form>
+
+    <br>
+    <form action="/logout" method="post">
+        <button type="submit">Logout</button>
+    </form>
+</body>
+</html>

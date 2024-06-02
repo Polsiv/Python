@@ -17,9 +17,8 @@ class MyApp:
         db_result = self.storage.get_data(number)
         db_result_active = self.storage.get_active_data(number)
         if db_result is None or db_result_active is None:
-            return "Not Found", 404
-
-        return f'{db_result[0]}: {db_result[1]}', 200
+            return {"message":"Not Found", "http code": 404}
+        return {db_result[0]: db_result[1], 'http code': 200}
 
     def post_number(self, number):
         """logic to post a number"""
@@ -29,41 +28,44 @@ class MyApp:
         if db_active_result is None:
             if db_result is None:
                 self.storage.post_data([number, self.fizzbuzz.compute_result(number)])
-                return f'{number}: {self.fizzbuzz.compute_result(number)}', 201
+                return {number: self.fizzbuzz.compute_result(number), 'http code' : 201}
 
             self.storage.update_inactive_data(number)
-            return f'{db_result[0]}: {db_result[1]}', 200
+            
+            return {db_result[0]: db_result[1], 'http code': 200}
 
-        return f'{db_result[0]}: {db_result[1]}', 409
+        
+        return {db_result[0]: db_result[1], 'http code': 409}
 
     def get_range(self, low_limit, sup_limit):
         """logic to get the range"""
         db_result = self.storage.get_range(low_limit, sup_limit)
         if low_limit > sup_limit:
-            return "error at stablishing limits.", 400
+            return {"message": "error at stablishing limits.", 'http code': 400}
 
         if len(db_result) == 0:
-            return "Not Found.", 404
+            return {"message": "not found.", 'http code': 404}
 
         nums_dict = {}
         for row in db_result:
             nums_dict[str(row[0])] = row[1]
-        return nums_dict, 200
+        return {'nums': nums_dict, 'http code': 200 }
 
     def delete_number(self, number):
         """logic to soft-delete a number"""
         db_result = self.storage.get_active_data(number)
         if db_result is None:
-            return "Not Found.", 404
+           
+            return  {'message': 'Not found', 'http code': 404}
 
         self.storage.delete_data(number)
-        return "", 204
+        return {'message': '', 'http code': 204}
     
     def hard_delete_number(self, number):
         """logic to hard-delete a number"""
         db_result = self.storage.get_data(number)
         if db_result is None:
-            return "Not Found.", 404
+            return {'message': 'Not found', 'http code': 404}
         
         self.storage.hard_delete_data(number)
-        return "", 204
+        return {'message': '', 'http code': 204}

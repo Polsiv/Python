@@ -1,6 +1,5 @@
 import sqlite3
 import uuid
-from flask import jsonify
 from DataBase.initialdatabase import DATA_BASE_ROUTE
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_jwt_extended import create_access_token
@@ -31,23 +30,21 @@ class UserHandler():
             connection.execute("INSERT INTO users (public_id, username, u_password) VALUES (?, ?, ?)", (public_id, data['username'], hashed_password))
             connection.commit()
             connection.close()
-            return jsonify({'message': 'user created!'}), 201
+            return {'message': 'user created!'}
 
-        return jsonify({'message': 'user already created!'}), 403
+        return {'message': 'user already created!'}
 
     def login_user(self, data):
         user = self.get_user(data["username"])
         if not user: 
-            return jsonify({"message": "User not registered"}), 404
+            return {"message": "User not registered"}
         
         if check_password_hash(user[3], data["password"]):
-            additional_claims = {"root": user[4]}
-            access_token = create_access_token(data["username"], additional_claims=additional_claims)
-            print("from user handler", access_token)
-            return jsonify(access_token=access_token)
+            access_token = create_access_token(data["username"])
+            return {"message": access_token}
         
-        return jsonify({"message": "Invalid Password"}), 401
+        return {"message": "Invalid Password"}
 
     def logout_user(self, jti, access_expires, redis_block_list):
         redis_block_list.set(jti, "", ex = access_expires)
-        return jsonify({"message": "Session closed"})
+        return {"message": "Session closed"}

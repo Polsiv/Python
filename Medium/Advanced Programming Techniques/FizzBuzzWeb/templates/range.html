@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Range Input</title>
+</head>
+<body>
+    <h1>Enter Range</h1>
+    <form id="range-form" action="/range/", method="post">
+        <label for="lowLimitInput">Low Limit:</label>
+        <input type="number" id="lowLimitInput" name="lowLimitInput" required>
+        <label for="supLimitInput">High Limit:</label>
+        <input type="number" id="supLimitInput" name="supLimitInput" required>
+        <button type="submit">Submit</button>
+        <br>
+        <br>
+    </form>
+
+    {% if num_range %}
+      
+        <h5>HTTP Code: {{ num_range['http code'] }}</h5>
+        {% if num_range['nums'] %}
+            {% for number, result in num_range['nums'].items() %}
+                <p>{{ number }}: {{ result }}</p>
+            {% endfor %}
+
+        {% else %}
+            {{ num_range['message']}}
+        {% endif %}
+    {% endif %}
+
+   
+    <form action="/numbers" method="get">
+        <button type="submit">Go to numbers!</button>
+    </form>
+    <br>
+    <form action="/logout" method="post">
+        <button type="submit">Logout</button>
+    </form>
+</body>
+</html>
