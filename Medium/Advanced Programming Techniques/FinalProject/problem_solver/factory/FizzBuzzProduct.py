@@ -1,0 +1,16 @@
+from .Iproblem import IProblemSolver
+
+class FizzBuzz(IProblemSolver):
+    
+    def compute_results(self, data):
+        list_result = []
+        for num in data:
+            result = self.__fizz_buzz(num)
+            list_result.append([num, result])
+        return list_result
+
+    def __fizz_buzz(self, data: int) -> str:
+        competedstring = ""
+        competedstring += "Fizz" * int(data % 3 == 0)
+        competedstring += "Buzz" * int(data % 5 == 0)
+        return competedstring or str(data)
