@@ -29,15 +29,25 @@ class Socket():
                 data = connection.recv(1024)
                 if data:
                     data_dict = json.loads(data.decode())
+ 
+                    response = requests.get('http://127.0.0.1:5000/publickey')
 
-                     
-                    data_server_pk = requests.get('http://127.0.0.1:5000/publickey')
-
-                    response = data_server_pk
                     if response.status_code == 200:
 
                         encrypted_json = sc.encrypt_data(data, response.text)
-                        print(encrypted_json)
+
+                        sent_data = {
+                            'socket_pk': sc.get_pk(),
+                            'data': encrypted_json 
+                            }
+           
+                        numbers_obtained = requests.post('http://127.0.0.1:5000/numbers', json=sent_data)
+
+                        if numbers_obtained.status_code == 200:
+                            pass
+                        
+                        else: 
+                            pass
 
                     else:
                         pass    

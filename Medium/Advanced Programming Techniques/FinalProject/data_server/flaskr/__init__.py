@@ -1,4 +1,4 @@
-from flask import Flask, Response, jsonify
+from flask import Flask, Response, jsonify, request
 import os
 import util.security as sc
 
@@ -32,5 +32,16 @@ def create_app(test_config=None):
         except Exception as e:
             app.logger.error(f"Error reading public key: {e}")
             return jsonify({"error": "Internal server error"}), 500
+        
+    @app.route('/numbers', methods = ("POST",))
+    def numbers():
+        data = request.json
+        flask_pvk = sc.get_pvk()
+        decrypted_data = sc.decrypt_data(data['data'], flask_pvk)
+        print(decrypted_data)
+
+        return "data recieved", 200
 
     return app
+
+  
