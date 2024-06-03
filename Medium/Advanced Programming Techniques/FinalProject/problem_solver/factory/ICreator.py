@@ -11,6 +11,6 @@ class ICreator(ABC):
         
         problem = self.factory_method()
 
-        result = problem.compute(data)
+        result = problem.compute_results(data)
 
         return result

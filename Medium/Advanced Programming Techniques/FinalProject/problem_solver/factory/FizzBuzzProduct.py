@@ -1,12 +1,12 @@
-from .Iproblem import IProblemSolver
+from Iproblem import IProblemSolver
 
 class FizzBuzz(IProblemSolver):
     
     def compute_results(self, data):
         list_result = []
         for num in data:
-            result = self.__fizz_buzz(num)
-            list_result.append([num, result])
+            result = self.__fizz_buzz(int(num))
+            list_result.append(str(num) + " " + result)
         return list_result
 
     def __fizz_buzz(self, data: int) -> str:

@@ -1,17 +1,16 @@
 from typing import List
-from .Iproblem import IProblemSolver
+from Iproblem import IProblemSolver
 
-class Prime(IProblemSolver):
+class PrimeProduct(IProblemSolver):
 
-  def compute_results(self, data: List[str]) -> List[str]:
-    result = []
-    line = ""
-    for element in data:
-      line = self.__prime_classifier(int(element))
-      result.append(element + " " + str(line))
-    return result
+  def compute_results(self, data: list) -> list[str]:
+    list_result = []
+    for num in data:
+      result = self.__prime_classifier(int(num))
+      list_result.append(str(num) + " " + result)
+    return list_result
 
-  def __prime(self,n):
+  def __prime(self, n):
     if n <= 1:
         return False
     if n <= 3:

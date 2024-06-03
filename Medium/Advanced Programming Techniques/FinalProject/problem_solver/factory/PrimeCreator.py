@@ -1,9 +1,7 @@
 from ICreator import ICreator
 from Iproblem import IProblemSolver
-from FizzBuzzProduct import FizzBuzz
+from PrimeProduct import PrimeProduct
 
-
-class FizzBuzzCreator(ICreator):
-
+class PrimeCreator(ICreator):
     def factory_method(self) -> IProblemSolver:
-        return FizzBuzz()
+        return PrimeProduct()
