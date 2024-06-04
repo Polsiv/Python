@@ -20,6 +20,10 @@ var (
 	out_put   string
 )
 
+type Response struct {
+	Response []string `json:"Results"`
+}
+
 type Config struct {
 	Problem  string
 	Total    int64
@@ -38,9 +42,12 @@ examples and usage of using your application. For example:
 Cobra is a CLI library for Go that empowers applications.
 This application is a tool to generate the needed files
 to quickly create a Cobra application.`,
-	// Uncomment the following line if your bare application
-	// has an action associated with it:
 	Run: func(cmd *cobra.Command, args []string) {
+
+		if low_limit < 0 || low_limit > sup_limit || sup_limit < 0 {
+			fmt.Println("Error: Low limit should be greater than or equal to 0 and less than or equal to the high limit.")
+			return
+		}
 
 		config := Config{
 			Problem:  problem,
@@ -58,14 +65,48 @@ to quickly create a Cobra application.`,
 
 		connection := conn.Connect_to_server()
 
-		conn.Send_data(connection, configJSON)
-
-		result, err := conn.Recieve_data(connection)
-
+		err = conn.Send_data(connection, configJSON)
 		if err != nil {
-			return fmt.Errorf("error deserializing JSON: %v", err)
+			fmt.Println("Error sending data:", err)
+			return
 		}
 
+		result, err := conn.Recieve_data(connection)
+		if err != nil {
+			fmt.Printf("error receiving data: %v\n", err)
+			return
+		}
+
+		var response Response
+
+		err = json.Unmarshal(result, &response)
+
+		if err != nil {
+			fmt.Printf("error deserializing JSON: %v\n", err)
+			return
+		}
+
+		if out_put != "console" {
+			file, err := os.Create(out_put)
+			if err != nil {
+				fmt.Printf("error creating file: %v\n", err)
+				return
+			}
+			defer file.Close()
+
+			for _, item := range response.Response {
+				_, err := file.WriteString(item + "\n")
+				if err != nil {
+					fmt.Printf("error writing to file: %v\n", err)
+					return
+				}
+			}
+			fmt.Printf("Results written to file: %s, go check themout!", out_put)
+		} else {
+			for _, item := range response.Response {
+				fmt.Println(item)
+			}
+		}
 	},
 }
 
@@ -88,10 +129,9 @@ func init() {
 	// Cobra also supports local flags, which will only run
 	// when this action is called directly.
 	rootCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
-	rootCmd.Flags().StringVarP(&problem, "problem", "p", "PrimeClasifier", "Problem to solve")
-	rootCmd.Flags().Int64VarP(&amount, "amount", "a", 500, "total amount of number")
+	rootCmd.Flags().StringVarP(&problem, "problem", "p", "PrimeClassifier", "Problem to solve")
+	rootCmd.Flags().Int64VarP(&amount, "amount", "a", 10, "total amount of number")
 	rootCmd.Flags().Int64VarP(&low_limit, "low", "l", 0, "low limit for rage")
-	rootCmd.Flags().Int64VarP(&sup_limit, "sup", "s", 1000000, "sup limit for range")
+	rootCmd.Flags().Int64VarP(&sup_limit, "sup", "s", 1000, "sup limit for range")
 	rootCmd.Flags().StringVarP(&out_put, "output", "o", "console", "output mode")
-
 }

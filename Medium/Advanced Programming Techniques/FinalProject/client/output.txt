@@ -1,0 +1,10 @@
+269 269
+389 389
+847 847
+75 FizzBuzz
+227 227
+290 Buzz
+227 227
+0 FizzBuzz
+198 Fizz
+675 FizzBuzz
