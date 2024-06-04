@@ -1,13 +1,19 @@
 from flask import Flask, Response, jsonify, request
 import os
-import util.security as sc
+import random
+from util.normal_distribution import NormalDistribution
+from util.uniform_distribution import UniformDistribution
+import json
+from util.security import Cryptographer
+
+CRYPT = Cryptographer()
+CRYPT.generate_keys()
 
 def create_app(test_config=None):
     # create and configure the app
     app = Flask(__name__, instance_relative_config=True)
     app.config.from_mapping(
         SECRET_KEY='118115c9d8814e719aee7dba24433e0a',
-
     )
     
     if test_config is None:
@@ -23,24 +29,34 @@ def create_app(test_config=None):
     except OSError:
         pass
 
-    # a simple page that says hello    
     @app.route('/publickey', methods = ['GET'])
     def public_key():
         try:
-            pk = sc.get_pk()
+            
+            pk = CRYPT.public_key.export_key().decode()
             return Response(pk, mimetype='text/plain')
         except Exception as e:
             app.logger.error(f"Error reading public key: {e}")
             return jsonify({"error": "Internal server error"}), 500
-        
-    @app.route('/numbers', methods = ("POST",))
-    def numbers():
-        data = request.json
-        flask_pvk = sc.get_pvk()
-        decrypted_data = sc.decrypt_data(data['data'], flask_pvk)
-        print(decrypted_data)
 
-        return "data recieved", 200
+    @app.route('/numbers', methods = ("POST",))
+    def numbers():    
+            try:
+                data = request.json
+                json_data = CRYPT.decrypt(data['data'])
+                low, sup, total = json_data["LowLimit"],  json_data["SupLimit"], json_data["Total"]
+                normal = NormalDistribution()
+                uniform = UniformDistribution()
+                to_choice = [normal.gen_numbers(low, sup, total), uniform.gen_numbers(low, sup, total)]
+                numbers = random.choice(to_choice)
+                to_send = { "numbers": numbers}
+                to_send_json = json.dumps(to_send)  
+                encrypted_json = CRYPT.encrypt(to_send_json, data['problem_handler_pk'])
+                sent_data = { 'data': encrypted_json}
+            
+                return jsonify(sent_data), 200
+            except:
+                return jsonify({"error": "Internal server error"}), 500
 
     return app
 

@@ -1,7 +1,9 @@
 import socket
 import json
 import requests
-import security as sc
+from security import Cryptographer
+
+CRYPT = Cryptographer()
 
 class Socket():
 
@@ -28,26 +30,29 @@ class Socket():
                 # Receive data
                 data = connection.recv(1024)
                 if data:
-                    data_dict = json.loads(data.decode())
+                   #data_dict = json.loads(data.decode())
  
                     response = requests.get('http://127.0.0.1:5000/publickey')
 
                     if response.status_code == 200:
-
-                        encrypted_json = sc.encrypt_data(data, response.text)
-
+                       
+                        CRYPT.generate_keys()
+                        encrypted_json = CRYPT.encrypt(data, response.text)
                         sent_data = {
-                            'socket_pk': sc.get_pk(),
+                            'problem_handler_pk': CRYPT.public_key.export_key().decode(),
                             'data': encrypted_json 
                             }
            
-                        numbers_obtained = requests.post('http://127.0.0.1:5000/numbers', json=sent_data)
+                        data_obtained = requests.post('http://127.0.0.1:5000/numbers', json = sent_data)
 
-                        if numbers_obtained.status_code == 200:
-                            pass
-                        
+                        if data_obtained.status_code == 200:
+
+                            obtained_data = data_obtained.json()
+                            decrypted_numbers = CRYPT.decrypt(obtained_data['data'])
+                      
+
                         else: 
-                            pass
+                            print("Error")
 
                     else:
                         pass    

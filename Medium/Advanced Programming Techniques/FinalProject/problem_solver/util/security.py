@@ -1,28 +1,50 @@
-import rsa
-import os
-import base64
+from Crypto.PublicKey import RSA
+from Crypto.Cipher import PKCS1_OAEP, AES
+from Crypto.Random import get_random_bytes 
+from Crypto.Util.Padding import pad, unpad
+import json
+import binascii
 
-def generate_key_pair():
-    public_key, private_key = rsa.newkeys(1024)
+class Cryptographer:
+    def __init__(self):
+        self.private_key = None
+        self.public_key = None
 
-    with open("public.pem", "wb") as f:
-        f.write(public_key.save_pkcs1("PEM"))
+    def generate_keys(self):
+        self.private_key = RSA.generate(1024)
+        self.public_key = self.private_key.publickey()
 
-    with open("private.pem", "wb") as f:
-        f.write(private_key.save_pkcs1("PEM"))
+    def encrypt(self, data, public_key_pem):
 
+        receiver_public_key = RSA.import_key(public_key_pem)
+        aes_key = get_random_bytes(16)
+        cipher_aes = AES.new(aes_key, AES.MODE_CBC)
+        iv = cipher_aes.iv
 
-def encrypt_data(data, key):
+        encrypted_data = cipher_aes.encrypt(pad(data, AES.block_size))
 
-    public_key = rsa.PublicKey.load_pkcs1(base64.b64decode(key.encode()))
-    encrypted_data = rsa.encrypt(data, public_key)
-    encoded_data = base64.b64encode(encrypted_data).decode('utf-8')
-    return encoded_data
+        cipher_rsa = PKCS1_OAEP.new(receiver_public_key)
+        encrypted_aes_key = cipher_rsa.encrypt(aes_key)
 
-def get_pk():
-    key_path = os.path.join(os.path.dirname(__file__), 'keys', 'public.pem')
-    with open(key_path, "rb") as f:        
-        pk = f.read()
-    return base64.b64encode(pk).decode('utf-8')
+        return {
+            'encrypted_aes_key': binascii.hexlify(encrypted_aes_key).decode(),
+            'encrypted_data': binascii.hexlify(encrypted_data).decode(),
+            'iv': binascii.hexlify(iv).decode()
+        }
 
+    def decrypt(self, encrypted):
 
+        encrypted_aes_key = binascii.unhexlify(encrypted['encrypted_aes_key'])
+        encrypted_data = binascii.unhexlify(encrypted['encrypted_data'])
+        iv = binascii.unhexlify(encrypted['iv'])
+
+        cipher_rsa = PKCS1_OAEP.new(self.private_key)
+        decrypted_aes_key = cipher_rsa.decrypt(encrypted_aes_key)
+
+        cipher_aes = AES.new(decrypted_aes_key, AES.MODE_CBC, iv)
+        decrypted_data = unpad(cipher_aes.decrypt(encrypted_data), AES.block_size)
+
+        decrypted_json = decrypted_data.decode()
+
+        return json.loads(decrypted_json)
+    
