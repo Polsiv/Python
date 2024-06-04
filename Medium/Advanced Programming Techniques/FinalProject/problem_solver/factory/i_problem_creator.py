@@ -1,5 +1,5 @@
 from abc import ABC, abstractmethod
-from Iproblem import IProblemSolver
+from .i_problem_solver import IProblemSolver
 
 class ICreator(ABC):
 

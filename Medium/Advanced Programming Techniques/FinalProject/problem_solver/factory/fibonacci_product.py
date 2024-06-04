@@ -1,6 +1,6 @@
-from Iproblem import IProblemSolver
+from .i_problem_solver import IProblemSolver
 
-class FibonnaciProduct(IProblemSolver):
+class FibonacciProduct(IProblemSolver):
 
     def compute_results(self, data: list) -> list[str]:
         list_result = []

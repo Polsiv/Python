@@ -60,9 +60,11 @@ to quickly create a Cobra application.`,
 
 		conn.Send_data(connection, configJSON)
 
-		result := conn.Recieve_data(connection)
+		result, err := conn.Recieve_data(connection)
 
-		fmt.Println(result)
+		if err != nil {
+			return fmt.Errorf("error deserializing JSON: %v", err)
+		}
 
 	},
 }
@@ -86,7 +88,7 @@ func init() {
 	// Cobra also supports local flags, which will only run
 	// when this action is called directly.
 	rootCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
-	rootCmd.Flags().StringVarP(&problem, "problem", "p", "PrimeVerifier", "Problem to solve")
+	rootCmd.Flags().StringVarP(&problem, "problem", "p", "PrimeClasifier", "Problem to solve")
 	rootCmd.Flags().Int64VarP(&amount, "amount", "a", 500, "total amount of number")
 	rootCmd.Flags().Int64VarP(&low_limit, "low", "l", 0, "low limit for rage")
 	rootCmd.Flags().Int64VarP(&sup_limit, "sup", "s", 1000000, "sup limit for range")

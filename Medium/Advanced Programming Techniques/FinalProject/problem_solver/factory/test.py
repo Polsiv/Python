@@ -1,7 +1,7 @@
-from ICreator import ICreator
-from FizzBuzzCreator import FizzBuzzCreator
-from FibonacciCreator import FibonacciCreator
-from PrimeCreator import PrimeCreator
+from problem_solver.factory.i_problem_creator import ICreator
+from problem_solver.factory.fizzbuzz_creator import FizzBuzzCreator
+from problem_solver.factory.fibonacci_creator import FibonacciCreator
+from problem_solver.factory.prime_creator import PrimeCreator
 
 def client_code(creator :ICreator):
 

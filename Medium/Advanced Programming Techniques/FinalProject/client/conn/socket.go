@@ -1,10 +1,15 @@
 package conn
 
 import (
+	"bytes"
 	"fmt"
 	"net"
 	"os"
 )
+
+type Response struct {
+	Result []string `json:"result"`
+}
 
 func Connect_to_server() net.Conn {
 	conn, err := net.Dial("tcp", "localhost:12345")
@@ -24,13 +29,24 @@ func Send_data(connection net.Conn, message []byte) {
 	}
 }
 
-func Recieve_data(connection net.Conn) []byte {
-	buff := make([]byte, 1024)
-	n, err := connection.Read(buff)
-	if err != nil {
-		fmt.Println("Error reading reading respone:", err)
-		return nil
+func Recieve_data(connect net.Conn) ([]byte, error) {
+
+	buffer := make([]byte, 1024)
+	var result bytes.Buffer
+
+	for {
+		n, err := connect.Read(buffer)
+		if err != nil {
+			return nil, fmt.Errorf("error: %v", err)
+		}
+
+		result.Write(buffer[:n])
+
+		if bytes.Contains(buffer[:n], []byte{'\n'}) {
+			break
+		}
 	}
 
-	return buff[:n]
+	return result.Bytes(), nil
+
 }

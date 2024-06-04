@@ -1,5 +1,4 @@
-from typing import List
-from Iproblem import IProblemSolver
+from .i_problem_solver import IProblemSolver
 
 class PrimeProduct(IProblemSolver):
 
