@@ -1,6 +1,7 @@
 Virtual enviroment
-Redis, import via cmd and install from github: https://github.com/microsoftarchive/redis/releases
+Redis, import via cmd and install from github: https://github.com/microsoftarchive/redis/releases (Redis-x64-3.0.504.zip)
 flask
 flask_jwt_extended
 uuid
 pyjwt (first uninstall jwt if installed )
+werkzeug
