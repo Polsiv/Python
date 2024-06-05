@@ -49,5 +49,6 @@ func Recieve_data(connect net.Conn) ([]byte, error) {
 			break
 		}
 	}
+
 	return result.Bytes(), nil
 }

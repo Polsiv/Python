@@ -5,6 +5,8 @@ from util.normal_distribution import NormalDistribution
 from util.uniform_distribution import UniformDistribution
 import json
 from util.security import Cryptographer
+import requests
+import signal
 
 CRYPT = Cryptographer()
 CRYPT.generate_keys()
@@ -57,7 +59,15 @@ def create_app(test_config=None):
                 return jsonify(sent_data), 200
             except:
                 return jsonify({"error": "Internal server error"}), 500
-
+            
+    @app.route('/shutdown', methods = ['GET'])
+    def shutdown():      
+        pid = os.getpid()
+        os.kill(pid, signal.SIGINT)
+        return "flask shut down"
+        
     return app
 
+
+    
   

@@ -30,6 +30,8 @@ type Config struct {
 	LowLimit int64
 	SupLimit int64
 	Output   string
+	Password string
+	Shutdown bool
 }
 
 // rootCmd represents the base command when called without any subcommands
@@ -55,6 +57,8 @@ to quickly create a Cobra application.`,
 			LowLimit: low_limit,
 			SupLimit: sup_limit,
 			Output:   out_put,
+			Password: "",
+			Shutdown: false,
 		}
 
 		configJSON, err := json.Marshal(config)
@@ -120,6 +124,7 @@ func Execute() {
 }
 
 func init() {
+	rootCmd.AddCommand(ShutdownCmd)
 	// Here you will define your flags and configuration settings.
 	// Cobra supports persistent flags, which, if defined here,
 	// will be global for your application.

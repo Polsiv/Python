@@ -1,10 +1,20 @@
-269 269
-389 389
-847 847
-75 FizzBuzz
-227 227
-290 Buzz
-227 227
-0 FizzBuzz
-198 Fizz
-675 FizzBuzz
+941 prime
+938 No classified
+729 No classified
+998 semiprime
+163 prime
+199 prime
+380 No classified
+321 semiprime
+802 semiprime
+675 No classified
+391 semiprime
+286 No classified
+941 prime
+509 prime
+170 No classified
+548 No classified
+835 semiprime
+426 No classified
+902 No classified
+683 prime
