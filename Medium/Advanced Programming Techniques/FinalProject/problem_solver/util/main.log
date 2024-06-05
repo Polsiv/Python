@@ -177,3 +177,92 @@
 2024-06-04 21:48:49 - root - INFO - Connection from ('127.0.0.1', 62510)
 2024-06-05 17:00:52 - root - INFO - Server listening on localhost:12345
 2024-06-05 17:01:26 - root - INFO - Connection from ('127.0.0.1', 56350)
+2024-06-05 17:12:43 - root - INFO - Server listening on localhost:12345
+2024-06-05 17:12:45 - root - INFO - Connection from ('127.0.0.1', 56449)
+2024-06-05 17:14:12 - root - INFO - Server listening on localhost:12345
+2024-06-05 17:14:15 - root - INFO - Connection from ('127.0.0.1', 56467)
+2024-06-05 17:14:17 - root - ERROR - Failed to connect to the Flask server
+2024-06-05 17:16:17 - root - INFO - Server listening on localhost:12345
+2024-06-05 17:16:19 - root - INFO - Connection from ('127.0.0.1', 56484)
+2024-06-05 17:16:21 - root - ERROR - Failed to connect to the Flask server
+2024-06-05 17:20:10 - root - INFO - Server listening on localhost:12345
+2024-06-05 17:20:13 - root - INFO - Connection from ('127.0.0.1', 56513)
+2024-06-05 17:20:15 - root - ERROR - Failed to connect to the Flask server for public key: HTTPConnectionPool(host='127.0.0.1', port=5000): Max retries exceeded with url: /publickey (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000236AAA25250>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+2024-06-05 17:20:15 - root - ERROR - Error handling data: Flask server is inactive or unreachable
+2024-06-05 17:20:15 - root - ERROR - Failed to handle data: Flask server is inactive or unreachable
+2024-06-05 17:22:06 - root - INFO - Connection from ('127.0.0.1', 56536)
+2024-06-05 17:22:07 - root - INFO - PrimeClassifier solution performed.
+2024-06-05 17:22:28 - root - INFO - Connection from ('127.0.0.1', 56541)
+2024-06-05 17:22:41 - root - INFO - Connection from ('127.0.0.1', 56545)
+2024-06-05 17:22:41 - root - ERROR - Failed to connect to the Flask server for shutdown
+2024-06-05 17:37:35 - root - INFO - Server listening on localhost:12345
+2024-06-05 17:42:24 - root - INFO - Connection from ('127.0.0.1', 56793)
+2024-06-05 17:42:24 - root - ERROR - Failed to connect to the Flask server for shutdown
+2024-06-05 17:42:27 - root - INFO - Server listening on localhost:12345
+2024-06-05 17:42:29 - root - INFO - Connection from ('127.0.0.1', 56799)
+2024-06-05 17:42:31 - root - ERROR - Failed to connect to the Flask server for public key: HTTPConnectionPool(host='127.0.0.1', port=5000): Max retries exceeded with url: /publickey (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000002933CA85250>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+2024-06-05 17:42:31 - root - ERROR - Error handling data: Flask server is inactive or unreachable
+2024-06-05 17:42:31 - root - ERROR - Failed to handle data: Flask server is inactive or unreachable
+2024-06-05 17:44:15 - root - INFO - Connection from ('127.0.0.1', 56802)
+2024-06-05 17:44:17 - root - ERROR - Failed to connect to the Flask server for public key: HTTPConnectionPool(host='127.0.0.1', port=5000): Max retries exceeded with url: /publickey (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000002933DE16810>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+2024-06-05 17:44:17 - root - ERROR - Error handling data: Flask server is inactive or unreachable
+2024-06-05 17:44:17 - root - ERROR - Failed to handle data: Flask server is inactive or unreachable
+2024-06-05 17:44:28 - root - INFO - Connection from ('127.0.0.1', 56807)
+2024-06-05 17:44:28 - root - INFO - FizzBuzz solution performed.
+2024-06-05 17:47:23 - root - INFO - Connection from ('127.0.0.1', 56877)
+2024-06-05 17:47:31 - root - INFO - Connection from ('127.0.0.1', 56881)
+2024-06-05 17:48:24 - root - INFO - Connection from ('127.0.0.1', 56885)
+2024-06-05 17:48:25 - root - ERROR - Failed to connect to the Flask server for shutdown
+2024-06-05 17:51:51 - root - INFO - Server listening on localhost:12345
+2024-06-05 17:51:56 - root - INFO - Connection from ('127.0.0.1', 56916)
+2024-06-05 17:51:59 - root - ERROR - Failed to connect to the Flask server for shutdown
+2024-06-05 18:18:36 - root - INFO - Connection from ('127.0.0.1', 57142)
+2024-06-05 18:18:39 - root - ERROR - Failed to connect to the Flask server for shutdown
+2024-06-05 18:31:49 - root - INFO - Server listening on localhost:12345
+2024-06-05 18:36:04 - root - INFO - Server listening on localhost:12345
+2024-06-05 18:40:25 - root - INFO - Connection from ('127.0.0.1', 57374)
+2024-06-05 18:40:27 - root - ERROR - Failed to get public key: HTTPConnectionPool(host='127.0.0.1', port=5000): Max retries exceeded with url: /publickey (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000171F0B9E3D0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+2024-06-05 18:40:27 - root - ERROR - Error handling data: HTTPConnectionPool(host='127.0.0.1', port=5000): Max retries exceeded with url: /publickey (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000171F0B9E3D0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+2024-06-05 18:40:27 - root - ERROR - Failed to handle problem request: HTTPConnectionPool(host='127.0.0.1', port=5000): Max retries exceeded with url: /publickey (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000171F0B9E3D0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+2024-06-05 18:42:07 - root - INFO - Server listening on localhost:12345
+2024-06-05 18:42:17 - root - INFO - Connection from ('127.0.0.1', 57381)
+2024-06-05 18:42:19 - root - ERROR - Failed to get public key: HTTPConnectionPool(host='127.0.0.1', port=5000): Max retries exceeded with url: /publickey (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000159D091A8D0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+2024-06-05 18:42:19 - root - ERROR - Error handling data: HTTPConnectionPool(host='127.0.0.1', port=5000): Max retries exceeded with url: /publickey (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000159D091A8D0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+2024-06-05 18:42:19 - root - ERROR - Failed to handle problem request: HTTPConnectionPool(host='127.0.0.1', port=5000): Max retries exceeded with url: /publickey (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000159D091A8D0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+2024-06-05 18:42:27 - root - INFO - Connection from ('127.0.0.1', 57387)
+2024-06-05 18:42:27 - root - INFO - PrimeClassifier solution performed.
+2024-06-05 18:44:04 - root - INFO - Connection from ('127.0.0.1', 57404)
+2024-06-05 18:44:25 - root - INFO - Connection from ('127.0.0.1', 57406)
+2024-06-05 18:44:26 - root - ERROR - Failed to connect to the Flask server for shutdown
+2024-06-05 18:44:43 - root - INFO - Connection from ('127.0.0.1', 57412)
+2024-06-05 18:44:46 - root - ERROR - Failed to connect to the Flask server for shutdown
+2024-06-05 18:51:05 - root - INFO - Server listening on localhost:12345
+2024-06-05 18:51:12 - root - INFO - Connection from ('127.0.0.1', 57454)
+2024-06-05 18:51:14 - root - ERROR - Failed to connect to the Flask server for public key: HTTPConnectionPool(host='127.0.0.1', port=5000): Max retries exceeded with url: /publickey (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000002AA2353E3D0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+2024-06-05 18:51:14 - root - ERROR - Error handling data: Flask server is inactive or unreachable
+2024-06-05 18:51:14 - root - ERROR - Failed to handle data: Flask server is inactive or unreachable
+2024-06-05 18:51:25 - root - INFO - Connection from ('127.0.0.1', 57458)
+2024-06-05 18:51:27 - root - ERROR - Failed to connect to the Flask server for public key: HTTPConnectionPool(host='127.0.0.1', port=5000): Max retries exceeded with url: /publickey (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000002AA236DDCD0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+2024-06-05 18:51:27 - root - ERROR - Error handling data: Flask server is inactive or unreachable
+2024-06-05 18:51:27 - root - ERROR - Failed to handle data: Flask server is inactive or unreachable
+2024-06-05 18:54:18 - root - INFO - Server listening on localhost:12345
+2024-06-05 18:54:26 - root - INFO - Connection from ('127.0.0.1', 57519)
+2024-06-05 18:55:03 - root - INFO - Server listening on localhost:12345
+2024-06-05 18:55:10 - root - INFO - Connection from ('127.0.0.1', 57527)
+2024-06-05 18:55:10 - root - INFO - PrimeClassifier solution performed.
+2024-06-05 18:55:25 - root - INFO - Connection from ('127.0.0.1', 57532)
+2024-06-05 18:55:31 - root - INFO - Connection from ('127.0.0.1', 57536)
+2024-06-05 18:57:02 - root - INFO - Server listening on localhost:12345
+2024-06-05 18:57:11 - root - INFO - Connection from ('127.0.0.1', 57553)
+2024-06-05 18:57:13 - root - ERROR - Failed to connect to the Flask server for public key: HTTPConnectionPool(host='127.0.0.1', port=5000): Max retries exceeded with url: /publickey (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001E444D8EE10>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+2024-06-05 18:57:13 - root - ERROR - Error handling data: Flask server is inactive or unreachable
+2024-06-05 18:58:35 - root - INFO - Server listening on localhost:12345
+2024-06-05 18:58:38 - root - INFO - Connection from ('127.0.0.1', 57568)
+2024-06-05 18:58:40 - root - ERROR - Failed to connect to the Flask server for public key: HTTPConnectionPool(host='127.0.0.1', port=5000): Max retries exceeded with url: /publickey (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000002A196AEE3D0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+2024-06-05 18:58:40 - root - ERROR - Error handling data: Flask server is inactive or unreachable
+2024-06-05 18:58:40 - root - ERROR - Failed to handle data: Flask server is inactive or unreachable
+2024-06-05 18:58:49 - root - INFO - Connection from ('127.0.0.1', 57573)
+2024-06-05 18:58:49 - root - INFO - PrimeClassifier solution performed.
+2024-06-05 18:59:06 - root - INFO - Connection from ('127.0.0.1', 57577)
+2024-06-05 18:59:14 - root - INFO - Connection from ('127.0.0.1', 57581)
+2024-06-05 18:59:14 - root - ERROR - Failed to connect to the Flask server for shutdown

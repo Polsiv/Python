@@ -41,7 +41,11 @@ to quickly create a Cobra application.`,
 			return
 
 		}
-		connection := conn.Connect_to_server()
+		connection, err := conn.Connect_to_server()
+		if err != nil {
+			fmt.Println("Error: Unable to connect to server. Please ensure the server is running and try again!.")
+			return
+		}
 
 		err = conn.Send_data(connection, configJSON)
 		if err != nil {

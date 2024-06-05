@@ -2,23 +2,23 @@ package conn
 
 import (
 	"bytes"
+	"errors"
 	"fmt"
 	"io"
 	"net"
-	"os"
 )
 
 type Response struct {
 	Result []string `json:"result"`
 }
 
-func Connect_to_server() net.Conn {
+// Connect_to_server tries to establish a connection and returns an error if it fails.
+func Connect_to_server() (net.Conn, error) {
 	conn, err := net.Dial("tcp", "localhost:12345")
 	if err != nil {
-		fmt.Println("Error connecting to server:", err)
-		os.Exit(1)
+		return nil, errors.New("failed to connect to server")
 	}
-	return conn
+	return conn, nil
 }
 
 func Send_data(connection net.Conn, message []byte) error {
