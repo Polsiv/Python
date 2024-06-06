@@ -34,7 +34,6 @@ def create_app(test_config=None):
     @app.route('/publickey', methods = ['GET'])
     def public_key():
         try:
-            
             pk = CRYPT.public_key.export_key().decode()
             return Response(pk, mimetype='text/plain')
         except Exception as e:

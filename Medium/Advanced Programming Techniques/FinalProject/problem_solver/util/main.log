@@ -1,268 +1,72 @@
-2024-06-04 17:54:58 - root - INFO - Server listeing on localhost : 12345
-2024-06-04 17:55:01 - root - INFO - Connection from ('127.0.0.1', 59961)
-2024-06-04 17:55:01 - root - ERROR - Problem requested not found.
-2024-06-04 19:57:16 - root - INFO - Server listeing on localhost : 12345
-2024-06-04 19:57:58 - root - INFO - Connection from ('127.0.0.1', 61112)
-2024-06-04 19:57:58 - root - ERROR - Problem requested not found.
-2024-06-04 20:00:19 - root - INFO - Connection from ('127.0.0.1', 61133)
-2024-06-04 20:00:19 - root - ERROR - Problem requested not found.
-2024-06-04 20:01:26 - root - INFO - Connection from ('127.0.0.1', 61152)
-2024-06-04 20:01:26 - root - ERROR - Problem requested not found.
-2024-06-04 20:01:37 - root - INFO - Connection from ('127.0.0.1', 61157)
-2024-06-04 20:01:37 - root - ERROR - Problem requested not found.
-2024-06-04 20:14:16 - root - INFO - Server listeing on localhost : 12345
-2024-06-04 20:14:23 - root - INFO - Connection from ('127.0.0.1', 61260)
-2024-06-04 20:14:23 - root - ERROR - Problem requested not found.
-2024-06-04 20:14:41 - root - INFO - Server listeing on localhost : 12345
-2024-06-04 20:14:44 - root - INFO - Connection from ('127.0.0.1', 61269)
-2024-06-04 20:14:44 - root - ERROR - Problem requested not found.
-2024-06-04 20:15:04 - root - INFO - Server listeing on localhost : 12345
-2024-06-04 20:15:07 - root - INFO - Connection from ('127.0.0.1', 61278)
-2024-06-04 20:15:07 - root - ERROR - Problem requested not found.
-2024-06-04 20:15:50 - root - INFO - Server listeing on localhost : 12345
-2024-06-04 20:15:54 - root - INFO - Connection from ('127.0.0.1', 61286)
-2024-06-04 20:15:54 - root - ERROR - Problem requested not found.
-2024-06-04 20:25:02 - root - INFO - Server listeing on localhost : 12345
-2024-06-04 20:25:14 - root - INFO - Connection from ('127.0.0.1', 61420)
-2024-06-04 20:25:37 - root - INFO - Server listeing on localhost : 12345
-2024-06-04 20:25:42 - root - INFO - Connection from ('127.0.0.1', 61429)
-2024-06-04 20:26:11 - root - INFO - Server listeing on localhost : 12345
-2024-06-04 20:26:13 - root - INFO - Connection from ('127.0.0.1', 61444)
-2024-06-04 20:26:13 - root - INFO - FizzBuzz solution performed.
-2024-06-04 20:26:46 - root - INFO - Connection from ('127.0.0.1', 61452)
-2024-06-04 20:26:46 - root - INFO - FizzBuzz solution performed.
-2024-06-04 20:27:26 - root - INFO - Connection from ('127.0.0.1', 61466)
-2024-06-04 20:27:26 - root - INFO - FizzBuzz solution performed.
-2024-06-04 20:28:16 - root - INFO - Server listeing on localhost : 12345
-2024-06-04 20:28:28 - root - INFO - Connection from ('127.0.0.1', 61481)
-2024-06-04 20:28:28 - root - INFO - FizzBuzz solution performed.
-2024-06-04 20:31:41 - root - INFO - Server listeing on localhost : 12345
-2024-06-04 20:31:46 - root - INFO - Connection from ('127.0.0.1', 61513)
-2024-06-04 20:32:49 - root - INFO - Server listeing on localhost : 12345
-2024-06-04 20:32:55 - root - INFO - Connection from ('127.0.0.1', 61525)
-2024-06-04 20:32:55 - root - INFO - FizzBuzz solution performed.
-2024-06-04 20:33:19 - root - INFO - Connection from ('127.0.0.1', 61531)
-2024-06-04 20:33:19 - root - ERROR - Problem requested not found.
-2024-06-04 20:33:49 - root - INFO - Connection from ('127.0.0.1', 61541)
-2024-06-04 20:33:49 - root - ERROR - Problem requested not found.
-2024-06-04 20:34:28 - root - INFO - Server listeing on localhost : 12345
-2024-06-04 20:34:36 - root - INFO - Connection from ('127.0.0.1', 61557)
-2024-06-04 20:34:36 - root - ERROR - Problem requested not found.
-2024-06-04 20:35:42 - root - INFO - Server listeing on localhost : 12345
-2024-06-04 20:35:45 - root - INFO - Connection from ('127.0.0.1', 61573)
-2024-06-04 20:35:46 - root - ERROR - Problem requested not found.
-2024-06-04 20:37:07 - root - INFO - Connection from ('127.0.0.1', 61584)
-2024-06-04 20:37:07 - root - INFO - PrimeClassifer solution performed.
-2024-06-04 20:37:14 - root - INFO - Connection from ('127.0.0.1', 61590)
-2024-06-04 20:37:14 - root - ERROR - Problem requested not found.
-2024-06-04 20:39:54 - root - INFO - Connection from ('127.0.0.1', 61615)
-2024-06-04 20:39:54 - root - ERROR - Problem requested not found.
-2024-06-04 20:40:10 - root - INFO - Connection from ('127.0.0.1', 61619)
-2024-06-04 20:40:10 - root - ERROR - Problem requested not found.
-2024-06-04 20:42:18 - root - INFO - Connection from ('127.0.0.1', 61639)
-2024-06-04 20:42:18 - root - ERROR - Problem requested not found.
-2024-06-04 20:46:01 - root - INFO - Connection from ('127.0.0.1', 61660)
-2024-06-04 20:46:01 - root - ERROR - Problem requested not found.
-2024-06-04 20:46:13 - root - INFO - Connection from ('127.0.0.1', 61666)
-2024-06-04 20:46:13 - root - ERROR - Problem requested not found.
-2024-06-04 20:46:16 - root - INFO - Connection from ('127.0.0.1', 61670)
-2024-06-04 20:46:16 - root - ERROR - Problem requested not found.
-2024-06-04 20:55:31 - root - INFO - Server listeing on localhost : 12345
-2024-06-04 20:55:40 - root - INFO - Connection from ('127.0.0.1', 61758)
-2024-06-04 20:55:40 - root - ERROR - Problem requested not found.
-2024-06-04 20:56:34 - root - INFO - Connection from ('127.0.0.1', 61777)
-2024-06-04 20:56:34 - root - ERROR - Problem requested not found.
-2024-06-04 20:56:34 - root - INFO - Cutting off conecction from ('127.0.0.1', 61777)
-2024-06-04 20:57:43 - root - INFO - Server listeing on localhost : 12345
-2024-06-04 20:57:48 - root - INFO - Connection from ('127.0.0.1', 61798)
-2024-06-04 20:57:48 - root - ERROR - Problem requested not found.
-2024-06-04 20:59:36 - root - INFO - Server listeing on localhost : 12345
-2024-06-04 20:59:40 - root - INFO - Connection from ('127.0.0.1', 61832)
-2024-06-04 20:59:40 - root - ERROR - Problem requested not found.
-2024-06-04 20:59:54 - root - INFO - Connection from ('127.0.0.1', 61839)
-2024-06-04 20:59:54 - root - ERROR - Problem requested not found.
-2024-06-04 21:00:31 - root - INFO - Connection from ('127.0.0.1', 61852)
-2024-06-04 21:00:31 - root - ERROR - Problem requested not found.
-2024-06-04 21:00:31 - root - INFO - Cutting off conecction from ('127.0.0.1', 61852)
-2024-06-04 21:01:27 - root - INFO - Connection from ('127.0.0.1', 61867)
-2024-06-04 21:01:27 - root - ERROR - Problem requested not found.
-2024-06-04 21:01:41 - root - INFO - Server listeing on localhost : 12345
-2024-06-04 21:01:47 - root - INFO - Connection from ('127.0.0.1', 61875)
-2024-06-04 21:01:48 - root - ERROR - Problem requested not found.
-2024-06-04 21:02:43 - root - INFO - Connection from ('127.0.0.1', 61886)
-2024-06-04 21:02:43 - root - ERROR - Problem requested not found.
-2024-06-04 21:03:53 - root - INFO - Server listeing on localhost : 12345
-2024-06-04 21:03:58 - root - INFO - Connection from ('127.0.0.1', 61910)
-2024-06-04 21:03:59 - root - ERROR - Problem requested not found.
-2024-06-04 21:03:59 - root - INFO - Cutting off conecction from ('127.0.0.1', 61910)
-2024-06-04 21:04:20 - root - INFO - Connection from ('127.0.0.1', 61917)
-2024-06-04 21:04:20 - root - ERROR - Problem requested not found.
-2024-06-04 21:04:20 - root - INFO - Cutting off conecction from ('127.0.0.1', 61917)
-2024-06-04 21:05:40 - root - INFO - Server listeing on localhost : 12345
-2024-06-04 21:05:46 - root - INFO - Connection from ('127.0.0.1', 61934)
-2024-06-04 21:05:46 - root - ERROR - Problem requested not found.
-2024-06-04 21:05:46 - root - INFO - Cutting off conecction from ('127.0.0.1', 61934)
-2024-06-04 21:06:01 - root - INFO - Connection from ('127.0.0.1', 61939)
-2024-06-04 21:06:02 - root - ERROR - Problem requested not found.
-2024-06-04 21:06:02 - root - INFO - Cutting off conecction from ('127.0.0.1', 61939)
-2024-06-04 21:09:04 - root - INFO - Server listeing on localhost : 12345
-2024-06-04 21:09:10 - root - INFO - Connection from ('127.0.0.1', 61988)
-2024-06-04 21:09:11 - root - ERROR - Problem requested not found.
-2024-06-04 21:09:11 - root - INFO - Cutting off conecction from ('127.0.0.1', 61988)
-2024-06-04 21:10:46 - root - INFO - Connection from ('127.0.0.1', 62003)
-2024-06-04 21:10:46 - root - INFO - PrimeClassifer solution performed.
-2024-06-04 21:11:10 - root - INFO - Server listeing on localhost : 12345
-2024-06-04 21:11:14 - root - INFO - Connection from ('127.0.0.1', 62015)
-2024-06-04 21:11:15 - root - ERROR - Problem requested not found.
-2024-06-04 21:11:15 - root - INFO - Cutting off conecction from ('127.0.0.1', 62015)
-2024-06-04 21:11:21 - root - INFO - Connection from ('127.0.0.1', 62019)
-2024-06-04 21:11:21 - root - INFO - PrimeClassifer solution performed.
-2024-06-04 21:11:35 - root - INFO - Server listeing on localhost : 12345
-2024-06-04 21:11:44 - root - INFO - Connection from ('127.0.0.1', 62034)
-2024-06-04 21:11:45 - root - ERROR - Problem requested not found.
-2024-06-04 21:11:45 - root - INFO - Cutting off conecction from ('127.0.0.1', 62034)
-2024-06-04 21:14:02 - root - INFO - Connection from ('127.0.0.1', 62045)
-2024-06-04 21:14:02 - root - ERROR - Problem requested not found.
-2024-06-04 21:15:42 - root - INFO - Server listeing on localhost : 12345
-2024-06-04 21:15:47 - root - INFO - Connection from ('127.0.0.1', 62065)
-2024-06-04 21:15:47 - root - INFO - PrimeClassifer solution performed.
-2024-06-04 21:15:57 - root - INFO - Server listeing on localhost : 12345
-2024-06-04 21:16:00 - root - INFO - Connection from ('127.0.0.1', 62072)
-2024-06-04 21:16:00 - root - INFO - PrimeClassifer solution performed.
-2024-06-04 21:16:11 - root - INFO - Connection from ('127.0.0.1', 62077)
-2024-06-04 21:16:11 - root - ERROR - Problem requested not found.
-2024-06-04 21:16:15 - root - INFO - Connection from ('127.0.0.1', 62081)
-2024-06-04 21:16:15 - root - INFO - FizzBuzz solution performed.
-2024-06-04 21:16:26 - root - INFO - Connection from ('127.0.0.1', 62086)
-2024-06-04 21:16:27 - root - ERROR - Problem requested not found.
-2024-06-04 21:17:39 - root - INFO - Connection from ('127.0.0.1', 62112)
-2024-06-04 21:17:39 - root - ERROR - Problem requested not found.
-2024-06-04 21:17:54 - root - INFO - Server listeing on localhost : 12345
-2024-06-04 21:18:00 - root - INFO - Connection from ('127.0.0.1', 62118)
-2024-06-04 21:18:00 - root - INFO - FizzBuzz solution performed.
-2024-06-04 21:18:33 - root - INFO - Connection from ('127.0.0.1', 62124)
-2024-06-04 21:18:33 - root - ERROR - Problem requested not found.
-2024-06-04 21:18:38 - root - INFO - Connection from ('127.0.0.1', 62128)
-2024-06-04 21:18:39 - root - ERROR - Problem requested not found.
-2024-06-04 21:19:05 - root - INFO - Connection from ('127.0.0.1', 62134)
-2024-06-04 21:19:05 - root - ERROR - Problem requested not found.
-2024-06-04 21:20:06 - root - INFO - Server listeing on localhost : 12345
-2024-06-04 21:20:09 - root - INFO - Connection from ('127.0.0.1', 62151)
-2024-06-04 21:20:09 - root - ERROR - Problem requested not found.
-2024-06-04 21:20:30 - root - INFO - Server listeing on localhost : 12345
-2024-06-04 21:20:35 - root - INFO - Connection from ('127.0.0.1', 62160)
-2024-06-04 21:20:36 - root - ERROR - Problem requested not found.
-2024-06-04 21:21:27 - root - INFO - Server listeing on localhost : 12345
-2024-06-04 21:33:19 - root - INFO - Server listening on localhost:12345
-2024-06-04 21:33:24 - root - INFO - Connection from ('127.0.0.1', 62296)
-2024-06-04 21:33:29 - root - INFO - Server listening on localhost:12345
-2024-06-04 21:33:34 - root - INFO - Connection from ('127.0.0.1', 62302)
-2024-06-04 21:34:09 - root - INFO - Connection from ('127.0.0.1', 62311)
-2024-06-04 21:34:09 - root - ERROR - Problem requested not found.
-2024-06-04 21:34:41 - root - INFO - Connection from ('127.0.0.1', 62318)
-2024-06-04 21:34:41 - root - INFO - FizzBuzz solution performed.
-2024-06-04 21:36:16 - root - INFO - Connection from ('127.0.0.1', 62334)
-2024-06-04 21:36:16 - root - INFO - PrimeClassifier solution performed.
-2024-06-04 21:36:27 - root - INFO - Connection from ('127.0.0.1', 62340)
-2024-06-04 21:36:27 - root - INFO - PrimeClassifier solution performed.
-2024-06-04 21:44:51 - root - INFO - Server listening on localhost:12345
-2024-06-04 21:44:57 - root - INFO - Connection from ('127.0.0.1', 62450)
-2024-06-04 21:44:57 - root - ERROR - Failed to get public key
-2024-06-04 21:45:41 - root - INFO - Server listening on localhost:12345
-2024-06-04 21:45:43 - root - INFO - Connection from ('127.0.0.1', 62463)
-2024-06-04 21:47:05 - root - INFO - Server listening on localhost:12345
-2024-06-04 21:47:10 - root - INFO - Connection from ('127.0.0.1', 62497)
-2024-06-04 21:47:10 - root - INFO - PrimeClassifier solution performed.
-2024-06-04 21:48:40 - root - INFO - Connection from ('127.0.0.1', 62506)
-2024-06-04 21:48:49 - root - INFO - Connection from ('127.0.0.1', 62510)
-2024-06-05 17:00:52 - root - INFO - Server listening on localhost:12345
-2024-06-05 17:01:26 - root - INFO - Connection from ('127.0.0.1', 56350)
-2024-06-05 17:12:43 - root - INFO - Server listening on localhost:12345
-2024-06-05 17:12:45 - root - INFO - Connection from ('127.0.0.1', 56449)
-2024-06-05 17:14:12 - root - INFO - Server listening on localhost:12345
-2024-06-05 17:14:15 - root - INFO - Connection from ('127.0.0.1', 56467)
-2024-06-05 17:14:17 - root - ERROR - Failed to connect to the Flask server
-2024-06-05 17:16:17 - root - INFO - Server listening on localhost:12345
-2024-06-05 17:16:19 - root - INFO - Connection from ('127.0.0.1', 56484)
-2024-06-05 17:16:21 - root - ERROR - Failed to connect to the Flask server
-2024-06-05 17:20:10 - root - INFO - Server listening on localhost:12345
-2024-06-05 17:20:13 - root - INFO - Connection from ('127.0.0.1', 56513)
-2024-06-05 17:20:15 - root - ERROR - Failed to connect to the Flask server for public key: HTTPConnectionPool(host='127.0.0.1', port=5000): Max retries exceeded with url: /publickey (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000236AAA25250>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
-2024-06-05 17:20:15 - root - ERROR - Error handling data: Flask server is inactive or unreachable
-2024-06-05 17:20:15 - root - ERROR - Failed to handle data: Flask server is inactive or unreachable
-2024-06-05 17:22:06 - root - INFO - Connection from ('127.0.0.1', 56536)
-2024-06-05 17:22:07 - root - INFO - PrimeClassifier solution performed.
-2024-06-05 17:22:28 - root - INFO - Connection from ('127.0.0.1', 56541)
-2024-06-05 17:22:41 - root - INFO - Connection from ('127.0.0.1', 56545)
-2024-06-05 17:22:41 - root - ERROR - Failed to connect to the Flask server for shutdown
-2024-06-05 17:37:35 - root - INFO - Server listening on localhost:12345
-2024-06-05 17:42:24 - root - INFO - Connection from ('127.0.0.1', 56793)
-2024-06-05 17:42:24 - root - ERROR - Failed to connect to the Flask server for shutdown
-2024-06-05 17:42:27 - root - INFO - Server listening on localhost:12345
-2024-06-05 17:42:29 - root - INFO - Connection from ('127.0.0.1', 56799)
-2024-06-05 17:42:31 - root - ERROR - Failed to connect to the Flask server for public key: HTTPConnectionPool(host='127.0.0.1', port=5000): Max retries exceeded with url: /publickey (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000002933CA85250>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
-2024-06-05 17:42:31 - root - ERROR - Error handling data: Flask server is inactive or unreachable
-2024-06-05 17:42:31 - root - ERROR - Failed to handle data: Flask server is inactive or unreachable
-2024-06-05 17:44:15 - root - INFO - Connection from ('127.0.0.1', 56802)
-2024-06-05 17:44:17 - root - ERROR - Failed to connect to the Flask server for public key: HTTPConnectionPool(host='127.0.0.1', port=5000): Max retries exceeded with url: /publickey (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000002933DE16810>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
-2024-06-05 17:44:17 - root - ERROR - Error handling data: Flask server is inactive or unreachable
-2024-06-05 17:44:17 - root - ERROR - Failed to handle data: Flask server is inactive or unreachable
-2024-06-05 17:44:28 - root - INFO - Connection from ('127.0.0.1', 56807)
-2024-06-05 17:44:28 - root - INFO - FizzBuzz solution performed.
-2024-06-05 17:47:23 - root - INFO - Connection from ('127.0.0.1', 56877)
-2024-06-05 17:47:31 - root - INFO - Connection from ('127.0.0.1', 56881)
-2024-06-05 17:48:24 - root - INFO - Connection from ('127.0.0.1', 56885)
-2024-06-05 17:48:25 - root - ERROR - Failed to connect to the Flask server for shutdown
-2024-06-05 17:51:51 - root - INFO - Server listening on localhost:12345
-2024-06-05 17:51:56 - root - INFO - Connection from ('127.0.0.1', 56916)
-2024-06-05 17:51:59 - root - ERROR - Failed to connect to the Flask server for shutdown
-2024-06-05 18:18:36 - root - INFO - Connection from ('127.0.0.1', 57142)
-2024-06-05 18:18:39 - root - ERROR - Failed to connect to the Flask server for shutdown
-2024-06-05 18:31:49 - root - INFO - Server listening on localhost:12345
-2024-06-05 18:36:04 - root - INFO - Server listening on localhost:12345
-2024-06-05 18:40:25 - root - INFO - Connection from ('127.0.0.1', 57374)
-2024-06-05 18:40:27 - root - ERROR - Failed to get public key: HTTPConnectionPool(host='127.0.0.1', port=5000): Max retries exceeded with url: /publickey (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000171F0B9E3D0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
-2024-06-05 18:40:27 - root - ERROR - Error handling data: HTTPConnectionPool(host='127.0.0.1', port=5000): Max retries exceeded with url: /publickey (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000171F0B9E3D0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
-2024-06-05 18:40:27 - root - ERROR - Failed to handle problem request: HTTPConnectionPool(host='127.0.0.1', port=5000): Max retries exceeded with url: /publickey (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000171F0B9E3D0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
-2024-06-05 18:42:07 - root - INFO - Server listening on localhost:12345
-2024-06-05 18:42:17 - root - INFO - Connection from ('127.0.0.1', 57381)
-2024-06-05 18:42:19 - root - ERROR - Failed to get public key: HTTPConnectionPool(host='127.0.0.1', port=5000): Max retries exceeded with url: /publickey (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000159D091A8D0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
-2024-06-05 18:42:19 - root - ERROR - Error handling data: HTTPConnectionPool(host='127.0.0.1', port=5000): Max retries exceeded with url: /publickey (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000159D091A8D0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
-2024-06-05 18:42:19 - root - ERROR - Failed to handle problem request: HTTPConnectionPool(host='127.0.0.1', port=5000): Max retries exceeded with url: /publickey (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000159D091A8D0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
-2024-06-05 18:42:27 - root - INFO - Connection from ('127.0.0.1', 57387)
-2024-06-05 18:42:27 - root - INFO - PrimeClassifier solution performed.
-2024-06-05 18:44:04 - root - INFO - Connection from ('127.0.0.1', 57404)
-2024-06-05 18:44:25 - root - INFO - Connection from ('127.0.0.1', 57406)
-2024-06-05 18:44:26 - root - ERROR - Failed to connect to the Flask server for shutdown
-2024-06-05 18:44:43 - root - INFO - Connection from ('127.0.0.1', 57412)
-2024-06-05 18:44:46 - root - ERROR - Failed to connect to the Flask server for shutdown
-2024-06-05 18:51:05 - root - INFO - Server listening on localhost:12345
-2024-06-05 18:51:12 - root - INFO - Connection from ('127.0.0.1', 57454)
-2024-06-05 18:51:14 - root - ERROR - Failed to connect to the Flask server for public key: HTTPConnectionPool(host='127.0.0.1', port=5000): Max retries exceeded with url: /publickey (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000002AA2353E3D0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
-2024-06-05 18:51:14 - root - ERROR - Error handling data: Flask server is inactive or unreachable
-2024-06-05 18:51:14 - root - ERROR - Failed to handle data: Flask server is inactive or unreachable
-2024-06-05 18:51:25 - root - INFO - Connection from ('127.0.0.1', 57458)
-2024-06-05 18:51:27 - root - ERROR - Failed to connect to the Flask server for public key: HTTPConnectionPool(host='127.0.0.1', port=5000): Max retries exceeded with url: /publickey (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000002AA236DDCD0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
-2024-06-05 18:51:27 - root - ERROR - Error handling data: Flask server is inactive or unreachable
-2024-06-05 18:51:27 - root - ERROR - Failed to handle data: Flask server is inactive or unreachable
-2024-06-05 18:54:18 - root - INFO - Server listening on localhost:12345
-2024-06-05 18:54:26 - root - INFO - Connection from ('127.0.0.1', 57519)
-2024-06-05 18:55:03 - root - INFO - Server listening on localhost:12345
-2024-06-05 18:55:10 - root - INFO - Connection from ('127.0.0.1', 57527)
-2024-06-05 18:55:10 - root - INFO - PrimeClassifier solution performed.
-2024-06-05 18:55:25 - root - INFO - Connection from ('127.0.0.1', 57532)
-2024-06-05 18:55:31 - root - INFO - Connection from ('127.0.0.1', 57536)
-2024-06-05 18:57:02 - root - INFO - Server listening on localhost:12345
-2024-06-05 18:57:11 - root - INFO - Connection from ('127.0.0.1', 57553)
-2024-06-05 18:57:13 - root - ERROR - Failed to connect to the Flask server for public key: HTTPConnectionPool(host='127.0.0.1', port=5000): Max retries exceeded with url: /publickey (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001E444D8EE10>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
-2024-06-05 18:57:13 - root - ERROR - Error handling data: Flask server is inactive or unreachable
-2024-06-05 18:58:35 - root - INFO - Server listening on localhost:12345
-2024-06-05 18:58:38 - root - INFO - Connection from ('127.0.0.1', 57568)
-2024-06-05 18:58:40 - root - ERROR - Failed to connect to the Flask server for public key: HTTPConnectionPool(host='127.0.0.1', port=5000): Max retries exceeded with url: /publickey (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000002A196AEE3D0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
-2024-06-05 18:58:40 - root - ERROR - Error handling data: Flask server is inactive or unreachable
-2024-06-05 18:58:40 - root - ERROR - Failed to handle data: Flask server is inactive or unreachable
-2024-06-05 18:58:49 - root - INFO - Connection from ('127.0.0.1', 57573)
-2024-06-05 18:58:49 - root - INFO - PrimeClassifier solution performed.
-2024-06-05 18:59:06 - root - INFO - Connection from ('127.0.0.1', 57577)
-2024-06-05 18:59:14 - root - INFO - Connection from ('127.0.0.1', 57581)
-2024-06-05 18:59:14 - root - ERROR - Failed to connect to the Flask server for shutdown
+2024-06-05 19:33:28 - root - INFO - Server listening on localhost:12345
+2024-06-05 19:33:38 - root - INFO - Connection from ('127.0.0.1', 57900)
+2024-06-05 19:33:40 - root - ERROR - Failed to connect to the Flask server for public key: HTTPConnectionPool(host='127.0.0.1', port=5000): Max retries exceeded with url: /publickey (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001B8995DE690>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+2024-06-05 19:33:40 - root - ERROR - Error handling data: Flask server is inactive or unreachable
+2024-06-05 19:33:40 - root - ERROR - Failed to handle data: Flask server is inactive or unreachable
+2024-06-05 19:33:50 - root - ERROR - Timeout occurred while trying to connect to the Flask server. Shutting down the socket server.
+2024-06-05 19:34:32 - root - INFO - Server listening on localhost:12345
+2024-06-05 19:34:42 - root - ERROR - Timeout occurred while trying to connect to the Flask server. Shutting down the socket server.
+2024-06-05 19:36:43 - root - INFO - Server listening on localhost:12345
+2024-06-05 19:36:47 - root - INFO - Connection from ('127.0.0.1', 57919)
+2024-06-05 19:36:47 - root - ERROR - Failed to connect to the Flask server for shutdown
+2024-06-05 19:36:53 - root - INFO - Server listening on localhost:12345
+2024-06-05 19:36:56 - root - INFO - Connection from ('127.0.0.1', 57925)
+2024-06-05 19:36:58 - root - ERROR - Failed to connect to the Flask server for public key: HTTPConnectionPool(host='127.0.0.1', port=5000): Max retries exceeded with url: /publickey (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000002CB4F5AE5D0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+2024-06-05 19:36:58 - root - ERROR - Error handling data: Flask server is inactive or unreachable
+2024-06-05 19:36:58 - root - ERROR - Failed to handle data: Flask server is inactive or unreachable
+2024-06-05 19:37:08 - root - ERROR - Timeout occurred while trying to connect to the Flask server. Shutting down the socket server.
+2024-06-05 19:37:53 - root - INFO - Server listening on localhost:12345
+2024-06-05 19:37:57 - root - INFO - Connection from ('127.0.0.1', 57934)
+2024-06-05 19:37:58 - root - ERROR - Failed to connect to the Flask server for shutdown
+2024-06-05 19:38:03 - root - INFO - Server listening on localhost:12345
+2024-06-05 19:38:05 - root - INFO - Connection from ('127.0.0.1', 57940)
+2024-06-05 19:38:07 - root - ERROR - Failed to connect to the Flask server for public key: HTTPConnectionPool(host='127.0.0.1', port=5000): Max retries exceeded with url: /publickey (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000002350751E690>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+2024-06-05 19:38:07 - root - ERROR - Error handling data: Flask server is inactive or unreachable
+2024-06-05 19:38:07 - root - ERROR - Failed to handle data: Flask server is inactive or unreachable
+2024-06-05 19:38:17 - root - ERROR - Timeout occurred while trying to connect to the Flask server. Shutting down the socket server.
+2024-06-05 19:40:20 - root - INFO - Server listening on localhost:12345
+2024-06-05 19:40:24 - root - INFO - Connection from ('127.0.0.1', 57963)
+2024-06-05 19:40:24 - root - ERROR - Failed to connect to the Flask server for shutdown
+2024-06-05 19:40:31 - root - INFO - Server listening on localhost:12345
+2024-06-05 19:40:34 - root - INFO - Connection from ('127.0.0.1', 57969)
+2024-06-05 19:40:36 - root - ERROR - Failed to connect to the Flask server for public key: HTTPConnectionPool(host='127.0.0.1', port=5000): Max retries exceeded with url: /publickey (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000023E617DE5D0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+2024-06-05 19:40:36 - root - ERROR - Error handling data: Flask server is inactive or unreachable
+2024-06-05 19:40:36 - root - ERROR - Failed to handle data: Flask server is inactive or unreachable
+2024-06-05 19:40:46 - root - ERROR - Timeout occurred while trying to connect to the Flask server. Shutting down the socket server.
+2024-06-05 19:44:04 - root - INFO - Server listening on localhost:12345
+2024-06-05 19:44:10 - root - INFO - Connection from ('127.0.0.1', 57996)
+2024-06-05 19:44:12 - root - ERROR - Failed to connect to the Flask server for public key: HTTPConnectionPool(host='127.0.0.1', port=5000): Max retries exceeded with url: /publickey (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000281993404D0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+2024-06-05 19:44:12 - root - ERROR - Error handling data: Flask server is inactive or unreachable
+2024-06-05 19:44:12 - root - ERROR - Failed to handle data: Flask server is inactive or unreachable
+2024-06-05 19:45:18 - root - INFO - Server listening on localhost:12345
+2024-06-05 19:45:25 - root - INFO - Connection from ('127.0.0.1', 58008)
+2024-06-05 19:45:27 - root - ERROR - Failed to connect to the Flask server for public key: HTTPConnectionPool(host='127.0.0.1', port=5000): Max retries exceeded with url: /publickey (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000014FB01A04D0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+2024-06-05 19:45:27 - root - ERROR - Error handling data: Flask server is inactive or unreachable
+2024-06-05 19:45:27 - root - ERROR - Failed to handle data: Flask server is inactive or unreachable
+2024-06-05 20:30:49 - root - INFO - Server listening on localhost:12345
+2024-06-05 20:31:03 - root - INFO - Connection from ('127.0.0.1', 58174)
+2024-06-05 20:31:05 - root - ERROR - Failed to connect to the Flask server for public key: HTTPConnectionPool(host='127.0.0.1', port=5000): Max retries exceeded with url: /publickey (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000002068B92E010>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+2024-06-05 20:31:05 - root - ERROR - Error handling data: Flask server is inactive or unreachable
+2024-06-05 20:31:05 - root - ERROR - Failed to handle data: Flask server is inactive or unreachable
+2024-06-05 20:31:35 - root - INFO - Connection from ('127.0.0.1', 58179)
+2024-06-05 20:31:37 - root - ERROR - Failed to connect to the Flask server for public key: HTTPConnectionPool(host='127.0.0.1', port=5000): Max retries exceeded with url: /publickey (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000002068ADD54D0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+2024-06-05 20:31:37 - root - ERROR - Error handling data: Flask server is inactive or unreachable
+2024-06-05 20:31:37 - root - ERROR - Failed to handle data: Flask server is inactive or unreachable
+2024-06-05 20:32:41 - root - INFO - Server listening on localhost:12345
+2024-06-05 20:32:46 - root - INFO - Connection from ('127.0.0.1', 58195)
+2024-06-05 20:32:48 - root - ERROR - Failed to connect to the Flask server for public key: HTTPConnectionPool(host='127.0.0.1', port=5000): Max retries exceeded with url: /publickey (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001877D0FE610>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+2024-06-05 20:32:48 - root - ERROR - Error handling data: Flask server is inactive or unreachable
+2024-06-05 20:32:48 - root - ERROR - Failed to handle data: Flask server is inactive or unreachable
+2024-06-05 20:34:19 - root - INFO - Server listening on localhost:12345
+2024-06-05 20:34:43 - root - INFO - Connection from ('127.0.0.1', 58214)
+2024-06-05 20:34:45 - root - ERROR - Failed to connect to the Flask server for public key: HTTPConnectionPool(host='127.0.0.1', port=5000): Max retries exceeded with url: /publickey (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000247AFEEAF10>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+2024-06-05 20:34:45 - root - ERROR - Error handling data: Flask server is inactive or unreachable
+2024-06-05 20:34:45 - root - ERROR - Failed to handle data: Flask server is inactive or unreachable
+2024-06-05 20:35:46 - root - INFO - Server listening on localhost:12345
+2024-06-05 20:35:55 - root - INFO - Connection from ('127.0.0.1', 58228)
+2024-06-05 20:35:57 - root - ERROR - Failed to connect to the Flask server for public key: HTTPConnectionPool(host='127.0.0.1', port=5000): Max retries exceeded with url: /publickey (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000229DB43E010>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+2024-06-05 20:35:57 - root - ERROR - Error handling data: Flask server is inactive or unreachable
+2024-06-05 20:35:57 - root - ERROR - Failed to handle data: Flask server is inactive or unreachable
+2024-06-05 20:36:05 - root - INFO - Server listening on localhost:12345
+2024-06-05 20:36:15 - root - INFO - Connection from ('127.0.0.1', 58235)
+2024-06-05 20:36:15 - root - ERROR - Failed to connect to the Flask server for shutdown
