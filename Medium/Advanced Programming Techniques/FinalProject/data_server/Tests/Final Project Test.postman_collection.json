@@ -1,0 +1,58 @@
+{
+	"info": {
+		"_postman_id": "fbf04186-7415-481b-a503-131c5ddfc4b0",
+		"name": "Final Project Test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30717786"
+	},
+	"item": [
+		{
+			"name": "get numbers",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"http code 200\", function () {\r",
+							"    pm.expect(pm.response.code).to.equal(200);\r",
+							"});\r",
+							"\r",
+							"var responseJson = pm.response.json();\r",
+							"\r",
+							"pm.test(\"key numbers in response\", function () {\r",
+							"    pm.expect(responseJson).to.have.property(\"numbers\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"key numbers has 100 numbers\", function () {\r",
+							"    pm.expect(responseJson.numbers).to.be.an(\"array\").and.to.have.lengthOf(100);\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/numbers",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"numbers"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

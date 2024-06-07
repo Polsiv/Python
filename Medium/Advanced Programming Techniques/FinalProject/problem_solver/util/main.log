@@ -1,0 +1,63 @@
+2024-06-07 00:53:43 - root - INFO - Connection from ('127.0.0.1', 65314)
+2024-06-07 00:53:43 - root - INFO - PrimeClassifier solution performed.
+2024-06-07 00:54:15 - root - INFO - Connection from ('127.0.0.1', 65318)
+2024-06-07 00:54:15 - root - ERROR - Failed to connect to the Flask server for shutdown
+2024-06-07 00:57:43 - root - INFO - Server listening on localhost:12345
+2024-06-07 00:57:48 - root - INFO - Connection from ('127.0.0.1', 65353)
+2024-06-07 00:57:48 - root - INFO - PrimeClassifier solution performed.
+2024-06-07 01:02:56 - root - INFO - Server listening on localhost:12345
+2024-06-07 01:03:02 - root - INFO - Connection from ('127.0.0.1', 65371)
+2024-06-07 01:03:02 - root - INFO - PrimeClassifier solution performed.
+2024-06-07 01:18:47 - root - INFO - Connection from ('127.0.0.1', 49193)
+2024-06-07 01:18:48 - root - ERROR - Failed to connect to the Flask server for shutdown
+2024-06-07 10:23:29 - root - INFO - Server listening on localhost:12345
+2024-06-07 10:23:34 - root - INFO - Connection from ('127.0.0.1', 64919)
+2024-06-07 10:23:34 - root - INFO - PrimeClassifier solution performed.
+2024-06-07 10:23:46 - root - INFO - Connection from ('127.0.0.1', 64923)
+2024-06-07 10:23:46 - root - INFO - FizzBuzz solution performed.
+2024-06-07 10:24:11 - root - INFO - Connection from ('127.0.0.1', 64946)
+2024-06-07 10:24:12 - root - ERROR - Failed to connect to the Flask server for shutdown
+2024-06-07 12:24:11 - root - INFO - Server listening on localhost:12345
+2024-06-07 12:24:29 - root - INFO - Connection from ('127.0.0.1', 49456)
+2024-06-07 12:24:29 - root - INFO - PrimeClassifier solution performed.
+2024-06-07 12:24:46 - root - INFO - Connection from ('127.0.0.1', 49460)
+2024-06-07 12:24:46 - root - INFO - PrimeClassifier solution performed.
+2024-06-07 12:24:58 - root - INFO - Connection from ('127.0.0.1', 49464)
+2024-06-07 12:24:58 - root - INFO - PrimeClassifier solution performed.
+2024-06-07 12:25:52 - root - INFO - Connection from ('127.0.0.1', 49473)
+2024-06-07 12:25:52 - root - INFO - PrimeClassifier solution performed.
+2024-06-07 12:26:12 - root - INFO - Connection from ('127.0.0.1', 49480)
+2024-06-07 12:26:12 - root - INFO - PrimeClassifier solution performed.
+2024-06-07 12:26:49 - root - INFO - Connection from ('127.0.0.1', 49493)
+2024-06-07 12:26:49 - root - ERROR - Failed to connect to the Flask server for shutdown
+2024-06-07 12:26:57 - root - INFO - Server listening on localhost:12345
+2024-06-07 12:27:05 - root - INFO - Connection from ('127.0.0.1', 49503)
+2024-06-07 12:27:05 - root - ERROR - Failed to connect to the Flask server for shutdown
+2024-06-07 12:27:52 - root - INFO - Server listening on localhost:12345
+2024-06-07 12:27:54 - root - INFO - Connection from ('127.0.0.1', 49514)
+2024-06-07 12:27:54 - root - INFO - PrimeClassifier solution performed.
+2024-06-07 12:29:28 - root - INFO - Connection from ('127.0.0.1', 49531)
+2024-06-07 12:29:28 - root - ERROR - Failed to connect to the Flask server for shutdown
+2024-06-07 12:29:32 - root - INFO - Server listening on localhost:12345
+2024-06-07 12:29:38 - root - INFO - Connection from ('127.0.0.1', 49535)
+2024-06-07 12:29:38 - root - INFO - FizzBuzz solution performed.
+2024-06-07 12:29:53 - root - INFO - Connection from ('127.0.0.1', 49539)
+2024-06-07 12:29:53 - root - INFO - PrimeClassifier solution performed.
+2024-06-07 12:30:34 - root - INFO - Connection from ('127.0.0.1', 49556)
+2024-06-07 12:30:35 - root - ERROR - Failed to connect to the Flask server for shutdown
+2024-06-07 12:30:43 - root - INFO - Server listening on localhost:12345
+2024-06-07 12:30:48 - root - INFO - Connection from ('127.0.0.1', 49561)
+2024-06-07 12:30:48 - root - INFO - PrimeClassifier solution performed.
+2024-06-07 12:32:51 - root - INFO - Connection from ('127.0.0.1', 49586)
+2024-06-07 12:32:51 - root - ERROR - Failed to connect to the Flask server for shutdown
+2024-06-07 12:32:59 - root - INFO - Server listening on localhost:12345
+2024-06-07 12:33:04 - root - INFO - Connection from ('127.0.0.1', 49591)
+2024-06-07 12:33:04 - root - ERROR - Failed to connect to the Flask server for shutdown
+2024-06-07 12:33:14 - root - INFO - Server listening on localhost:12345
+2024-06-07 12:33:18 - root - INFO - Connection from ('127.0.0.1', 49595)
+2024-06-07 12:33:18 - root - INFO - PrimeClassifier solution performed.
+2024-06-07 12:33:35 - root - INFO - Connection from ('127.0.0.1', 49599)
+2024-06-07 12:33:35 - root - ERROR - Failed to connect to the Flask server for shutdown
+2024-06-07 12:33:39 - root - INFO - Server listening on localhost:12345
+2024-06-07 12:33:42 - root - INFO - Connection from ('127.0.0.1', 49603)
+2024-06-07 12:33:44 - root - ERROR - Failed to connect to the Flask server for shutdown

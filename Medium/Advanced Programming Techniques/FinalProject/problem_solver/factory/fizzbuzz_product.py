@@ -1,7 +1,7 @@
 from .i_problem_solver import IProblemSolver
 
 class FizzBuzzProduct(IProblemSolver):
-    
+
     def compute_results(self, data):
         list_result = []
         for num in data:

@@ -1,10 +1,12 @@
+#pylint: disable =C0114, C0103
+import json
+import binascii
+import os
 from Crypto.PublicKey import RSA
 from Crypto.Cipher import PKCS1_OAEP, AES
 from Crypto.Random import get_random_bytes 
 from Crypto.Util.Padding import pad, unpad
-import json
-import binascii
-import os
+
 
 class Cryptographer:
     def __init__(self):
@@ -12,8 +14,9 @@ class Cryptographer:
         self.public_key = None
 
     def save_keys_to_files(self):
+        """save keys in .pem format"""
         keys_dir = 'keys'
-        
+
         with open(os.path.join(keys_dir, "dataserver_solver_pk"), "wb") as private_file:
             private_file.write(self.private_key.export_key())
 
@@ -21,13 +24,15 @@ class Cryptographer:
             public_file.write(self.public_key.export_key())
 
     def generate_keys(self):
+        """Generate both private and public key for data server"""
         self.private_key = RSA.generate(1024)
         self.public_key = self.private_key.publickey()
         self.save_keys_to_files()
 
-    def encrypt(self, data, public_key_pem):
+    def encrypt(self, data, problem_solver_pk):
+        """Encrypts the data"""
 
-        receiver_public_key = RSA.import_key(public_key_pem)
+        receiver_public_key = RSA.import_key(problem_solver_pk)
 
         #convert to json then bytes
         data_json = json.dumps(data)
@@ -35,7 +40,7 @@ class Cryptographer:
 
         #generate random 16-byte 16 key
         aes_key = get_random_bytes(16)
-        
+
         #initialize the AES cipher in CBC mode with the generated AES key
         cipher_aes = AES.new(aes_key, AES.MODE_CBC)
         iv = cipher_aes.iv
@@ -58,6 +63,7 @@ class Cryptographer:
         }
 
     def decrypt(self, encrypted):
+        """decrypts the data"""
 
         #hex string convertion (converting the hex strings back to bytes)
         encrypted_aes_key = binascii.unhexlify(encrypted['encrypted_aes_key'])
@@ -79,4 +85,3 @@ class Cryptographer:
         #decode the decrypted bytes to a JSON string and then parse it back to a python dictionary.
         decrypted_json = decrypted_data.decode()
         return json.loads(decrypted_json)
-    

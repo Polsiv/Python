@@ -1,10 +1,11 @@
+#pylint: disable =C0114, R0801
+import json
+import binascii
+import os
 from Crypto.PublicKey import RSA
 from Crypto.Cipher import PKCS1_OAEP, AES
 from Crypto.Random import get_random_bytes 
 from Crypto.Util.Padding import pad, unpad
-import json
-import binascii
-import os
 
 class Cryptographer:
     def __init__(self):
@@ -12,8 +13,9 @@ class Cryptographer:
         self.public_key = None
 
     def save_keys_to_files(self):
+        """save keys in .pem format"""
         keys_dir = 'keys'
-        
+
         with open(os.path.join(keys_dir, "problem_solver_pk"), "wb") as private_file:
             private_file.write(self.private_key.export_key())
 
@@ -21,15 +23,17 @@ class Cryptographer:
             public_file.write(self.public_key.export_key())
 
     def generate_keys(self):
+        """Generate both private and public key for data server"""
         self.private_key = RSA.generate(1024)
         self.public_key = self.private_key.publickey()
         self.save_keys_to_files()
 
-    def encrypt(self, data, public_key_pem):
+    def encrypt(self, data, data_server_pk):
+        """Encrypts the data"""
 
-        receiver_public_key = RSA.import_key(public_key_pem)
-        
-        #generate random 16-byte 16 key
+        receiver_public_key = RSA.import_key(data_server_pk)
+
+        #generate random 16-byte
         aes_key = get_random_bytes(16)
 
         #initialize the AES cipher in CBC mode with the generated AES key
@@ -53,7 +57,7 @@ class Cryptographer:
         }
 
     def decrypt(self, encrypted):
-        
+        """decrypts the data"""
         #hex string convertion (converting the hex strings back to bytes)
         encrypted_aes_key = binascii.unhexlify(encrypted['encrypted_aes_key'])
         encrypted_data = binascii.unhexlify(encrypted['encrypted_data'])
@@ -71,7 +75,6 @@ class Cryptographer:
         #decrypt the encrypted data using the AES cipher and unpad it.
         decrypted_data = unpad(cipher_aes.decrypt(encrypted_data), AES.block_size)
 
-        #decode the decrypted bytes to a JSON string and then parse it back to a python dictionary.
+        #decode decrypted bytes to a JSON string and then parse it back to a python dictionary.
         decrypted_json = decrypted_data.decode()
         return json.loads(decrypted_json)
-    

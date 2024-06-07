@@ -8,7 +8,6 @@ import (
 	"net"
 )
 
-// Connect_to_server tries to establish a connection and returns an error if it fails.
 func Connect_to_server() (net.Conn, error) {
 	conn, err := net.Dial("tcp", "localhost:12345")
 	if err != nil {
