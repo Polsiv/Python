@@ -51,6 +51,11 @@ to quickly create a Cobra application.`,
 			return
 		}
 
+		if amount <= 0 {
+			fmt.Println("That is not a allowed amount!")
+			return
+		}
+
 		config := Config{
 			Problem:  problem,
 			Total:    amount,

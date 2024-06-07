@@ -3,3 +3,4 @@ pycryptodome
 flask
 socket
 werkzeug
+pytest
