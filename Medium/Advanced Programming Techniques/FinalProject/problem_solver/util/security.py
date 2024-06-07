@@ -24,20 +24,28 @@ class Cryptographer:
         self.private_key = RSA.generate(1024)
         self.public_key = self.private_key.publickey()
         self.save_keys_to_files()
-    
-    
+
     def encrypt(self, data, public_key_pem):
 
         receiver_public_key = RSA.import_key(public_key_pem)
+        
+        #generate random 16-byte 16 key
         aes_key = get_random_bytes(16)
+
+        #initialize the AES cipher in CBC mode with the generated AES key
         cipher_aes = AES.new(aes_key, AES.MODE_CBC)
         iv = cipher_aes.iv
 
+        #encrypt the data with AES and pad it to match the block size
         encrypted_data = cipher_aes.encrypt(pad(data, AES.block_size))
 
+        #initialize RSA cipher with data server's public key
         cipher_rsa = PKCS1_OAEP.new(receiver_public_key)
+
+        #encrypt the AES key with RSA
         encrypted_aes_key = cipher_rsa.encrypt(aes_key)
 
+        #return a dictionary containing the encrypted AES key, encrypted data, and IV
         return {
             'encrypted_aes_key': binascii.hexlify(encrypted_aes_key).decode(),
             'encrypted_data': binascii.hexlify(encrypted_data).decode(),
@@ -45,15 +53,25 @@ class Cryptographer:
         }
 
     def decrypt(self, encrypted):
-
+        
+        #hex string convertion (converting the hex strings back to bytes)
         encrypted_aes_key = binascii.unhexlify(encrypted['encrypted_aes_key'])
         encrypted_data = binascii.unhexlify(encrypted['encrypted_data'])
         iv = binascii.unhexlify(encrypted['iv'])
-        cipher_rsa = PKCS1_OAEP.new(self.private_key)
-        decrypted_aes_key = cipher_rsa.decrypt(encrypted_aes_key)
-        cipher_aes = AES.new(decrypted_aes_key, AES.MODE_CBC, iv)
-        decrypted_data = unpad(cipher_aes.decrypt(encrypted_data), AES.block_size)
-        decrypted_json = decrypted_data.decode()
 
+        #initialize the RSA cipher with the private key
+        cipher_rsa = PKCS1_OAEP.new(self.private_key)
+
+        #decrypt the AES key using the RSA cipher
+        decrypted_aes_key = cipher_rsa.decrypt(encrypted_aes_key)
+
+        #initialize the AES cipher in CBC mode with the decrypted AES key and IV.
+        cipher_aes = AES.new(decrypted_aes_key, AES.MODE_CBC, iv)
+
+        #decrypt the encrypted data using the AES cipher and unpad it.
+        decrypted_data = unpad(cipher_aes.decrypt(encrypted_data), AES.block_size)
+
+        #decode the decrypted bytes to a JSON string and then parse it back to a python dictionary.
+        decrypted_json = decrypted_data.decode()
         return json.loads(decrypted_json)
     

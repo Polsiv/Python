@@ -1,6 +1,6 @@
 from .i_problem_solver import IProblemSolver
 
-class FizzBuzz(IProblemSolver):
+class FizzBuzzProduct(IProblemSolver):
     
     def compute_results(self, data):
         list_result = []

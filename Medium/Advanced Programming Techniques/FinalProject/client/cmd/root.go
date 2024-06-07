@@ -128,6 +128,7 @@ func Execute() {
 }
 
 func init() {
+
 	rootCmd.AddCommand(ShutdownCmd)
 	// Here you will define your flags and configuration settings.
 	// Cobra supports persistent flags, which, if defined here,

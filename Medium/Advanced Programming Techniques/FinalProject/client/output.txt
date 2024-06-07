@@ -1,20 +1,10 @@
-941 prime
-938 No classified
+33 Semiprime
+867 No classified
+664 No classified
+484 No classified
+431 Prime
+51 Semiprime
+266 No classified
 729 No classified
-998 semiprime
-163 prime
-199 prime
-380 No classified
-321 semiprime
-802 semiprime
-675 No classified
-391 semiprime
-286 No classified
-941 prime
-509 prime
-170 No classified
-548 No classified
-835 semiprime
-426 No classified
-902 No classified
-683 prime
+308 No classified
+740 No classified

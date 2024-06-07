@@ -1,12 +1,12 @@
-from flask import Flask, Response, jsonify, request
+import signal
+from flask import Flask, Response, jsonify
 import os
+from util.security import Cryptographer
+from flask import request
 import random
 from util.normal_distribution import NormalDistribution
 from util.uniform_distribution import UniformDistribution
 import json
-from util.security import Cryptographer
-import requests
-import signal
 
 CRYPT = Cryptographer()
 CRYPT.generate_keys()
@@ -38,11 +38,13 @@ def create_app(test_config=None):
             return Response(pk, mimetype='text/plain')
         except Exception as e:
             app.logger.error(f"Error reading public key: {e}")
-            return jsonify({"error": "Internal server error"}), 500
+            return jsonify({"error": "Internal server error"})
 
     @app.route('/numbers', methods = ("POST",))
     def numbers():    
             try:
+                data = request.json
+                json_data = CRYPT.decrypt(data['data'])
                 data = request.json
                 json_data = CRYPT.decrypt(data['data'])
                 low, sup, total = json_data["LowLimit"],  json_data["SupLimit"], json_data["Total"]
@@ -52,9 +54,9 @@ def create_app(test_config=None):
                 numbers = random.choice(to_choice)
                 to_send = { "numbers": numbers}
                 to_send_json = json.dumps(to_send)  
-                encrypted_json = CRYPT.encrypt(to_send_json, data['problem_handler_pk'])
+                encrypted_json = CRYPT.encrypt(to_send_json, data['problem_solver_pk'])
                 sent_data = { 'data': encrypted_json}
-            
+
                 return jsonify(sent_data), 200
             except:
                 return jsonify({"error": "Internal server error"}), 500
@@ -68,5 +70,4 @@ def create_app(test_config=None):
     return app
 
 
-    
   
