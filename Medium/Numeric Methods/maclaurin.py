@@ -1,8 +1,6 @@
 from math import sqrt
 
 def derivative(f, x, n, h=1e-4):
-    if n == 0:
-      return f(x)
     if n == 1:
       return (f(x + h) - f(x)) / h
   
