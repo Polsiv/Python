@@ -1,9 +1,9 @@
 from math import exp
 
-tol = 10**(-6)
+tol = 10**(-4)
 
 def f(x):
-    return (exp(-x) - x) 
+    return (x**2 -12) 
 
 
 def falsa_posicion(a, b):
@@ -16,7 +16,7 @@ def falsa_posicion(a, b):
 
         c = (a * f(b) - b * f(a) ) / (f(b) - f(a))
 
-        if abs(c - b)  < tol:
+        if abs( f(c))  < tol:
             break
 
         if f(c) * f(a) < 0:
@@ -27,4 +27,4 @@ def falsa_posicion(a, b):
 
     return c
 
-print(falsa_posicion(0, 2))
+print(falsa_posicion(0,10))
