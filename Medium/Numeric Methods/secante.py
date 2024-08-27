@@ -1,9 +1,13 @@
-from math import exp
+from math import exp, sqrt
+
+
 
 tol = 10**(-6)
 
 def f(x):
-    return (exp(-x) - x) 
+    n_i = 6.21
+    
+    return (1/2) * (x + sqrt(x**2 + 4*n_i**2)) - 16
 
 def f_secant(x, y):
     return (f(x) - f(y)) / (x - y)

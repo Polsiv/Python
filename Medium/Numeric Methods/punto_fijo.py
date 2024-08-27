@@ -1,9 +1,9 @@
-import math
+from math import sin, sqrt
 
-x_old = 1
+x_old = 3
 
 def g(x):
-    return math.exp(-x)
+    return 2*sin(sqrt(x)) - sqrt(x) + x
 
 tol = 10**(-6)
 
