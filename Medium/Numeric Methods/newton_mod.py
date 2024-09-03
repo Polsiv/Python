@@ -1,7 +1,7 @@
-from math import exp
+from math import exp, sin, sqrt
 
 def f(x):
-    return (exp(-x) - x) 
+    return 2*sin(sqrt(x)) - sqrt(x)
 
 def f_prime(x, h):
     return (f( x + h) - f(x)) / h

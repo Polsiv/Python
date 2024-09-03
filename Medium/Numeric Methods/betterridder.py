@@ -1,17 +1,12 @@
-from math import sqrt, sin
-
+from math import sqrt, sin, exp
 def f(x):
-    return 2 * sin(sqrt(x)) - sqrt(x)
+    return exp(-x) - x
 
 def ridder(a, b):
     tol = 10**(-4)
     counter = 1
     flag = True
 
-    if abs(f(a)) < tol:
-        return a
-    if abs(f(b)) < tol:
-        return b
 
     while flag:
         if abs(a - b) / 2 < tol:
@@ -30,5 +25,4 @@ def ridder(a, b):
 
     return x_3
 
-root = ridder(1, 5)
-print(f'Root found: {root}')
+ridder(1, 5)

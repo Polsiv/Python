@@ -3,7 +3,7 @@ from math import exp
 tol = 10**(-6)
 
 def f(x):
-    return (exp(-x) - x) 
+    return 20*exp(0.15 * x) - 100
 
 def f_prime(x):
     h = 10**(-6)
@@ -24,4 +24,4 @@ def newton_rapshon(a):
         print(f'{counter}. {a_new}')
         counter += 1
 
-newton_rapshon(3)
+newton_rapshon(6)
