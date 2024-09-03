@@ -1,6 +1,4 @@
-from math import exp, sqrt
-
-
+from math import sqrt
 
 tol = 10**(-6)
 
@@ -12,7 +10,7 @@ def f(x):
 def f_secant(x, y):
     return (f(x) - f(y)) / (x - y)
 
-def newton_rapshon(a, b):
+def secant(a, b):
     flag = True
     a_old = a
     counter = 1
@@ -29,4 +27,4 @@ def newton_rapshon(a, b):
         print(f'{counter}. {a_new}')
         counter += 1
 
-newton_rapshon(1, 2)
+secant(1, 2)

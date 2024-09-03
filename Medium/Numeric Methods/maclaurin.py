@@ -4,7 +4,7 @@ def derivative(f, x, n, h=1e-4):
     if n == 1:
       return (f(x + h) - f(x)) / h
   
-    f_prime = lambda x: derivative(f, x, n-1, h)
+    f_prime = lambda x: derivative(f, x, n - 1, h)
     return (f_prime(x + h) - f_prime(x)) / h
 
 def factorial(n):

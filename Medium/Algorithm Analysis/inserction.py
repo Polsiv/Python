@@ -26,7 +26,7 @@ def save_data():
     x_axis = []
     y_axis = []
 
-    numbers = [10, 100, 1000, 10000]
+    numbers = [10, 100, 1000, 10000, 100000]
     for i in numbers:
         x_axis.append(i)
         my_list = generate_random(1, 100, i)
