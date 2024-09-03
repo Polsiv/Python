@@ -11,20 +11,24 @@ def falsa_posicion(a, b):
         return None
 
     c = a 
-
+    counter = 1
     while (b - a) >= tol:
 
         c = (a * f(b) - b * f(a) ) / (f(b) - f(a))
 
         if abs( f(c))  < tol:
+    
             break
 
+   
         if f(c) * f(a) < 0:
             b = c
-
+    
         else :
             a = c
 
+        print(counter, c)
+        counter += 1
     return c
 
-print(falsa_posicion(0,10))
+falsa_posicion(0,10)
