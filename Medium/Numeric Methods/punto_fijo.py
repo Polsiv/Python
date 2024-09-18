@@ -1,9 +1,9 @@
-from math import sin, sqrt
+from math import sqrt
 
 x_old = 3
 
 def g(x):
-    return 2*sin(sqrt(x)) - sqrt(x) + x
+    return sqrt(2 - x + x**2)  
 
 tol = 10**(-6)
 
@@ -17,3 +17,4 @@ for i in range(50):
         x_old = x_new
 
 print(x_old)
+
