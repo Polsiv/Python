@@ -1,4 +1,4 @@
-
+from numpy import linspace
 
 def f(x):
     return x**2
@@ -6,23 +6,19 @@ def f(x):
 def rieman(a, b, n):
 
     dx = (b - a)/n
-    total_area_left = 0
-    total_area_right = 0
+    x_values = linspace(a, b, n + 1)
+    total_area_left, total_area_right = 0, 0
 
-    x1 = a + dx
     for i in range(0, n):
 
-        
-        x0 = a + i * dx
-        total_area_left += dx * f(x0)
-        total_area_right += dx * f(x1)
-        x1 = a + i * dx
+        total_area_left += dx * f(x_values[i])
+        total_area_right += dx * f(x_values[i + 1])
 
-
-    return total_area_left, total_area_right
+    mean = (total_area_right + total_area_left)/ 2
+    return mean
 
 a = 0
 b = 3
-n = 100
+n = 10000
 
 print(rieman(a, b, n))
