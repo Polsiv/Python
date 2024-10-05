@@ -1,22 +1,11 @@
-from numpy import linspace
-
-
-
+from math import *
 def f(x):
-    return x
+    return exp(x**2)
 
+def simpson13(a,b,f):
+    I=(b-a)*(f(a)+4*f((a+b)/2)+f(b))/6
+    return I
 
-
-def simpson(a, b, n):
-
-    dx = (b - a)/n
-    subsections = linspace(a, b, n + 1 )
-
-
-    pass
-
-
-a = 0
-b = 0
-
-n = 2
+a=0
+b=1
+print(simpson13(a,b,f))
