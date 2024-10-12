@@ -18,7 +18,7 @@ print(example[1:3])
 for i in example:
     print(i)
 
-example
+
 
 
 a, b, c, d, e = example
@@ -41,3 +41,7 @@ print(eventuple)
 ## REAL CASE SCENARIO =====================
 
 db1_credential = ("silv", "xd123")
+
+
+print(tuple([1, 2, 3]))
+

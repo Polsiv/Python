@@ -9,6 +9,7 @@ tcp_ports = [21, 22, 25, 80, 443, 8080, 445, 69]
 cve_list = ['CVE-2023-1435', 'CVE-2022-45761', 'CVE-2023-7663']
 attacks = ['Phishing', 'DDoS', 'SQL INJECTION', 'Man In the Middle', 'Cross-site Scripting']
 
+print("xd", attacks[:])
 #Remove and append ===============================
 
 tcp_ports.append(1337)
@@ -97,3 +98,7 @@ more_ages = [10, 20, 30, 40]
 
 ages.extend(more_ages)
 print(ages)
+
+
+numbers4 = [1, 2, 3, 4, 5, 6]
+print(numbers4)

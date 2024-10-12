@@ -32,9 +32,7 @@ print(my_set)
 #remove element w/o getting an error if its not present
 my_set.discard(9)
 
-
-
-
+print("poping", my_set.pop())
 #Basic operations ==================================
 
 #intersection
