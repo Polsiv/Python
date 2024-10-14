@@ -1,6 +1,3 @@
-import numpy as np
-from math import sqrt
-
 def f(x):
     match x:
         case 1:

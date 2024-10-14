@@ -8,8 +8,6 @@ def lagrange(a, b, n, f, x):
 
     sum = 0
     dx = np.linspace(a, b, n + 1)
-    print(dx)
-
     for i in range(n + 1):
         L = 1
         for j in range(n + 1):

@@ -4,7 +4,6 @@ from math import *
 def f(x):
     return sqrt(x ** 3 + 1)
 
-
 def simpson13n(a, b, f, n):
     
     x = np.linspace(a, b, n + 1)
