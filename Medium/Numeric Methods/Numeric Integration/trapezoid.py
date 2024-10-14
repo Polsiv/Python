@@ -15,7 +15,7 @@ def trapezoid(a, b, n):
     
     sum *= 2
     
-    area = (b-a) * ((f(a) + f(a + dx * n) + sum)/(2*n))
+    area = (b-a) * ((f(a) + f(a + dx * n) + sum)/ (2 * n))
 
     return area
 

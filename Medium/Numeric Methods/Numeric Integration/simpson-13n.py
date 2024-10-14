@@ -1,16 +1,17 @@
 import numpy as np
 from math import *
+
 def f(x):
-    return sin(x)
+    return sqrt(x ** 3 + 1)
 
 
 def simpson13n(a, b, f, n):
     
-    x = np.linspace(a, b, n+1)
+    x = np.linspace(a, b, n + 1)
     dx = (b - a) / n
     I = f(x[0]) + f(x[n])
 
-    for i in range(1, len(x)-1):
+    for i in range(1, len(x) - 1):
         if i % 2 == 0:
             I += 2 * f(x[i])
 
@@ -19,7 +20,7 @@ def simpson13n(a, b, f, n):
 
     return (dx / 3) * I
 
-a = 0
-b = pi
-n = 10
+a = 1
+b = 4
+n = 4
 print(simpson13n(a, b, f, n))
