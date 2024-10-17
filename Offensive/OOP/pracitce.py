@@ -93,10 +93,12 @@ class Students:
     @staticmethod
     def display_students():
         for i, student in enumerate(Students.students):
-            print(i, student)
+            print(f"[{i + 1}] Name: {student.name} Age: {student.age}")
 
 Students.define_student("Kai Cenat", 31)
 Students.define_student("Speed", 20)
-Students.define_student("Doroteo", 16)
+Students.define_student("Doroteo", 19)
 
     
+
+Students.display_students()
