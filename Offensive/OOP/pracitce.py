@@ -22,6 +22,7 @@ class Calculator:
             return "imagine dividing by 0 lmao"
  
 
+
 print (f"\nCalculator shit {'=' * 40}\n")
 
 print(Calculator.sumy(1, 2))
@@ -60,3 +61,42 @@ print(sport2.brand)
 sean1 = Car.sean("Toyota")
 
 print(sean1)
+
+
+
+print (f"\Student shit {'=' * 40}\n")
+
+class Students:
+
+    students = []
+    
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+        
+        Students.students.append(self)
+        
+        
+    @staticmethod
+    def not_a_minor(age):
+        return age >= 18
+
+    @classmethod
+    def define_student(cls, name, age):
+        if cls.not_a_minor(age):
+            return cls(name, age) 
+        else:
+            print(f"{name} is a minor!")
+            
+
+
+    @staticmethod
+    def display_students():
+        for i, student in enumerate(Students.students):
+            print(i, student)
+
+Students.define_student("Kai Cenat", 31)
+Students.define_student("Speed", 20)
+Students.define_student("Doroteo", 16)
+
+    
