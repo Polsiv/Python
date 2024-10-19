@@ -1,0 +1,23 @@
+FUNCTION CaesarDecrypt(char, shift):
+    
+    IF char is a letter:
+        shift_base = 'A' IF char is uppercase, ELSE 'a'
+        encrypted_char = (char - shift_base + shift) % 26 + shift_base
+        RETURN encrypted_char
+    ELSE:
+        RETURN char
+
+FUNCTION DivideAndConquerDecrypt(message, shift):
+    IF length of message <= 1:
+        RETURN CaesarDecrypt(message, shift)
+    
+    mid = length(message) // 2
+    
+    left_half = message[0 to mid]
+    right_half = message[mid to end]
+    
+    decrypted_left = DivideAndConquerDecrypt(left_half, shift)
+    decrypted_right = DivideAndConquerDecrypt(right_half, shift)
+    
+    ELSE:
+        RETURN decrypted_left + decrypted_right

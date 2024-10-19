@@ -21,8 +21,6 @@ class Calculator:
         except ZeroDivisionError:
             return "imagine dividing by 0 lmao"
  
-
-
 print (f"\nCalculator shit {'=' * 40}\n")
 
 print(Calculator.sumy(1, 2))
