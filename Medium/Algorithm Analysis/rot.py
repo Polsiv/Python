@@ -3,8 +3,7 @@ def rot(string, shift):
     d = {i + 1: chr(65 + i) for i in range(26)}
     cipher_msg = ""
 
-    for i in string:
-        
+    for i in string:  
         letter_pos = list(d.keys())[list(d.values()).index(i)]
         rotated = letter_pos + shift
         
