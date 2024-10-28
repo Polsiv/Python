@@ -2,7 +2,7 @@ def caesar_decrypt(char, shift):
 
     if char.isalpha():
         shift_base = 65 if char.isupper() else 97
-        decrypted_char = chr((ord(char) - shift_base + shift) % 26 + shift_base)
+        decrypted_char = chr((ord(char) - shift_base - shift) % 26 + shift_base)
         return decrypted_char
     return char
 
@@ -20,7 +20,7 @@ def divide_and_conquer_decrypt(message, shift):
     
     return decrypted_left + decrypted_right
 
-encrypted_message = "hello" 
+encrypted_message = "ifmmp" 
 shift_value = 1
 decrypted_message = divide_and_conquer_decrypt(encrypted_message, shift_value)
 print(decrypted_message)

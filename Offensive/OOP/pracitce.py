@@ -31,6 +31,7 @@ print(Calculator.div(1, 12))
 
 
 print (f"\nCar shit {'=' * 40}\n")
+
 class Car:
     def __init__(self, brand, model) -> None:
         self.brand = brand

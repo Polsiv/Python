@@ -1,31 +1,32 @@
 def f(x):
     match x:
-        case 1:
-            return 2
-        case 2:
-            return 3
-        case 3:
-            return 5
+        case 0:
+            return 0
+        case 10:
+            return 227
+        case 15:
+            return 362
 
 def lagrange(a, b, f, x):
-
+    A = [0, 227, 362]
+    B=[0,10,15]
     sum = 0
-    for i in range(a, b + 1):
+    for i in range(len(A)):
         L = 1
-        for j in range(a, b + 1):
+        for j in range(len(A)):
             if i == j:
                 continue
             
             else:
-                L *= (x - j) / (i - j)
+                L *= (x - B[j]) / (B[i] - B[j])
 
-        sum += L * f(i)
+        sum += L * A[i]
     return sum
 
 
-a = 1
-b = 3
+a = 0
+b = 15
 n = 3
-x = 2.6
+x = 12
 
 print(lagrange(a, b, f, x))

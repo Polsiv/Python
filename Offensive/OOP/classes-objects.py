@@ -14,9 +14,7 @@ class Person:
 
 p1 = Person("Silv", 19)
 
-
 print(p1.greeings())
-
 
 class Animal:
     def __init__(self, name, type_a, color) -> None:
