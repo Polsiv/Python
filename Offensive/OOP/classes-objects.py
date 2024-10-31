@@ -22,7 +22,7 @@ class Animal:
         self.type = type_a
         self.color = color
     
-    def description(self):
+    def description(self): #Animal.description(cat)
         return f"{self.name} is a {self.type}, and their color is {self.color}"
 
 
