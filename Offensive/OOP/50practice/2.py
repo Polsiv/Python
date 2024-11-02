@@ -8,7 +8,7 @@ class Student:
     def name(self):
         return self.__name
     
-    @name.setter #the function to must have property
+    @name.setter #the function to must be a property
     def name(self, name: str):
         self.__name = name
         
