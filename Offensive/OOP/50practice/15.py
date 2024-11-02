@@ -12,8 +12,8 @@ class Smartphone:
 class SmartComputer(Computer, Smartphone):
 
     def get_specs(self):
-        phone_specs = Computer().get_specs()
-        pc_specs = Smartphone().get_specs()
+        pc_specs = super(SmartComputer, self).get_specs()
+        phone_specs = super(SmartComputer, self).get_specs()
         return f" {phone_specs}, {pc_specs}"
 
 
