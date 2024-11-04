@@ -17,14 +17,12 @@ courses = [
     Course("Python Ofensivo", 35, "https://hack4u.io/cursos/python-ofensivo/")
 ]
 
-
-
 def list_courses():
     for course in courses:
         print(course)
 
-
 def find_course_by_name(name):
     for course  in courses:
-        if course.name == name
-        return course
+        if course.name == name:
+            return course
+    return None
