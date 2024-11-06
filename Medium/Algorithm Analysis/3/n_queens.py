@@ -16,13 +16,13 @@ def solve_n_queens(n: int):
             if c in col or (r + c) in pos_diag or (r - c) in neg_diag:
                 continue
             
+            # place the queen and add the constraints for further checking
             col.add(c)
             pos_diag.add(r + c)
             neg_diag.add(r - c)
             board[r][c] = "1"
             
             backtrack(r + 1)
-            
             
             # backtrack (remove the queens that dont fit the solution)
             col.remove(c)
@@ -35,8 +35,8 @@ def solve_n_queens(n: int):
 
 results = solve_n_queens(4)
 
-for i in range(len(results)):
-    print("\n")
-    for j in range(len(results[i])):
-        print(" ".join(results[i][j]))
+#for i in range(len(results)):
+#   print("\n")
+#   for j in range(len(results[i])):
+#       print(" ".join(results[i][j]))
     
