@@ -19,6 +19,7 @@ with open("example.txt", "rb") as f:
 
 with open("example.txt", "rb") as f: #rb raw binary
     #loads all the file in memory (not efficient)
+    print(type(line))
     for line in f.readlines():
         print(line.strip().decode())
     
@@ -32,3 +33,21 @@ with open("example.txt", "a") as f:
 #no1 uses it
 with open("test.txt", "w") as f:  
     print("omg hi there", file = f)
+
+
+# handle images
+with open("/home/silv/Wallpapers/forest.png", "rb") as f_in, open("image.png", "wb") as f_out:
+    file_content = f_in.read()
+    f_out.write(file_content)
+
+
+#exceptions
+try:
+    with open("fi.txt", "r") as f:
+        f2 = f.read()
+    
+except FileNotFoundError:
+    print("File not found!")
+
+
+    
