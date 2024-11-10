@@ -16,7 +16,6 @@ def memo_cut_rod_aux(p,n,r):
   r[n - 1] = q
   return q
 
-n = 10
-price_list = [1, 5, 8, 9, 10, 17, 17, 20, 24, 30]
-
-print(memo_cut_rod(price_list, n))
+#n = 10
+#price_list = [1, 5, 8, 9, 10, 17, 17, 20, 24, 30]
+#print(memo_cut_rod(price_list, n))
