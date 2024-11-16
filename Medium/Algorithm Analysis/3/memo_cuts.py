@@ -28,6 +28,8 @@ def reconstruct_solution(s, n):
         n -= s[n - 1]
     return pieces
 
-n = 10
+n = 4
 price_list = [1, 5, 8, 9, 10, 17, 17, 20, 24, 30]
-print(memo_cut_rod(price_list, n))
+cost, cuts = memo_cut_rod(price_list, n)
+print(cost)
+print(cuts)

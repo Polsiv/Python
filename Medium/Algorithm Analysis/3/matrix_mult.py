@@ -1,13 +1,13 @@
 def matrix_chain_order(p):
-    n = len(p) - 1  
+    n = len(p) - 1  # number of matrices
 
-    # Create tables m and s
+    # create tables m and s
     m = [[0 for _ in range(n)] for _ in range(n)]
     s = [[0 for _ in range(n)] for _ in range(n)]
 
-    # Fill the tables m and s in a bottom-up manner
+    # fill the tables m and s in a bottom-up manner
     for l in range(2, n + 1):
-        for i in range(n - l + 1):  # Ensure proper range for i
+        for i in range(n - l + 1): # l is the chain length
             j = i + l - 1
             m[i][j] = float('inf')
             for k in range(i, j):
@@ -20,11 +20,10 @@ def matrix_chain_order(p):
 
 
 def print_optimal_parens(s, i, j):
-    """
-    Prints the optimal parenthesization of a matrix chain multiplication.
-    """
+
+    # prints the optimal parenthesization of a matrix chain multiplication.
     if i == j:
-        print("A" + str(i + 1), end="")  # Adjust to start from 1
+        print("A" + str(i + 1), end="")  
     else:
         print("(", end="")
         print_optimal_parens(s, i, s[i][j])
@@ -39,4 +38,4 @@ m, s = matrix_chain_order(p)
 print_optimal_parens(s, 0, len(p) - 2)
 
 # Print the minimum number of scalar multiplications
-print("\nMinimum number of scalar multiplications:", m[0][len(p) - 2])
+print("\nminimum number of scalar multiplications:", m[0][len(p) - 2])

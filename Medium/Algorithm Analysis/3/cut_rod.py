@@ -13,6 +13,6 @@ def cut_rod(p, n):
 
 p = [1, 5, 8, 9, 10, 17, 17, 20, 24, 30]
 n = 4
-max_revenue, cuts = cut_rod(p, n)
-print(max_revenue)
-print("Solution piece", cuts)
+cost, cuts = cut_rod(p, n)
+print(cost)
+print(cuts)

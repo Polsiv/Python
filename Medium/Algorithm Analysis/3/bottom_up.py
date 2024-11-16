@@ -22,11 +22,11 @@ def get_cut_rod_solution(s, n):
     return sol
 
 p = [1, 5, 8, 9, 10, 17, 17, 20, 24, 30]
-n = 10
-max_revenue, cuts = bottom_up_cut_rod(p, n)
-print(cuts)
+n = 4
+cost, cuts = bottom_up_cut_rod(p, n)
+#print(cuts)
 solution_pieces = get_cut_rod_solution(cuts, n)
-print(max_revenue)
+print(cost)
 print(solution_pieces)
 
 
