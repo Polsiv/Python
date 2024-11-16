@@ -91,7 +91,7 @@ class Pizza:
         
     def description(self):
         
-        print(f"Pizza is {self.size} cm long, and its ingredients are: {", ".join(self.ingredients)}")
+        print(f"Pizza is {self.size} cm long, and its ingredients are: {', '.join(self.ingredients)}")
         
     
     
