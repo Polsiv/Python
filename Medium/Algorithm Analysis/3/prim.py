@@ -1,17 +1,10 @@
 import heapq
 
-class Vertex:
-    def __init__(self, key):
-        self.key = key
-        self.parent = None
-        self.neighbors = []
-
-    def __lt__(self, other):
-        return self.key < other.key
-
 class Graph:
     def __init__(self, vertices):
-        self.vertices = vertices
+        self.V = vertices
+        
+        # adjacency matrix
         self.graph = [[0 for _ in range(vertices)] for _ in range(vertices)]
 
     def add_edge(self, u, v, w):
@@ -19,35 +12,52 @@ class Graph:
         self.graph[v][u] = w
 
     def MST_PRIM(self, root):
-        V = len(self.vertices)
+        V = self.V
         key = [float('inf')] * V
-        key[root] = 0
         parent = [None] * V
-        Q = []
-        for v in range(V):
-            Q.append(Vertex(key[v]))
+        key[root] = 0
 
-        heapq.heapify(Q)
+        # priority queue of (key, vertex)
+        Q = [(0, root)]
+        in_queue = {i: True for i in range(V)}
 
         while Q:
-            u = heapq.heappop(Q)
+            _, u = heapq.heappop(Q)
+            in_queue[u] = False
+
             for v in range(V):
-                if self.graph[u.key][v] > 0 and v in Q and self.graph[u.key][v] < Q[v].key:
-                    Q[v].key = self.graph[u.key][v]
-                    Q[v].parent = u.key
-                    heapq.heapify(Q)
+                weight = self.graph[u][v]
+                if weight > 0 and in_queue[v] and weight < key[v]:
+                    key[v] = weight
+                    parent[v] = u
+                    heapq.heappush(Q, (key[v], v))
 
         print("Edge \tWeight")
         for v in range(1, V):
-            print(f"{parent[v]} - {v} \t{self.graph[parent[v]][v]}")
+            if parent[v] is not None:
+                print(f"{parent[v]} - {v} \t{self.graph[parent[v]][v]}")
 
-# Example usage:
-g = Graph(5)
-g.add_edge(0, 1, 2)
-g.add_edge(0, 3, 6)
-g.add_edge(1, 2, 3)
-g.add_edge(1, 3, 8)
-g.add_edge(1, 4, 5)
-g.add_edge(2, 4, 7)
+# graph (u, v, w)
+edges = [
+    (2, 5, 8),  # c -> f
+    (0, 2, 2),  # a -> c
+    (0, 6, 7),  # a -> g
+    (1, 3, 2),  # b -> d
+    (7, 9, 2),  # h -> j
+    (2, 6, 3),  # c -> g
+    (5, 9, 3),  # f -> j
+    (0, 1, 4),  # a -> b
+    (3, 7, 6),  # d -> h
+    (6, 9, 5),  # g -> j
+    (6, 3, 4),  # g -> d
+]
+
+# vertices (highest vertex index + 1)
+num_vertices = max(max(u, v) for u, v, _ in edges) + 1
+
+# create the graph, then add edges
+g = Graph(num_vertices)
+for u, v, w in edges:
+    g.add_edge(u, v, w)
 
 g.MST_PRIM(0)

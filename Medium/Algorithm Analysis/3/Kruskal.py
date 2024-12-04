@@ -24,16 +24,11 @@ class DisjointSet:
             self.parent[y_root] = x_root
             self.rank[x_root] += 1
 
-def kruskal_mst(graph):
-    num_vertices = len(graph)
+
+def kruskal_mst(edges, num_vertices):
     mst = []
-
-    # Create a disjoint set for each vertex
     ds = DisjointSet(num_vertices)
-
-    # Sort edges by weight in non-decreasing order
-    edges = [(u, v, w) for u in range(num_vertices) for v, w in enumerate(graph[u])]
-    edges.sort(key=lambda x: x[2])
+    edges.sort(key=lambda x: x[2])  # Sort edges by weight
 
     for u, v, w in edges:
         if ds.find_parent(u) != ds.find_parent(v):
@@ -42,14 +37,46 @@ def kruskal_mst(graph):
 
     return mst
 
-# Example usage
-graph = [
-    [0, 2, 0, 6, 0],
-    [2, 0, 3, 8, 5],    
-    [0, 3, 0, 0, 7],
-    [6, 8, 0, 0, 9],
-    [0, 5, 7, 9, 0]
+
+# edge list with vertices converted to indices
+edges = [
+    (0, 2, 2),  # a -> c
+    (1, 3, 2),  # b -> d
+    (7, 9, 2),  # h -> j
+    (2, 6, 3),  # c -> g
+    (5, 9, 3),  # f -> j
+    (0, 1, 4),  # a -> b
+    (6, 9, 4),  # g -> j
+    (6, 9, 4),  # d -> g
+    (3, 7, 6),  # d -> h
+    (0, 6, 7),  # a -> g
+    (2, 5, 8),  # c -> f 
 ]
 
-minimum_spanning_tree = kruskal_mst(graph)
-print(minimum_spanning_tree)
+edges2 = [
+    (0, 1, 5), # a -> b
+    (1, 2, 3), # b -> c
+    (2, 0, 1), # c -> a
+]
+
+
+# Peculiar problem, we "need" 2 edges more since we skipped i and e.
+
+#https://www.youtube.com/watch?v=5iBeLKst5bo
+print(f"First Problem {'=' * 20}")
+
+num_vertices = 10
+result = kruskal_mst(edges, num_vertices)
+print("number of nodes:", len(result))
+print(result)
+print("cost:", sum(x[2] for x in result))
+
+
+num_vertices2 = 3
+
+print(f"Second Problem {'=' * 20}")
+
+result2 = kruskal_mst(edges2, num_vertices2)
+print("number of nodes", len(result2))
+print(result2)
+print("cost:", sum(x[2] for x in result2))
