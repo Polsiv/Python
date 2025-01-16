@@ -11,7 +11,6 @@ def removeElement(nums, val):
     nums = newlist       
     return len(nums)
 
-
 print(f'Len: {removeElement([0, 1, 2, 2, 3, 0, 4, 2], 2)}')
 
 #Working solution
