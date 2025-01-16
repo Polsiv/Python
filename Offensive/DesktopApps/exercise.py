@@ -3,7 +3,7 @@
 import tkinter as tk
 
 def button_pressed():
-    print("Buttom clicked!")
+    print("button clicked!")
 
 def get_data(input_label):
     data = input_label.get()
@@ -29,8 +29,8 @@ def main():
     label3 = tk.Label(root, text = "Third Label lol", bg = "#464646")
     label4 = tk.Label(root, text = "Fourth lol", bg = "#464646")
 
-    # buttom
-    buttom = tk.Button(root, text = "Click me", command = button_pressed)
+    # button
+    button = tk.Button(root, text = "Click me", command = button_pressed)
 
     # placing shit using place (lol)
     place_label = tk.Label(root, text = "Place") 
@@ -45,10 +45,9 @@ def main():
     # canvas
     canvas = tk.Canvas(root, width = 300, height = 300, bg = "#FFF")
 
-
     # inputs
     input_label = tk.Entry(root)
-    input_buttom = tk.Button(root, text = "Send", command = lambda: get_data(input_label))
+    input_button = tk.Button(root, text = "Send", command = lambda: get_data(input_label))
 
     # for text
     #input_label = tk.Text(root)
@@ -57,12 +56,12 @@ def main():
     # using both grid and pack at the same time isnt compatible
 
     # using pack
-    buttom.pack(fill = tk.X) # fill the X axis
+    button.pack(fill = tk.X) # fill the X axis
     label.pack(fill = tk.Y, side = tk.LEFT)
     label2.pack()
     label3.pack()
     input_label.pack(pady = 5) #padding-y 5 px
-    input_buttom.pack()
+    input_button.pack()
     label5.pack()
     label6.pack()
     canvas.pack()
