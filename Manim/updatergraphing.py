@@ -3,8 +3,6 @@ from manim import *
 class UpdatersGraphing(Scene):
     def construct(self):
 
-       
-
         k = ValueTracker(2)
         ax = Axes(x_range=[-5, 5, 1], y_range=[0, 10, 1], x_length=10, y_length=10).to_edge(DOWN).add_coordinates()
         func = ax.plot(lambda x: x**2, x_range=[-4, 4], stroke_width=5, color = GREEN_C)
