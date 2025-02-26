@@ -1,24 +1,19 @@
+import random
 from weirdstringstack import *
-import random as rd
 
-pancakes = Pila()
-x = rd.sample(range(1, 6), 5)
-for i in x:
-    apilar(pancakes, i)
+pancakes = Stack()
+random_values = random.sample(range(1, 6), 5)
+for value in random_values:
+    push(pancakes, value)
 
 sorted_stack = [1, 2, 3, 4, 5]
 
-stack_to_sort = barrido_modificado(pancakes)
+stack_to_sort = traverse_modified(pancakes)
 print(stack_to_sort)
 
-while(sorted_stack != stack_to_sort):
-    stack_to_sort, posicion_flip = act_flip(pancakes)
+while sorted_stack != stack_to_sort:
+    stack_to_sort, flip_position = act_flip(pancakes)
     print(stack_to_sort)
-   # print(f'flip en la posicion: {posicion_flip}')
-    
+    # print(f' Position: {flip_position}')
 
-
-print(f'sorted stack: {stack_to_sort}')
-
-    
-    
+print(f'Sorted stack: {stack_to_sort}')

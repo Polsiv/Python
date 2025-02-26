@@ -11,8 +11,8 @@ operations = {"*": multiplication,
                }
 
 
-def analizador(ecuacion: str):
-    equationSolved = ecuacion[:ecuacion.find("=") - 1].split(" ")
+def analizador(ecuation: str):
+    equationSolved = ecuation[:ecuation.find("=") - 1].split(" ")
     print(equationSolved)
 
     for operation in operations.keys():
@@ -22,23 +22,23 @@ def analizador(ecuacion: str):
                 break 
 
             if equationSolved[index] == operation:
-                print(ecuacion)
+                print(ecuation)
                 
                 result = operations[operation](int(equationSolved[index - 1]), int(equationSolved[index + 1]))
                 element_to_be_replaced = " ".join(equationSolved[index - 1: index + 2])
 
-                ecuacion = ecuacion.replace(element_to_be_replaced, str(result))
+                ecuation = ecuation.replace(element_to_be_replaced, str(result))
 
-                equationSolved = ecuacion[:ecuacion.find("=") - 1].split(" ")
+                equationSolved = ecuation[:ecuation.find("=") - 1].split(" ")
                 index = 0
             else:
                 index += 1  
 
-    print(ecuacion)
+    print(ecuation)
 
 
 def main():
-    ecuacion = input("Ingresa la ecuacion a resolver: ")
-    analizador(ecuacion)
+    ecuation = input("Enter the equation to solve: ")
+    analizador(ecuation)
 
 main()

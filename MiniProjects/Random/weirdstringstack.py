@@ -1,73 +1,67 @@
 import random
 
-class nodoPila(object):
-    info,sig=None, None
+class StackNode:
+    info, next = None, None
 
-class Pila(object):
+class Stack:
     def __init__(self):
-        self.cima=None
-        self.tamano=0
+        self.top = None
+        self.size = 0
 
-def apilar(pila,dato):
-    nodo=nodoPila()
-    nodo.info=dato
-    nodo.sig=pila.cima
-    pila.cima=nodo
-    pila.tamano+=1
+def push(stack, data):
+    node = StackNode()
+    node.info = data
+    node.next = stack.top
+    stack.top = node
+    stack.size += 1
 
-def desapilar(pila):
-    x=pila.cima.info
-    pila.cima=pila.cima.sig
-    pila.tamano-=1
-    return x
+def pop(stack):
+    data = stack.top.info
+    stack.top = stack.top.next
+    stack.size -= 1
+    return data
 
-def pila_vacia(pila):
-    return pila.cima is None
+def is_empty(stack):
+    return stack.top is None
 
-def en_cima(pila):
-    if pila.cima is not None:
-        return pila.cima.info
-    else:
-        return None
+def peek(stack):
+    return stack.top.info if stack.top is not None else None
 
-def tamano(pila):
-    return pila.tamano
+def get_size(stack):
+    return stack.size
 
-def barrido(pila):
-    paux=Pila()
-    while(not pila_vacia(pila)):
-        dato=desapilar(pila)
-        print(dato)
-        apilar(paux,dato)
-    while(not pila_vacia(paux)):
-        dato=desapilar(paux)
-        apilar(pila,dato)
+def traverse(stack):
+    aux_stack = Stack()
+    while not is_empty(stack):
+        data = pop(stack)
+        print(data)
+        push(aux_stack, data)
+    while not is_empty(aux_stack):
+        data = pop(aux_stack)
+        push(stack, data)
 
-def barrido_modificado(pila):
-    list_barrido = []
-    paux=Pila()
-    while(not pila_vacia(pila)):
-        dato=desapilar(pila)
-        list_barrido.append(dato)
-        apilar(paux,dato)
-    while(not pila_vacia(paux)):
-        dato=desapilar(paux)
-        apilar(pila,dato)
+def traverse_modified(stack):
+    traversed_list = []
+    aux_stack = Stack()
+    while not is_empty(stack):
+        data = pop(stack)
+        traversed_list.append(data)
+        push(aux_stack, data)
+    while not is_empty(aux_stack):
+        data = pop(aux_stack)
+        push(stack, data)
+    return traversed_list
 
-    return list_barrido
-
-def act_flip(pila):
-
+def act_flip(stack):
     flip_position = random.randint(2, 5)
     pos = 0
-    list = []
-    while(pos != flip_position):
-        list.append(desapilar(pila))
-        pos +=1
-
-    print(f'flip at: {5 - flip_position}')
-    for i in list:
-        apilar(pila, i)
+    temp_list = []
+    while pos != flip_position:
+        temp_list.append(pop(stack))
+        pos += 1
     
-    return barrido_modificado(pila), (5 - flip_position)
+    print(f'Flip at: {5 - flip_position}')
+    for item in temp_list:
+        push(stack, item)
     
+    return traverse_modified(stack), (5 - flip_position)
