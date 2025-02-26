@@ -42,8 +42,6 @@ listy = [1, 2, 3, 4, 1]
 #for i in range(n):
     #print(i)
 
- 
-
 # for i in range(1, 11):
 #     print (i)
     
