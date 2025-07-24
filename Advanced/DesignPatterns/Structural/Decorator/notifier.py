@@ -73,7 +73,7 @@ if __name__ == "__main__":
     
     # decorated notifications
     email = EmailDecorator(simple_notifiacion)
-    sms = SMSDecorator(email)
-    
+    sms = SMSDecorator(email)    
+
     client_code(sms)
     
