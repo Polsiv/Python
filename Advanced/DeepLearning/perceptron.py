@@ -21,7 +21,6 @@ weights = np.zeros((2, 2))  # shape: (neurons, inputs)
 biases = np.zeros(2)
 learning_rate = 0.05
 
-
 # train
 for epoch in range(12):
     print(f"Epoch: {epoch}")
