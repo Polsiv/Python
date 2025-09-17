@@ -17,6 +17,8 @@ from sklearn.metrics import confusion_matrix
 from sklearn.metrics import precision_score, recall_score, f1_score, accuracy_score, roc_auc_score, roc_curve
 from sklearn.preprocessing import label_binarize
 import seaborn as sns
+
+
 # import some data to play with
 iris = datasets.load_iris() # https://archive.ics.uci.edu/ml/datasets/iris
 X = iris.data # características
