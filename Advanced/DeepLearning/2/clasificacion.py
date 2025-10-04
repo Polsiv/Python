@@ -6,15 +6,18 @@ mushroom = fetch_ucirepo(id=73)
 # data (as pandas dataframes) 
 X = mushroom.data.features 
 y = mushroom.data.targets 
+#print(X)
+  
+print(X["odor"].unique())
   
 # # metadata 
 # print(mushroom.metadata) 
   
 # # variable information 
-# print(mushroom.variables) 
+#print(mushroom.variables) 
 
 # Imprimir la primera fila
-print(mushroom.variables.head(1))
+#print(mushroom.variables.head(1))
 
 # # O una fila aleatoria
 # print(mushroom.variables.sample(1))
