@@ -6,9 +6,9 @@ from matplotlib.animation import FuncAnimation
 import pandas as pd
 
 def main():
-    df = pd.read_csv("colorectal_ct_patients.csv")
+    df = pd.read_csv("datasets/colorectal_ct_patients.csv")
     ct_folders = df["ct_folder_path"]
-    patient = 111
+    patient = 400
     patient_folder = ct_folders[patient]
 
 

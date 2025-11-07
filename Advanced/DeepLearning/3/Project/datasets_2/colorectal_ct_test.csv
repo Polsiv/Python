@@ -1,0 +1,66 @@
+patient_id,ct_folder_path,stage,dataset_source,num_slices
+StageII-Colorectal-CT-188,images/Stage2/StageII-Colorectal-CT/StageII-Colorectal-CT-188/01-04-2008-NA-Abdomen CT RoutineEnhanced-90193/2.000000-Abdomen  5.0  B30f-75233,2,stage2,54
+StageII-Colorectal-CT-072,images/Stage2/StageII-Colorectal-CT/StageII-Colorectal-CT-072/12-18-2005-NA-Abdomen CT RoutineEnhanced-50473/4.000000-Venous Phase  5.0  B30f-71981,2,stage2,59
+CRLM-CT-1148,images/Stage4/Colorectal-Liver-Metastases/CRLM-CT-1148/03-10-1992-NA-CT ANGIO ABD WITH CH AND PEL-90325/101.000000-NA-72222,4,stage4,87
+CRLM-CT-1038,images/Stage4/Colorectal-Liver-Metastases/CRLM-CT-1038/01-17-1994-NA-CT CHABDPEL W CONTRAST-13770/2.000000-CT CHABPEL-45370,4,stage4,38
+CRLM-CT-1163,images/Stage4/Colorectal-Liver-Metastases/CRLM-CT-1163/12-27-1992-NA-CT CHABDPEL W CONTRAST-49339/2.000000-NA-44496,4,stage4,34
+CRLM-CT-1159,images/Stage4/Colorectal-Liver-Metastases/CRLM-CT-1159/07-01-1992-NA-CT CHABDPEL W CONTRAST-31200/2.000000-CT CHABPEL-97198,4,stage4,34
+StageII-Colorectal-CT-192,images/Stage2/StageII-Colorectal-CT/StageII-Colorectal-CT-192/01-18-2008-NA-Pelvic Cavity CT RoutineEnhanced-13066/2.000000-Pelvis  5.0  B31f-63072,2,stage2,59
+StageII-Colorectal-CT-100,images/Stage2/StageII-Colorectal-CT/StageII-Colorectal-CT-100/04-30-2006-NA-Abdomen CT RoutineEnhanced-92121/4.000000-Venous Phase  5.0  B30f-38494,2,stage2,57
+StageII-Colorectal-CT-108,images/Stage2/StageII-Colorectal-CT/StageII-Colorectal-CT-108/06-21-2006-NA-Abdomen CT RoutineEnhanced-43586/4.000000-NA-12325,2,stage2,58
+CRLM-CT-1183,images/Stage4/Colorectal-Liver-Metastases/CRLM-CT-1183/07-21-1992-NA-CT ANGIO ABD WITH PEL-04821/101.000000-NA-15533,4,stage4,168
+StageII-Colorectal-CT-103,images/Stage2/StageII-Colorectal-CT/StageII-Colorectal-CT-103/05-09-2006-NA-Pelvic Cavity CT RoutineEnhanced-46189/2.000000-Pelvis  5.0  B31f-32842,2,stage2,58
+StageII-Colorectal-CT-104,images/Stage2/StageII-Colorectal-CT/StageII-Colorectal-CT-104/05-11-2006-NA-penqctzengq-65615/2.000000-NA-14433,2,stage2,47
+CRLM-CT-1164,images/Stage4/Colorectal-Liver-Metastases/CRLM-CT-1164/02-07-1993-NA-CT ANGIO ABD WITH CH AND PEL-41050/101.000000-NA-35553,4,stage4,157
+StageII-Colorectal-CT-009,images/Stage2/StageII-Colorectal-CT/StageII-Colorectal-CT-009/02-28-2004-NA-Pelvic Cavity CT RoutineEnhanced-45671/4.000000-Venous Phase  5.0  B30f-54622,2,stage2,90
+StageII-Colorectal-CT-223,images/Stage2/StageII-Colorectal-CT/StageII-Colorectal-CT-223/01-10-2009-NA-Pelvic Cavity CT RoutineEnhanced-15242/2.000000-Pelvis  5.0  B31f-90306,2,stage2,53
+CRLM-CT-1147,images/Stage4/Colorectal-Liver-Metastases/CRLM-CT-1147/12-14-1992-NA-CT ANGIO ABDOMEN W  WO CONT-46856/101.000000-NA-77589,4,stage4,138
+StageII-Colorectal-CT-021,images/Stage2/StageII-Colorectal-CT/StageII-Colorectal-CT-021/11-23-2004-NA-penqctzengq-74179/4.000000-Venous Phase  5.0  B30f-19867,2,stage2,94
+StageII-Colorectal-CT-038,images/Stage2/StageII-Colorectal-CT/StageII-Colorectal-CT-038/03-17-2005-NA-Pelvic Cavity CT RoutineEnhanced-18506/2.000000-Pelvis  5.0  B31f-94281,2,stage2,63
+StageII-Colorectal-CT-117,images/Stage2/StageII-Colorectal-CT/StageII-Colorectal-CT-117/08-24-2006-NA-Pelvic Cavity CT RoutineEnhanced-90573/2.000000-NA-04127,2,stage2,54
+CRLM-CT-1121,images/Stage4/Colorectal-Liver-Metastases/CRLM-CT-1121/01-07-1995-NA-CT ANGIO LIVER WITH PEL-66570/101.000000-Bind41264314..545-59336,4,stage4,181
+CRLM-CT-1094,images/Stage4/Colorectal-Liver-Metastases/CRLM-CT-1094/12-28-1992-NA-CT CHABDPEL W CONTRAST-78632/2.000000-ChestAbdomenPelvis-25329,4,stage4,24
+CRLM-CT-1009,images/Stage4/Colorectal-Liver-Metastases/CRLM-CT-1009/01-04-1994-NA-CT ANGIO LIVER WITH PEL-07970/101.000000-NA-15022,4,stage4,141
+StageII-Colorectal-CT-051,images/Stage2/StageII-Colorectal-CT/StageII-Colorectal-CT-051/08-06-2005-NA-Pelvic Cavity CT RoutineEnhanced-31447/2.000000-Pelvis  5.0  B31f-32972,2,stage2,47
+CRLM-CT-1085,images/Stage4/Colorectal-Liver-Metastases/CRLM-CT-1085/07-18-1992-NA-CT CHABDPEL W CONTRAST-05228/2.000000-NA-09919,4,stage4,21
+StageII-Colorectal-CT-089,images/Stage2/StageII-Colorectal-CT/StageII-Colorectal-CT-089/03-17-2006-NA-Pelvic Cavity CT RoutineEnhanced-97531/2.000000-Pelvis  5.0  B31f-89062,2,stage2,51
+CRLM-CT-1002,images/Stage4/Colorectal-Liver-Metastases/CRLM-CT-1002/07-12-1992-NA-CT ANGIO ABD WITH CH AND PEL-46457/101.000000-NA-36282,4,stage4,178
+StageII-Colorectal-CT-131,images/Stage2/StageII-Colorectal-CT/StageII-Colorectal-CT-131/11-09-2006-NA-Pelvic Cavity CT RoutineEnhanced-85922/2.000000-Pelvis  5.0  B31f-29392,2,stage2,51
+CRLM-CT-1173,images/Stage4/Colorectal-Liver-Metastases/CRLM-CT-1173/08-19-1992-NA-CT CHABDPEL W CONTRAST-67124/2.000000-NA-00990,4,stage4,35
+StageII-Colorectal-CT-014,images/Stage2/StageII-Colorectal-CT/StageII-Colorectal-CT-014/09-09-2004-NA-Chest CT Routine-10028/5.000000-Venous Phase  5.0  B30f-06035,2,stage2,104
+StageII-Colorectal-CT-213,images/Stage2/StageII-Colorectal-CT/StageII-Colorectal-CT-213/07-24-2008-NA-Abdomen CT RoutineEnhanced-84919/8.000000-Venous Phase  5.0  B30f-72504,2,stage2,51
+CRLM-CT-1040,images/Stage4/Colorectal-Liver-Metastases/CRLM-CT-1040/06-24-1992-NA-CT CHABDPEL W CONTRAST-09690/2.000000-CT CHABPEL-62890,4,stage4,24
+StageII-Colorectal-CT-059,images/Stage2/StageII-Colorectal-CT/StageII-Colorectal-CT-059/10-05-2005-NA-fubu-94690/4.000000-Venous Phase  5.0  B30f-72688,2,stage2,51
+CRLM-CT-1162,images/Stage4/Colorectal-Liver-Metastases/CRLM-CT-1162/09-16-1992-NA-CT ANGIO ABD WITH CH AND PEL-55872/101.000000-NA-37181,4,stage4,134
+StageII-Colorectal-CT-090,images/Stage2/StageII-Colorectal-CT/StageII-Colorectal-CT-090/03-09-2006-NA-Abdomen CT RoutineEnhanced-62284/4.000000-Venous Phase  5.0  B30f-85550,2,stage2,49
+StageII-Colorectal-CT-201,images/Stage2/StageII-Colorectal-CT/StageII-Colorectal-CT-201/03-08-2008-NA-Pelvic Cavity CT RoutineEnhanced-25456/2.000000-Pelvis  5.0  B31f-32359,2,stage2,59
+StageII-Colorectal-CT-135,images/Stage2/StageII-Colorectal-CT/StageII-Colorectal-CT-135/12-24-2006-NA-Pelvic Cavity CT RoutineEnhanced-22973/2.000000-Pelvis  5.0  B31f-66947,2,stage2,54
+CRLM-CT-1197,images/Stage4/Colorectal-Liver-Metastases/CRLM-CT-1197/10-26-1991-NA-CT ANGIO ABD WITH CH AND PEL-28629/101.000000-NA-06082,4,stage4,89
+StageII-Colorectal-CT-064,images/Stage2/StageII-Colorectal-CT/StageII-Colorectal-CT-064/11-10-2005-NA-Abdomen CT RoutineEnhanced-70735/4.000000-NA-93970,2,stage2,47
+StageII-Colorectal-CT-216,images/Stage2/StageII-Colorectal-CT/StageII-Colorectal-CT-216/08-30-2008-NA-Pelvic Cavity CT RoutineEnhanced-20603/2.000000-Pelvis  5.0  B31f-86207,2,stage2,61
+CRLM-CT-1185,images/Stage4/Colorectal-Liver-Metastases/CRLM-CT-1185/11-18-1993-NA-CT CHABDPEL W CONTRAST-70553/2.000000-CT CHABPEL-23894,4,stage4,50
+StageII-Colorectal-CT-015,images/Stage2/StageII-Colorectal-CT/StageII-Colorectal-CT-015/09-15-2004-NA-Abdomen CT RoutineEnhanced-63632/2.000000-Abdomen  5.0  B30f-20314,2,stage2,95
+CRLM-CT-1021,images/Stage4/Colorectal-Liver-Metastases/CRLM-CT-1021/05-23-1992-NA-CT CHABDPEL W CONTRAST-38735/2.000000-CT CHABPEL-26648,4,stage4,32
+StageII-Colorectal-CT-081,images/Stage2/StageII-Colorectal-CT/StageII-Colorectal-CT-081/02-02-2008-NA-Abdomen CT RoutineEnhanced-25406/2.000000-Abdomen  5.0  B30f-99943,2,stage2,62
+CRLM-CT-1111,images/Stage4/Colorectal-Liver-Metastases/CRLM-CT-1111/10-16-1991-NA-CT ANGIO ABD WITH CH AND PEL-48381/101.000000-NA-70892,4,stage4,80
+StageII-Colorectal-CT-215,images/Stage2/StageII-Colorectal-CT/StageII-Colorectal-CT-215/08-09-2008-NA-Abdomen CT RoutineEnhanced-74272/7.000000-NA-51936,2,stage2,52
+StageII-Colorectal-CT-093,images/Stage2/StageII-Colorectal-CT/StageII-Colorectal-CT-093/03-18-2006-NA-Pelvic Cavity CT RoutineEnhanced-80144/2.000000-Pelvis  5.0  B31f-97436,2,stage2,61
+StageII-Colorectal-CT-008,images/Stage2/StageII-Colorectal-CT/StageII-Colorectal-CT-008/01-25-2004-NA-Abdomen CT RoutineEnhanced-25675/4.000000-Venous Phase  5.0  B30f-71081,2,stage2,87
+StageII-Colorectal-CT-230,images/Stage2/StageII-Colorectal-CT/StageII-Colorectal-CT-230/12-11-2004-NA-Abdomen CT RoutineEnhanced-84487/2.000000-Venous Phase  5.0  B30f-76643,2,stage2,93
+CRLM-CT-1175,images/Stage4/Colorectal-Liver-Metastases/CRLM-CT-1175/04-03-1995-NA-CT ANGIO LIVER WITH CHPEL-89282/101.000000-Bind56834214..434-50980,4,stage4,138
+StageII-Colorectal-CT-084,images/Stage2/StageII-Colorectal-CT/StageII-Colorectal-CT-084/01-21-2006-NA-Pelvic Cavity CT Enhanced-47216/4.000000-Venous Phase  5.0  B30f-83920,2,stage2,137
+StageII-Colorectal-CT-058,images/Stage2/StageII-Colorectal-CT/StageII-Colorectal-CT-058/10-05-2005-NA-Pelvic Cavity CT RoutineEnhanced-23321/2.000000-Pelvis  5.0  B31f-02319,2,stage2,65
+CRLM-CT-1117,images/Stage4/Colorectal-Liver-Metastases/CRLM-CT-1117/03-01-1993-NA-CT ANGIO ABD WITH CH AND PEL-63521/101.000000-NA-71342,4,stage4,161
+CRLM-CT-1181,images/Stage4/Colorectal-Liver-Metastases/CRLM-CT-1181/10-26-1992-NA-CT ANGIO ABD WITH CH AND PEL-93407/101.000000-NA-92152,4,stage4,128
+CRLM-CT-1105,images/Stage4/Colorectal-Liver-Metastases/CRLM-CT-1105/07-28-1992-NA-CT ANGIO ABD WITH PEL-16817/101.000000-NA-33758,4,stage4,44
+StageII-Colorectal-CT-018,images/Stage2/StageII-Colorectal-CT/StageII-Colorectal-CT-018/11-04-2004-NA-Pelvic Cavity CT RoutineEnhanced-33436/4.000000-Venous Phase  5.0  B30f-21666,2,stage2,102
+CRLM-CT-1161,images/Stage4/Colorectal-Liver-Metastases/CRLM-CT-1161/11-18-1992-NA-CT ABPEL W CONTRAST-87565/2.000000-NA-98817,4,stage4,27
+CRLM-CT-1165,images/Stage4/Colorectal-Liver-Metastases/CRLM-CT-1165/06-14-1991-NA-CT CHABDPEL W CONTRAST-44600/2.000000-NA-06872,4,stage4,30
+CRLM-CT-1007,images/Stage4/Colorectal-Liver-Metastases/CRLM-CT-1007/12-29-1994-NA-CT CHABDPEL W CONTRAST-68508/2.000000-CT CHABPEL-38775,4,stage4,51
+StageII-Colorectal-CT-022,images/Stage2/StageII-Colorectal-CT/StageII-Colorectal-CT-022/11-26-2004-NA-fubu-21712/2.000000-NA-96874,2,stage2,93
+StageII-Colorectal-CT-189,images/Stage2/StageII-Colorectal-CT/StageII-Colorectal-CT-189/01-06-2008-NA-Abdomen CT RoutineEnhanced-16107/6.000000-Venous Phase  5.0  B30f-80930,2,stage2,63
+CRLM-CT-1187,images/Stage4/Colorectal-Liver-Metastases/CRLM-CT-1187/08-31-1992-NA-CT ANGIO ABD WITH CH AND PEL-96636/101.000000-NA-22136,4,stage4,131
+CRLM-CT-1061,images/Stage4/Colorectal-Liver-Metastases/CRLM-CT-1061/04-04-1995-NA-CT ANGIO LIVER WITH CHPEL-40864/101.000000-Bind57214233..483-70757,4,stage4,161
+StageII-Colorectal-CT-175,images/Stage2/StageII-Colorectal-CT/StageII-Colorectal-CT-175/07-19-2007-NA-Pelvic Cavity CT RoutineEnhanced-45952/2.000000-Pelvis  5.0  B31f-01251,2,stage2,60
+CRLM-CT-1169,images/Stage4/Colorectal-Liver-Metastases/CRLM-CT-1169/01-16-1995-NA-CT ANGIO LIVER WITH PEL-30653/102.000000-Bind195715159..254-09398,4,stage4,48
+CRLM-CT-1198,images/Stage4/Colorectal-Liver-Metastases/CRLM-CT-1198/11-02-1993-NA-CT ANGIO LIVER WITH CHPEL-20901/101.000000-NA-50801,4,stage4,138
